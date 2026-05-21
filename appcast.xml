@@ -1,0 +1,9 @@
+<?xml version="1.0" standalone="yes"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+  <channel>
+    <title>Forge</title>
+    <link>https://forge.coursion.studio/appcast.xml</link>
+    <description>Updates for Forge — agent-first development workbench from Coursion.</description>
+    <language>en</language>
+  </channel>
+</rss>
