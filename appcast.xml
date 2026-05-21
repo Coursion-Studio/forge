@@ -5,5 +5,15 @@
     <link>https://forge.coursion.studio/appcast.xml</link>
     <description>Updates for Forge — agent-first development workbench from Coursion.</description>
     <language>en</language>
-  </channel>
+  
+    <item>
+      <title>Version 0.1.0</title>
+      <pubDate>Thu, 21 May 2026 23:44:02 +0300</pubDate>
+      <sparkle:version>2</sparkle:version>
+      <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[First public test release.]]></description>
+      <enclosure url="https://github.com/kuraydev/forge-release/releases/download/v0.1.0/Forge-0.1.0.dmg" type="application/octet-stream" sparkle:edSignature="oVu1UjTJ5ZtlRsNxpMYqwAM2KxOWlXSh753xCgrTXSXsqUjpCtPSBUsmz+DZZZ6g/Ibwl6YRXsw1KDxBBqKVCw==" length="6756725" />
+    </item>
+</channel>
 </rss>
