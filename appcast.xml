@@ -6,7 +6,17 @@
     <description>Updates for Forge — agent-first development workbench from Coursion.</description>
     <language>en</language>
   
+    
     <item>
+      <title>Version 0.1.1</title>
+      <pubDate>Sat, 23 May 2026 21:08:39 +0300</pubDate>
+      <sparkle:version>3</sparkle:version>
+      <sparkle:shortVersionString>0.1.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[Editor pane, dev reload overlay, customizable top-bar chips, terminal fixes]]></description>
+      <enclosure url="https://github.com/kuraydev/forge-release/releases/download/v0.1.1/Forge-0.1.1.dmg" type="application/octet-stream" sparkle:edSignature="5MeattmC6mKLgDF+hNbJSQWDAlwF4P954YKiZXx+JDDfMNNTBSXLN8QtdsHZkjfIg0sX+QpZqZDg84KJIdYGDg==" length="7451802" />
+    </item>
+<item>
       <title>Version 0.1.0</title>
       <pubDate>Thu, 21 May 2026 23:44:02 +0300</pubDate>
       <sparkle:version>2</sparkle:version>
