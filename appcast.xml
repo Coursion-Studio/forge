@@ -6,7 +6,24 @@
     <description>Updates for Forge — agent-first development workbench from Coursion.</description>
     <language>en</language>
 
+    
     <item>
+      <title>Version 0.3.0</title>
+      <pubDate>Tue, 02 Jun 2026 11:56:49 +0300</pubDate>
+      <sparkle:version>5</sparkle:version>
+      <sparkle:shortVersionString>0.3.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[_2026-06-02_
+
+- **In-app updates** — Forge now checks for, downloads, and installs new versions itself via Sparkle. Auto-check and auto-download are toggleable in Settings, with last-checked status and a one-click Check for Updates.
+- **What's New** — A release-notes modal driven by the bundled changelog greets you after each update, with an icon-row layout that turns each highlight into a glanceable card.
+- **Selectable terminal output** — Select and copy text from a terminal while a command is still streaming.
+- **Pane & terminal rename** — Give any pane or terminal a custom name straight from its tab.
+- **Workspace icon picker** — Choose from 103 SF Symbols when customizing a workspace.
+- **Settings refresh** — Branded toggles and segmented pickers throughout, a dedicated Coach tab, and collapsible cards to cut first-glance clutter.]]></description>
+      <enclosure url="https://github.com/kuraydev/forge-release/releases/download/v0.3.0/Forge-0.3.0.dmg" type="application/octet-stream" sparkle:edSignature="DH88Crat0eKo3rEEi/8J0AZVvqhdeVS2aoqbfl93HU9LR/QrL+NkQpgqDeYKQU+BUTcPSJybuWl5nTi5p0jvCg==" length="7929821" />
+    </item>
+<item>
       <title>Version 0.2.0</title>
       <pubDate>Tue, 02 Jun 2026 10:02:13 +0300</pubDate>
       <sparkle:version>4</sparkle:version>
