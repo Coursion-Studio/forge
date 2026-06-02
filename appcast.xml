@@ -6,17 +6,7 @@
     <description>Updates for Forge — agent-first development workbench from Coursion.</description>
     <language>en</language>
 
-    
     <item>
-      <title>Version 0.2.1</title>
-      <pubDate>Tue, 02 Jun 2026 10:38:03 +0300</pubDate>
-      <sparkle:version>5</sparkle:version>
-      <sparkle:shortVersionString>0.2.1</sparkle:shortVersionString>
-      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-      <description><![CDATA[In-app updates, Hutch-style: Forge now checks for updates automatically in the background (daily) and can download them silently. Settings → General → Updates shows your current version, last-checked time, and toggles for automatic check + download, alongside a Check Now button. Updates remain Developer ID-signed, notarized, and delivered over a secure EdDSA-signed feed.]]></description>
-      <enclosure url="https://github.com/kuraydev/forge-release/releases/download/v0.2.1/Forge-0.2.1.dmg" type="application/octet-stream" sparkle:edSignature="D+IFPUnTL2nNa7LpxR8/dgrwIktHf6HePJw90tpcDCKObl0j2l1+339Lx6d4qqq2LKwQGhr5r5AYP0szlqRfAg==" length="7843930" />
-    </item>
-<item>
       <title>Version 0.2.0</title>
       <pubDate>Tue, 02 Jun 2026 10:02:13 +0300</pubDate>
       <sparkle:version>4</sparkle:version>
