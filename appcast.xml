@@ -8,7 +8,22 @@
 
     
     
+    
     <item>
+      <title>Version 0.4.1</title>
+      <pubDate>Fri, 05 Jun 2026 00:55:04 +0300</pubDate>
+      <sparkle:version>8</sparkle:version>
+      <sparkle:shortVersionString>0.4.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[_2026-06-04_
+
+- **Worktree badge** — Every terminal header and the workspace toolbar now show the active git branch and worktree at a glance, targeting the focused terminal.
+- **Per-terminal worktree toggle** — Enable or disable isolated worktree mode for the focused terminal straight from the toolbar.
+- **Reliable git detection** — Reworked git invocation to exec directly with a composed PATH and retry transient spawn failures, fixing flaky branch/worktree detection under load.
+- **Faster dev loop** — Reliable rebuild-and-relaunch flow with InjectionIII hot reload.]]></description>
+      <enclosure url="https://github.com/kuraydev/forge-release/releases/download/v0.4.1/Forge-0.4.1.dmg" type="application/octet-stream" sparkle:edSignature="ZMBKSJuk25wI2s0CRxmXS/uWJhlQs+wdRLedZMI0fBWqgUExaT68t/FT02p3bzCW9/qCpcBm8K/WO+r7X05FAg==" length="8194023" />
+    </item>
+<item>
       <title>Version 0.4.0</title>
       <pubDate>Thu, 04 Jun 2026 21:18:29 +0300</pubDate>
       <sparkle:version>7</sparkle:version>
