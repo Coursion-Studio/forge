@@ -72,15 +72,5 @@
       <description><![CDATA[Editor pane, dev reload overlay, customizable top-bar chips, terminal fixes]]></description>
       <enclosure url="https://github.com/Coursion-Studio/forge/releases/download/v0.1.1/Forge-0.1.1.dmg" type="application/octet-stream" sparkle:edSignature="5MeattmC6mKLgDF+hNbJSQWDAlwF4P954YKiZXx+JDDfMNNTBSXLN8QtdsHZkjfIg0sX+QpZqZDg84KJIdYGDg==" length="7451802" />
     </item>
-
-    <item>
-      <title>Version 0.1.0</title>
-      <pubDate>Thu, 21 May 2026 23:44:02 +0300</pubDate>
-      <sparkle:version>2</sparkle:version>
-      <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
-      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-      <description><![CDATA[First public test release.]]></description>
-      <enclosure url="https://github.com/Coursion-Studio/forge/releases/download/v0.1.0/Forge-0.1.0.dmg" type="application/octet-stream" sparkle:edSignature="oVu1UjTJ5ZtlRsNxpMYqwAM2KxOWlXSh753xCgrTXSXsqUjpCtPSBUsmz+DZZZ6g/Ibwl6YRXsw1KDxBBqKVCw==" length="6756725" />
-    </item>
   </channel>
 </rss>
