@@ -11,7 +11,17 @@
     
     
 
+    
     <item>
+      <title>Version 0.5.1</title>
+      <pubDate>Fri, 05 Jun 2026 16:05:53 +0300</pubDate>
+      <sparkle:version>10</sparkle:version>
+      <sparkle:shortVersionString>0.5.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[Fixed: Claude Code and Hermes agent chips no longer vanish from the toolbar. Agent detection now scans PATH directly with retries instead of relying on a one-shot login-shell check.]]></description>
+      <enclosure url="https://github.com/kuraydev/forge-release/releases/download/v0.5.1/Forge-0.5.1.dmg" type="application/octet-stream" sparkle:edSignature="C09BvsHjVDEretG/TN12/mTaAf4fGsDABn/PiyfXiYtpOKxIG2xaZIyUyBW7r17x/7aXd0h/4PnwFyiptJGWBg==" length="8203133" />
+    </item>
+<item>
       <title>Version 0.5.0</title>
       <pubDate>Fri, 05 Jun 2026 15:42:36 +0300</pubDate>
       <sparkle:version>9</sparkle:version>
