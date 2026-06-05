@@ -9,7 +9,24 @@
     
     
     
+    
     <item>
+      <title>Version 0.5.0</title>
+      <pubDate>Fri, 05 Jun 2026 15:12:17 +0300</pubDate>
+      <sparkle:version>8</sparkle:version>
+      <sparkle:shortVersionString>0.5.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[_2026-06-05_
+
+- **Prompt Optimizer** — Rewrite any prompt with project-aware context before sending it to an agent. Get a side-by-side comparison plus a model and effort recommendation. Trigger from the chat input bar, the command palette, or ⌘⇧O.
+- **Frecency-ranked ⌘K** — The command palette now ranks board cards, workspace panes, and recent files by how often and how recently you use them.
+- **Searchable Add popover** — Adding a pane is a quick type-to-filter popover instead of a nested menu, with full pane names visible.
+- **Reliable agent chips** — Claude and Hermes toolbar chips no longer vanish after launch; agent detection now retries transient failures and caches results.
+- **Responsive toolbar** — The workspace top bar adapts to narrow windows with a compact mode instead of clipping buttons.
+- **Updater fixes** — In-app updates now wire the Sparkle delegate correctly and skip update checks when running off the launch path.]]></description>
+      <enclosure url="https://github.com/kuraydev/forge-release/releases/download/v0.5.0/Forge-0.5.0.dmg" type="application/octet-stream" sparkle:edSignature="GUdbng+WGWvhJZbpjeDY9HVIS6dnGHxJnCEh+Ytx697YhMeYNQml7HHMPOxPQUftrLxiByUG1tBASpUaablOCA==" length="8203984" />
+    </item>
+<item>
       <title>Version 0.4.1</title>
       <pubDate>Fri, 05 Jun 2026 00:55:04 +0300</pubDate>
       <sparkle:version>8</sparkle:version>
