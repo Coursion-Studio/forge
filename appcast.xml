@@ -21,7 +21,7 @@
 - **Per-terminal worktree toggle** — Enable or disable isolated worktree mode for the focused terminal straight from the toolbar.
 - **Reliable git detection** — Reworked git invocation to exec directly with a composed PATH and retry transient spawn failures, fixing flaky branch/worktree detection under load.
 - **Faster dev loop** — Reliable rebuild-and-relaunch flow with InjectionIII hot reload.]]></description>
-      <enclosure url="https://github.com/kuraydev/forge-release/releases/download/v0.4.1/Forge-0.4.1.dmg" type="application/octet-stream" sparkle:edSignature="ZMBKSJuk25wI2s0CRxmXS/uWJhlQs+wdRLedZMI0fBWqgUExaT68t/FT02p3bzCW9/qCpcBm8K/WO+r7X05FAg==" length="8194023" />
+      <enclosure url="https://github.com/Coursion-Studio/forge/releases/download/v0.4.1/Forge-0.4.1.dmg" type="application/octet-stream" sparkle:edSignature="ZMBKSJuk25wI2s0CRxmXS/uWJhlQs+wdRLedZMI0fBWqgUExaT68t/FT02p3bzCW9/qCpcBm8K/WO+r7X05FAg==" length="8194023" />
     </item>
 <item>
       <title>Version 0.4.0</title>
@@ -35,7 +35,7 @@
 - **Per-terminal worktree toggle** — Enable or disable isolated worktree mode for the focused terminal straight from the toolbar.
 - **Reliable git detection** — Reworked git invocation to exec directly with a composed PATH and retry transient spawn failures, fixing flaky branch/worktree detection under load.
 - **Faster dev loop** — Reliable rebuild-and-relaunch flow with InjectionIII hot reload.]]></description>
-      <enclosure url="https://github.com/kuraydev/forge-release/releases/download/v0.4.0/Forge-0.4.0.dmg" type="application/octet-stream" sparkle:edSignature="cpui0dL+dyho912IWv20dOMMC3nkXc4O9tKrFEek05JD8hqhY5mVczHhWwJYRKhDkDQ5NVhxt0BK5dQo0AcMDA==" length="8115126" />
+      <enclosure url="https://github.com/Coursion-Studio/forge/releases/download/v0.4.0/Forge-0.4.0.dmg" type="application/octet-stream" sparkle:edSignature="cpui0dL+dyho912IWv20dOMMC3nkXc4O9tKrFEek05JD8hqhY5mVczHhWwJYRKhDkDQ5NVhxt0BK5dQo0AcMDA==" length="8115126" />
     </item>
 <item>
       <title>Version 0.3.0</title>
@@ -51,7 +51,7 @@
 - **Pane & terminal rename** — Give any pane or terminal a custom name straight from its tab.
 - **Workspace icon picker** — Choose from 103 SF Symbols when customizing a workspace.
 - **Settings refresh** — Branded toggles and segmented pickers throughout, a dedicated Coach tab, and collapsible cards to cut first-glance clutter.]]></description>
-      <enclosure url="https://github.com/kuraydev/forge-release/releases/download/v0.3.0/Forge-0.3.0.dmg" type="application/octet-stream" sparkle:edSignature="DH88Crat0eKo3rEEi/8J0AZVvqhdeVS2aoqbfl93HU9LR/QrL+NkQpgqDeYKQU+BUTcPSJybuWl5nTi5p0jvCg==" length="7929821" />
+      <enclosure url="https://github.com/Coursion-Studio/forge/releases/download/v0.3.0/Forge-0.3.0.dmg" type="application/octet-stream" sparkle:edSignature="DH88Crat0eKo3rEEi/8J0AZVvqhdeVS2aoqbfl93HU9LR/QrL+NkQpgqDeYKQU+BUTcPSJybuWl5nTi5p0jvCg==" length="7929821" />
     </item>
 <item>
       <title>Version 0.2.0</title>
@@ -60,7 +60,7 @@
       <sparkle:shortVersionString>0.2.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
       <description><![CDATA[Planning board: per-workspace Trello-style kanban with AI fill, live two-way file sync, and structured sync endpoints (.forge/board.json + board.inbox.jsonl) so agents read/mutate the board without parsing markdown. Send cards straight to agent terminals. Telegram gateway + Hermes push notifications. Vendored SwiftTerm fork with Warp-style inline path completion and reliable command-completion detection. Unified solid-surface button styling.]]></description>
-      <enclosure url="https://github.com/kuraydev/forge-release/releases/download/v0.2.0/Forge-0.2.0.dmg" type="application/octet-stream" sparkle:edSignature="Gec2Mxd1NWer4nm/O+jei7hBmgtmU4TqpfrKzBp92UuTvPsxZciY7TSrjoXJSTkaxMA4RNcN8Kq5Qa7UPpCYBw==" length="7831427" />
+      <enclosure url="https://github.com/Coursion-Studio/forge/releases/download/v0.2.0/Forge-0.2.0.dmg" type="application/octet-stream" sparkle:edSignature="Gec2Mxd1NWer4nm/O+jei7hBmgtmU4TqpfrKzBp92UuTvPsxZciY7TSrjoXJSTkaxMA4RNcN8Kq5Qa7UPpCYBw==" length="7831427" />
     </item>
 
     <item>
@@ -70,7 +70,7 @@
       <sparkle:shortVersionString>0.1.1</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
       <description><![CDATA[Editor pane, dev reload overlay, customizable top-bar chips, terminal fixes]]></description>
-      <enclosure url="https://github.com/kuraydev/forge-release/releases/download/v0.1.1/Forge-0.1.1.dmg" type="application/octet-stream" sparkle:edSignature="5MeattmC6mKLgDF+hNbJSQWDAlwF4P954YKiZXx+JDDfMNNTBSXLN8QtdsHZkjfIg0sX+QpZqZDg84KJIdYGDg==" length="7451802" />
+      <enclosure url="https://github.com/Coursion-Studio/forge/releases/download/v0.1.1/Forge-0.1.1.dmg" type="application/octet-stream" sparkle:edSignature="5MeattmC6mKLgDF+hNbJSQWDAlwF4P954YKiZXx+JDDfMNNTBSXLN8QtdsHZkjfIg0sX+QpZqZDg84KJIdYGDg==" length="7451802" />
     </item>
 
     <item>
@@ -80,7 +80,7 @@
       <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
       <description><![CDATA[First public test release.]]></description>
-      <enclosure url="https://github.com/kuraydev/forge-release/releases/download/v0.1.0/Forge-0.1.0.dmg" type="application/octet-stream" sparkle:edSignature="oVu1UjTJ5ZtlRsNxpMYqwAM2KxOWlXSh753xCgrTXSXsqUjpCtPSBUsmz+DZZZ6g/Ibwl6YRXsw1KDxBBqKVCw==" length="6756725" />
+      <enclosure url="https://github.com/Coursion-Studio/forge/releases/download/v0.1.0/Forge-0.1.0.dmg" type="application/octet-stream" sparkle:edSignature="oVu1UjTJ5ZtlRsNxpMYqwAM2KxOWlXSh753xCgrTXSXsqUjpCtPSBUsmz+DZZZ6g/Ibwl6YRXsw1KDxBBqKVCw==" length="6756725" />
     </item>
   </channel>
 </rss>

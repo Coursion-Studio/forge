@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Forge — Agent-first development workbench for Mac</title>
+  <meta name="description" content="A cloud-shaped IDE on your own Mac. Open a project, get a workspace with every tool an agent needs — terminal, browser, chat, review — pre-wired. Native SwiftUI, bring your own API key." />
+  <link rel="icon" type="image/png" href="icon.png" />
+  <link rel="apple-touch-icon" href="icon.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <meta property="og:title" content="Forge — Agent-first development workbench for Mac" />
+  <meta property="og:description" content="Cloud-shaped IDE on your own Mac. Workspaces pre-wired for AI agents. Native SwiftUI, no servers, BYO API key." />
+  <meta property="og:image" content="icon.png" />
+  <meta name="theme-color" content="#0E1224" />
+</head>
+<body>
+  <div class="bg"></div>
+
+  <div class="container">
+    <nav class="top">
+      <div class="brand">
+        <img src="icon.png" alt="Forge" />
+        <span>Forge</span>
+      </div>
+      <div class="links">
+        <a href="#panes">Panes</a>
+        <a href="#why">Why Forge</a>
+        <a href="https://github.com/Coursion-Studio/forge/releases/latest">Download</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <img class="app-icon" src="icon.png" alt="Forge app icon" />
+      <div class="eyebrow">Agent-first development workbench</div>
+      <h1>A cloud-shaped IDE,<br /><span class="grad">on your own Mac.</span></h1>
+      <p class="sub">
+        Open a project, get a workspace with every tool an agent needs —
+        terminal, AI chat, browser, code review, simulator — pre-wired.
+        No VMs, no containers, no servers. Your shell, your files,
+        your API keys. Native SwiftUI all the way down.
+      </p>
+      <div class="cta-grid">
+        <a class="btn primary" href="https://github.com/Coursion-Studio/forge/releases/latest">
+          Download&nbsp;.dmg
+        </a>
+      </div>
+      <p class="req-note">macOS 15 (Sequoia) or later · Auto-updates via Sparkle · <a href="#panes">See the panes</a></p>
+    </header>
+
+    <section class="tight" style="padding-top:0">
+      <div class="hero-stats three" id="hero-stats">
+        <div class="stat"><strong>11</strong><span>pane types</span></div>
+        <div class="stat"><strong>100%</strong><span>native SwiftUI</span></div>
+        <div class="stat"><strong>Local</strong><span>no servers</span></div>
+        <div class="stat" id="stat-downloads" hidden>
+          <strong id="dl-count">0</strong><span>downloads</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="panes">
+      <div class="section-label">What's inside</div>
+      <h2>Every tool an agent needs.</h2>
+      <p class="lede">Split, tab, and arrange panes per workspace. Sessions survive workspace switches — terminals keep running, chats keep streaming, pages stay loaded.</p>
+
+      <div class="grid">
+        <div class="card">
+          <div class="tile c-pink">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2.5" y="4" width="19" height="16" rx="2.5"/>
+              <path d="M6.5 9 L9.5 12 L6.5 15"/>
+              <path d="M12 15 H17"/>
+            </svg>
+          </div>
+          <h3>Terminal</h3>
+          <p>Real PTY terminals that keep running when you switch workspaces. Launch Claude Code, Codex, Aider, or any CLI agent straight into your project — Forge detects what's installed.</p>
+          <ul class="pills">
+            <li>Persistent sessions</li><li>Agent auto-detect</li><li>Login-shell PATH</li><li>Activity status</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="tile c-violet">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12c0 4.4-4 8-9 8-1.1 0-2.2-.17-3.2-.5L3 21l1.6-4.2C3.6 15.4 3 13.8 3 12c0-4.4 4-8 9-8s9 3.6 9 8z"/>
+            </svg>
+          </div>
+          <h3>AI Chat</h3>
+          <p>Talk to Anthropic or OpenAI models with your own keys, stored in the Keychain. Compare multiple agents side-by-side in the Compare pane.</p>
+          <ul class="pills">
+            <li>BYO API keys</li><li>Streaming</li><li>Multi-agent compare</li><li>Keychain only</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="tile c-blue">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M3 12 H21"/>
+              <path d="M12 3 c2.5 2.4 4 5.5 4 9 s-1.5 6.6-4 9 c-2.5-2.4-4-5.5-4-9 s1.5-6.6 4-9z"/>
+            </svg>
+          </div>
+          <h3>Browser</h3>
+          <p>A real WKWebView next to your terminal — preview your dev server, read docs, test the thing the agent just built. Page state survives workspace switches.</p>
+          <ul class="pills">
+            <li>Persistent pages</li><li>Dev-server preview</li><li>Per-leaf sessions</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="tile c-green">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M6 3 v12"/>
+              <circle cx="6" cy="18" r="2.5"/>
+              <circle cx="18" cy="6" r="2.5"/>
+              <path d="M18 8.5 a9 9 0 0 1-9 9"/>
+            </svg>
+          </div>
+          <h3>Code Review</h3>
+          <p>Git status, diffs, staging, commits, and PR lists without leaving the workspace. Ask AI to review the diff before you ship it.</p>
+          <ul class="pills">
+            <li>Stage &amp; commit</li><li>gh PR list</li><li>AI review</li><li>Inline diffs</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="tile c-amber">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3 a4 4 0 0 1 4 4 v5 a4 4 0 0 1-8 0 V7 a4 4 0 0 1 4-4z"/>
+              <path d="M5.5 11 a6.5 6.5 0 0 0 13 0"/>
+              <path d="M12 17.5 V21"/>
+            </svg>
+          </div>
+          <h3>Voice</h3>
+          <p>Dictate straight into the focused terminal — adaptive silence detection auto-commits the transcript. Say "Command, …" to trigger palette actions hands-free.</p>
+          <ul class="pills">
+            <li>Silence auto-commit</li><li>Wake-word commands</li><li>Global hotkey</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="tile c-teal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="7.5" height="7.5" rx="1.5"/>
+              <rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5"/>
+              <rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5"/>
+              <rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.5"/>
+            </svg>
+          </div>
+          <h3>And the rest</h3>
+          <p>Quick single-file editor, markdown preview, sticky notes, log tail, HTTP client, planning board kanban — plus an iOS simulator pane on the way.</p>
+          <ul class="pills">
+            <li>Editor</li><li>Markdown</li><li>Notes</li><li>Log tail</li><li>HTTP</li><li>Planning board</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <hr class="sep" />
+
+    <section id="releases" class="tight" hidden>
+      <div class="section-label">Releases</div>
+      <h2>Every version, every download.</h2>
+      <p class="lede">Live count, every channel — site and in-app updates.</p>
+      <ol class="releases" id="releases-list"></ol>
+    </section>
+
+    <hr class="sep" id="releases-sep" hidden />
+
+    <section id="why" class="tight">
+      <div class="section-label">Why Forge</div>
+      <h2>Native. Local. Yours.</h2>
+      <p class="lede">Cloud agent workspaces, minus the cloud.</p>
+
+      <div class="grid why-grid">
+        <div class="card">
+          <div class="tile c-pink">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M13 2L4 14h7l-1 8 9-12h-7z"/>
+            </svg>
+          </div>
+          <h3>100% native SwiftUI</h3>
+          <p>No Electron. No web views pretending to be apps. Feels like macOS because it is macOS.</p>
+        </div>
+        <div class="card">
+          <div class="tile c-green">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/><circle cx="12" cy="16" r="1.4" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3>Fully local</h3>
+          <p>No VMs, no containers, no accounts. Shell runs on your Mac, files live in your folders. AI is optional and runs on your own keys.</p>
+        </div>
+        <div class="card">
+          <div class="tile c-violet">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="14" rx="2"/>
+              <path d="M3 9 H21"/>
+              <path d="M9 9 V18"/>
+            </svg>
+          </div>
+          <h3>Workspaces that persist</h3>
+          <p>Split panes, tab groups, per-workspace accents. Switch projects with ⌘1–⌘9 — everything keeps running.</p>
+        </div>
+        <div class="card">
+          <div class="tile c-blue">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/>
+            </svg>
+          </div>
+          <h3>Auto-updates</h3>
+          <p>Sparkle-signed updates ship over the air. Apple-notarized DMGs, EdDSA-verified — no App Store middleman.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="links">
+        <a href="https://github.com/Coursion-Studio/forge/releases/latest">Download</a>
+        <a href="mailto:kuraydev.io@gmail.com">Support</a>
+        <a href="https://x.com/kuraydev" target="_blank" rel="noopener">@kuraydev</a>
+      </div>
+      <div>© 2026 Coursion · Made in SwiftUI</div>
+    </footer>
+  </div>
+
+  <script>
+    // Pulls every public release from GitHub. Two things happen with the result:
+    //   1. The hero "downloads" stat shows the sum across all assets.
+    //   2. The Releases section lists each version with its own download count.
+    // Unauthenticated calls are rate-limited to 60/hr per IP — fine for a
+    // landing page. Both surfaces stay hidden if there are no releases yet,
+    // so we never ship a "0 downloads" page pre-launch.
+    (function () {
+      var fmtCount = function (n) {
+        if (n >= 1e6) return (n / 1e6).toFixed(1).replace(/\.0$/, "") + "M";
+        if (n >= 1e3) return (n / 1e3).toFixed(1).replace(/\.0$/, "") + "K";
+        return String(n);
+      };
+      var fmtDate = function (iso) {
+        try {
+          return new Date(iso).toLocaleDateString("en-US", {
+            year: "numeric", month: "short", day: "numeric"
+          });
+        } catch (_) { return ""; }
+      };
+      var pickDmg = function (assets) {
+        return (assets || []).find(function (a) {
+          return /\.dmg$/i.test(a.name || "");
+        }) || (assets || [])[0];
+      };
+
+      fetch("https://api.github.com/repos/Coursion-Studio/forge/releases")
+        .then(function (r) { return r.ok ? r.json() : []; })
+        .then(function (releases) {
+          releases = releases || [];
+          var total = 0;
+          var rows = releases.map(function (rel) {
+            var assets = rel.assets || [];
+            var count = assets.reduce(function (s, a) {
+              return s + (a.download_count || 0);
+            }, 0);
+            total += count;
+            var dmg = pickDmg(assets);
+            var li = document.createElement("li");
+            li.className = "release-row";
+            li.innerHTML =
+              '<div class="release-meta">' +
+                '<span class="release-tag">' + (rel.tag_name || rel.name || "") + '</span>' +
+                '<span class="release-date">' + fmtDate(rel.published_at) + '</span>' +
+              '</div>' +
+              '<div class="release-count">' +
+                '<strong>' + count.toLocaleString("en-US") + '</strong>' +
+                '<span>downloads</span>' +
+              '</div>' +
+              (dmg
+                ? '<a class="release-link" href="' + dmg.browser_download_url + '">Download</a>'
+                : '<a class="release-link" href="' + rel.html_url + '">Release page</a>');
+            return li;
+          });
+
+          // Hero stat — total across everything.
+          if (total > 0) {
+            document.getElementById("dl-count").textContent = fmtCount(total);
+            document.getElementById("stat-downloads").hidden = false;
+            document.getElementById("hero-stats").classList.remove("three");
+          }
+
+          // Releases section — only show when there's something to show.
+          if (rows.length > 0) {
+            var list = document.getElementById("releases-list");
+            rows.forEach(function (li) { list.appendChild(li); });
+            document.getElementById("releases").hidden = false;
+            document.getElementById("releases-sep").hidden = false;
+          }
+        })
+        .catch(function () { /* no-op: leave hero strip at 3 stats, releases section hidden */ });
+    })();
+  </script>
+</body>
+</html>
