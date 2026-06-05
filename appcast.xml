@@ -10,10 +10,11 @@
     
     
     
+
     <item>
       <title>Version 0.5.0</title>
-      <pubDate>Fri, 05 Jun 2026 15:12:17 +0300</pubDate>
-      <sparkle:version>8</sparkle:version>
+      <pubDate>Fri, 05 Jun 2026 15:42:36 +0300</pubDate>
+      <sparkle:version>9</sparkle:version>
       <sparkle:shortVersionString>0.5.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
       <description><![CDATA[_2026-06-05_
@@ -24,7 +25,7 @@
 - **Reliable agent chips** — Claude and Hermes toolbar chips no longer vanish after launch; agent detection now retries transient failures and caches results.
 - **Responsive toolbar** — The workspace top bar adapts to narrow windows with a compact mode instead of clipping buttons.
 - **Updater fixes** — In-app updates now wire the Sparkle delegate correctly and skip update checks when running off the launch path.]]></description>
-      <enclosure url="https://github.com/kuraydev/forge-release/releases/download/v0.5.0/Forge-0.5.0.dmg" type="application/octet-stream" sparkle:edSignature="GUdbng+WGWvhJZbpjeDY9HVIS6dnGHxJnCEh+Ytx697YhMeYNQml7HHMPOxPQUftrLxiByUG1tBASpUaablOCA==" length="8203984" />
+      <enclosure url="https://github.com/kuraydev/forge-release/releases/download/v0.5.0/Forge-0.5.0.dmg" type="application/octet-stream" sparkle:edSignature="T7KSKMnt4v7uCuhStIt4tzPNkurJ5Vgh1WVBW0BBXmTajg4aJtbeQhTvdps8OxnPvyEFxU2xTmgxwvOdjyWxCw==" length="8203837" />
     </item>
 <item>
       <title>Version 0.4.1</title>
