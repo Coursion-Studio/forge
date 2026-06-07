@@ -16,7 +16,22 @@
     
     
         
+    
     <item>
+      <title>Version 0.6.5</title>
+      <pubDate>Sun, 07 Jun 2026 23:02:35 +0300</pubDate>
+      <sparkle:version>16</sparkle:version>
+      <sparkle:shortVersionString>0.6.5</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[_2026-06-07_
+
+- **No more false "finished"** — Builds and scripts that go quiet mid-run no longer ping as finished. Silence-based turn detection now applies only to TUI agents (Claude Code, Codex, Aider…); ordinary commands signal completion when they actually exit.
+- **Apple Intelligence board planning works** — AI Fill on the planning board no longer fails with the on-device model; project context is now trimmed to fit its context window, and failure alerts show the real provider error.
+- **Cleaner sidebar** — Removed the per-workspace activity pill from the sidebar list (still shown in the top tab strip).
+- **No more orphaned shells** — Closing a terminal pane, deleting a workspace, or quitting Forge now terminates the underlying shell process instead of leaving it running in the background.]]></description>
+      <enclosure url="https://github.com/kuraydev/forge-release/releases/download/v0.6.5/Forge-0.6.5.dmg" type="application/octet-stream" sparkle:edSignature="O6WS3GW4y0+Edgu023LE+wa+efWXRtbG2AV+y4Vj2kpoo8iStGIFqrRYJ9qGmkXfgVS0lVFX0GCODYLDPx/DBg==" length="8341876" />
+    </item>
+<item>
       <title>Version 0.6.4</title>
       <pubDate>Sun, 07 Jun 2026 21:38:56 +0300</pubDate>
       <sparkle:version>15</sparkle:version>
