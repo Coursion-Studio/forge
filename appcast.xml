@@ -27,37 +27,6 @@
       <enclosure url="https://github.com/kuraydev/forge-release/releases/download/v0.6.2/Forge-0.6.2.dmg" type="application/octet-stream" sparkle:edSignature="bOEPwuHbtaQxPRcAwiEZySaErCi4kwAwpuoi9vY0Ik09SI+Y12U0NG2646apTLI7UUf/eUeYxEq9rbxZ3aM6AA==" length="8342358" />
     </item>
 <item>
-      <title>Version 0.6.1</title>
-      <pubDate>Sun, 07 Jun 2026 16:11:31 +0300</pubDate>
-      <sparkle:version>12</sparkle:version>
-      <sparkle:shortVersionString>0.6.1</sparkle:shortVersionString>
-      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-      <description><![CDATA[_2026-06-07_
-
-- **Terminal breathing room** — Terminal panes now have left padding so output no longer hugs the pane edge.
-- **Accurate activity dots** — Stale "working" indicators on idle terminals now correctly demote to idle, so the sidebar and dock only signal real activity.]]></description>
-      <enclosure url="https://github.com/kuraydev/forge-release/releases/download/v0.6.1/Forge-0.6.1.dmg" type="application/octet-stream" sparkle:edSignature="03Te1oHlqwt3z4NXuq92hF02l6G6Y34wRPaJ+FSTTP6AQ17cZZpwDV1sfcDL7NhOwEoFV2Kau0H4KB461F1BDQ==" length="8337521" />
-    </item>
-<item>
-      <title>Version 0.6.0</title>
-      <pubDate>Sun, 07 Jun 2026 15:00:52 +0300</pubDate>
-      <sparkle:version>11</sparkle:version>
-      <sparkle:shortVersionString>0.6.0</sparkle:shortVersionString>
-      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-      <description><![CDATA[_2026-06-07_
-
-- **Agent identities** — Every agent terminal now gets a fun random name (Maverick, Athena, Ripley, Nova…) with the engine shown small underneath — "claude code" in tabs, pane headers, the sidebar, and the command palette. Reroll any name from the pane's ··· menu, or turn naming off in Settings → Agents.
-- **Personas** — Assign a role to any agent: Frontend Engineer, Backend Engineer, Designer, QA, DevOps, Marketing, Docs Writer, Code Reviewer — or create your own. Claude Code gets the persona injected as a real system prompt at launch, so your Frontend Engineer actually thinks frontend. Launch a persona directly from ⌘K with "New Agent: 🎨 Frontend Engineer".
-- **Team templates** — One click spawns a whole squad: "Startup Squad" (Frontend + Backend + Designer) and "Ship It" (Backend + Reviewer + QA), each terminal pre-named and persona-typed.
-- **Smarter activity notifications** — Agents that stop to ask you something now ping differently from agents that finish: a new needs-input state with its own sound and orange tag. Native macOS banners when Forge is backgrounded (click to jump to the pane), a menu bar status item with live working/waiting/done counts, and an in-app HUD for completions in other workspaces. Pane headers show "finished 4m ago" / "waiting for input".
-- **Quit guard** — ⌘Q warns you when agents or terminals are still working.
-- **Merge worktrees in-app** — Merge agent worktree branches into your current branch from the Review pane or the command palette.
-- **Command palette polish** — Better keyboard navigation, section headers, smarter fuzzy matching.
-- **Terminal ⌘A + Delete** — Clears the agent's input line (translated to readline Ctrl+E/Ctrl+U).
-- **Fix** — Terminal content no longer vanishes when a second window opens.]]></description>
-      <enclosure url="https://github.com/kuraydev/forge-release/releases/download/v0.6.0/Forge-0.6.0.dmg" type="application/octet-stream" sparkle:edSignature="mS4TBY0Wp8njVjYlmSGznwG86bTNy3beNhoBonc4RwbvTKMYB4bfc9b5FUIjs1OHUe+aC5z1IKbRPgZHCpKDCQ==" length="8337131" />
-    </item>
-<item>
       <title>Version 0.5.1</title>
       <pubDate>Fri, 05 Jun 2026 16:05:53 +0300</pubDate>
       <sparkle:version>10</sparkle:version>
