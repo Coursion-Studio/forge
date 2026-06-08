@@ -18,7 +18,20 @@
         
     
     
+    
     <item>
+      <title>Version 0.6.7</title>
+      <pubDate>Mon, 08 Jun 2026 10:49:00 +0300</pubDate>
+      <sparkle:version>18</sparkle:version>
+      <sparkle:shortVersionString>0.6.7</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<p><em>2026-06-08</em></p>
+<ul>
+<li><strong>Readable update notes</strong> — The &quot;A new version is available&quot; dialog now renders release notes as formatted text — bold feature names, bullet lists, and links — instead of raw Markdown symbols.</li>
+</ul>]]></description>
+      <enclosure url="https://github.com/kuraydev/forge-release/releases/download/v0.6.7/Forge-0.6.7.dmg" type="application/octet-stream" sparkle:edSignature="vQ2ZRAIB/84DqauVMSmRYzOzxX9c1LrhU92FveNHiykxpeLqvn4jO7VHHybfug9hNTL73DMLkppH1vcG81aeAQ==" length="8372870" />
+    </item>
+<item>
       <title>Version 0.6.6</title>
       <pubDate>Sun, 07 Jun 2026 23:26:59 +0300</pubDate>
       <sparkle:version>17</sparkle:version>
