@@ -24,10 +24,11 @@
       <sparkle:version>17</sparkle:version>
       <sparkle:shortVersionString>0.6.6</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-      <description><![CDATA[_2026-06-07_
-
-- **Categorize workspaces** — Group workspaces into collapsible sidebar categories. Drag a workspace onto a category header to file it, or use the new Categorize menu on any workspace. Rename or dissolve categories from the header's context menu.
-- **Auto-categorize** — One click on the wand button sorts ungrouped workspaces by project type (iOS, macOS, Web, Mobile, Backend, Scripts) — detected locally from project files, no AI key needed.]]></description>
+      <description><![CDATA[<p><em>2026-06-07</em></p>
+<ul>
+<li><strong>Categorize workspaces</strong> — Group workspaces into collapsible sidebar categories. Drag a workspace onto a category header to file it, or use the new Categorize menu on any workspace. Rename or dissolve categories from the header&#x27;s context menu.</li>
+<li><strong>Auto-categorize</strong> — One click on the wand button sorts ungrouped workspaces by project type (iOS, macOS, Web, Mobile, Backend, Scripts) — detected locally from project files, no AI key needed.</li>
+</ul>]]></description>
       <enclosure url="https://github.com/kuraydev/forge-release/releases/download/v0.6.6/Forge-0.6.6.dmg" type="application/octet-stream" sparkle:edSignature="O0aFQDGLCiT6NHh9X4gRQPzt4mgOSfCnwSdvRLJPVvhBqKS/cPz9fg3QkuZBIsa9JMENTqIVwiodUVeidrsxBQ==" length="8374088" />
     </item>
 <item>
@@ -36,12 +37,13 @@
       <sparkle:version>16</sparkle:version>
       <sparkle:shortVersionString>0.6.5</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-      <description><![CDATA[_2026-06-07_
-
-- **No more false "finished"** — Builds and scripts that go quiet mid-run no longer ping as finished. Silence-based turn detection now applies only to TUI agents (Claude Code, Codex, Aider…); ordinary commands signal completion when they actually exit.
-- **Apple Intelligence board planning works** — AI Fill on the planning board no longer fails with the on-device model; project context is now trimmed to fit its context window, and failure alerts show the real provider error.
-- **Cleaner sidebar** — Removed the per-workspace activity pill from the sidebar list (still shown in the top tab strip).
-- **No more orphaned shells** — Closing a terminal pane, deleting a workspace, or quitting Forge now terminates the underlying shell process instead of leaving it running in the background.]]></description>
+      <description><![CDATA[<p><em>2026-06-07</em></p>
+<ul>
+<li><strong>No more false &quot;finished&quot;</strong> — Builds and scripts that go quiet mid-run no longer ping as finished. Silence-based turn detection now applies only to TUI agents (Claude Code, Codex, Aider…); ordinary commands signal completion when they actually exit.</li>
+<li><strong>Apple Intelligence board planning works</strong> — AI Fill on the planning board no longer fails with the on-device model; project context is now trimmed to fit its context window, and failure alerts show the real provider error.</li>
+<li><strong>Cleaner sidebar</strong> — Removed the per-workspace activity pill from the sidebar list (still shown in the top tab strip).</li>
+<li><strong>No more orphaned shells</strong> — Closing a terminal pane, deleting a workspace, or quitting Forge now terminates the underlying shell process instead of leaving it running in the background.</li>
+</ul>]]></description>
       <enclosure url="https://github.com/kuraydev/forge-release/releases/download/v0.6.5/Forge-0.6.5.dmg" type="application/octet-stream" sparkle:edSignature="O6WS3GW4y0+Edgu023LE+wa+efWXRtbG2AV+y4Vj2kpoo8iStGIFqrRYJ9qGmkXfgVS0lVFX0GCODYLDPx/DBg==" length="8341876" />
     </item>
 <item>
@@ -50,7 +52,7 @@
       <sparkle:version>10</sparkle:version>
       <sparkle:shortVersionString>0.5.1</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-      <description><![CDATA[Fixed: Claude Code and Hermes agent chips no longer vanish from the toolbar. Agent detection now scans PATH directly with retries instead of relying on a one-shot login-shell check.]]></description>
+      <description><![CDATA[<p>Fixed: Claude Code and Hermes agent chips no longer vanish from the toolbar. Agent detection now scans PATH directly with retries instead of relying on a one-shot login-shell check.</p>]]></description>
       <enclosure url="https://github.com/kuraydev/forge-release/releases/download/v0.5.1/Forge-0.5.1.dmg" type="application/octet-stream" sparkle:edSignature="C09BvsHjVDEretG/TN12/mTaAf4fGsDABn/PiyfXiYtpOKxIG2xaZIyUyBW7r17x/7aXd0h/4PnwFyiptJGWBg==" length="8203133" />
     </item>
 <item>
@@ -59,14 +61,15 @@
       <sparkle:version>9</sparkle:version>
       <sparkle:shortVersionString>0.5.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-      <description><![CDATA[_2026-06-05_
-
-- **Prompt Optimizer** — Rewrite any prompt with project-aware context before sending it to an agent. Get a side-by-side comparison plus a model and effort recommendation. Trigger from the chat input bar, the command palette, or ⌘⇧O.
-- **Frecency-ranked ⌘K** — The command palette now ranks board cards, workspace panes, and recent files by how often and how recently you use them.
-- **Searchable Add popover** — Adding a pane is a quick type-to-filter popover instead of a nested menu, with full pane names visible.
-- **Reliable agent chips** — Claude and Hermes toolbar chips no longer vanish after launch; agent detection now retries transient failures and caches results.
-- **Responsive toolbar** — The workspace top bar adapts to narrow windows with a compact mode instead of clipping buttons.
-- **Updater fixes** — In-app updates now wire the Sparkle delegate correctly and skip update checks when running off the launch path.]]></description>
+      <description><![CDATA[<p><em>2026-06-05</em></p>
+<ul>
+<li><strong>Prompt Optimizer</strong> — Rewrite any prompt with project-aware context before sending it to an agent. Get a side-by-side comparison plus a model and effort recommendation. Trigger from the chat input bar, the command palette, or ⌘⇧O.</li>
+<li><strong>Frecency-ranked ⌘K</strong> — The command palette now ranks board cards, workspace panes, and recent files by how often and how recently you use them.</li>
+<li><strong>Searchable Add popover</strong> — Adding a pane is a quick type-to-filter popover instead of a nested menu, with full pane names visible.</li>
+<li><strong>Reliable agent chips</strong> — Claude and Hermes toolbar chips no longer vanish after launch; agent detection now retries transient failures and caches results.</li>
+<li><strong>Responsive toolbar</strong> — The workspace top bar adapts to narrow windows with a compact mode instead of clipping buttons.</li>
+<li><strong>Updater fixes</strong> — In-app updates now wire the Sparkle delegate correctly and skip update checks when running off the launch path.</li>
+</ul>]]></description>
       <enclosure url="https://github.com/kuraydev/forge-release/releases/download/v0.5.0/Forge-0.5.0.dmg" type="application/octet-stream" sparkle:edSignature="T7KSKMnt4v7uCuhStIt4tzPNkurJ5Vgh1WVBW0BBXmTajg4aJtbeQhTvdps8OxnPvyEFxU2xTmgxwvOdjyWxCw==" length="8203837" />
     </item>
 <item>
@@ -75,12 +78,13 @@
       <sparkle:version>8</sparkle:version>
       <sparkle:shortVersionString>0.4.1</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-      <description><![CDATA[_2026-06-04_
-
-- **Worktree badge** — Every terminal header and the workspace toolbar now show the active git branch and worktree at a glance, targeting the focused terminal.
-- **Per-terminal worktree toggle** — Enable or disable isolated worktree mode for the focused terminal straight from the toolbar.
-- **Reliable git detection** — Reworked git invocation to exec directly with a composed PATH and retry transient spawn failures, fixing flaky branch/worktree detection under load.
-- **Faster dev loop** — Reliable rebuild-and-relaunch flow with InjectionIII hot reload.]]></description>
+      <description><![CDATA[<p><em>2026-06-04</em></p>
+<ul>
+<li><strong>Worktree badge</strong> — Every terminal header and the workspace toolbar now show the active git branch and worktree at a glance, targeting the focused terminal.</li>
+<li><strong>Per-terminal worktree toggle</strong> — Enable or disable isolated worktree mode for the focused terminal straight from the toolbar.</li>
+<li><strong>Reliable git detection</strong> — Reworked git invocation to exec directly with a composed PATH and retry transient spawn failures, fixing flaky branch/worktree detection under load.</li>
+<li><strong>Faster dev loop</strong> — Reliable rebuild-and-relaunch flow with InjectionIII hot reload.</li>
+</ul>]]></description>
       <enclosure url="https://github.com/Coursion-Studio/forge/releases/download/v0.4.1/Forge-0.4.1.dmg" type="application/octet-stream" sparkle:edSignature="ZMBKSJuk25wI2s0CRxmXS/uWJhlQs+wdRLedZMI0fBWqgUExaT68t/FT02p3bzCW9/qCpcBm8K/WO+r7X05FAg==" length="8194023" />
     </item><item>
       <title>Version 0.3.0</title>
@@ -88,14 +92,15 @@
       <sparkle:version>5</sparkle:version>
       <sparkle:shortVersionString>0.3.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-      <description><![CDATA[_2026-06-02_
-
-- **In-app updates** — Forge now checks for, downloads, and installs new versions itself via Sparkle. Auto-check and auto-download are toggleable in Settings, with last-checked status and a one-click Check for Updates.
-- **What's New** — A release-notes modal driven by the bundled changelog greets you after each update, with an icon-row layout that turns each highlight into a glanceable card.
-- **Selectable terminal output** — Select and copy text from a terminal while a command is still streaming.
-- **Pane & terminal rename** — Give any pane or terminal a custom name straight from its tab.
-- **Workspace icon picker** — Choose from 103 SF Symbols when customizing a workspace.
-- **Settings refresh** — Branded toggles and segmented pickers throughout, a dedicated Coach tab, and collapsible cards to cut first-glance clutter.]]></description>
+      <description><![CDATA[<p><em>2026-06-02</em></p>
+<ul>
+<li><strong>In-app updates</strong> — Forge now checks for, downloads, and installs new versions itself via Sparkle. Auto-check and auto-download are toggleable in Settings, with last-checked status and a one-click Check for Updates.</li>
+<li><strong>What&#x27;s New</strong> — A release-notes modal driven by the bundled changelog greets you after each update, with an icon-row layout that turns each highlight into a glanceable card.</li>
+<li><strong>Selectable terminal output</strong> — Select and copy text from a terminal while a command is still streaming.</li>
+<li><strong>Pane &amp; terminal rename</strong> — Give any pane or terminal a custom name straight from its tab.</li>
+<li><strong>Workspace icon picker</strong> — Choose from 103 SF Symbols when customizing a workspace.</li>
+<li><strong>Settings refresh</strong> — Branded toggles and segmented pickers throughout, a dedicated Coach tab, and collapsible cards to cut first-glance clutter.</li>
+</ul>]]></description>
       <enclosure url="https://github.com/Coursion-Studio/forge/releases/download/v0.3.0/Forge-0.3.0.dmg" type="application/octet-stream" sparkle:edSignature="DH88Crat0eKo3rEEi/8J0AZVvqhdeVS2aoqbfl93HU9LR/QrL+NkQpgqDeYKQU+BUTcPSJybuWl5nTi5p0jvCg==" length="7929821" />
     </item>
 <item>
@@ -104,7 +109,7 @@
       <sparkle:version>4</sparkle:version>
       <sparkle:shortVersionString>0.2.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-      <description><![CDATA[Planning board: per-workspace Trello-style kanban with AI fill, live two-way file sync, and structured sync endpoints (.forge/board.json + board.inbox.jsonl) so agents read/mutate the board without parsing markdown. Send cards straight to agent terminals. Telegram gateway + Hermes push notifications. Vendored SwiftTerm fork with Warp-style inline path completion and reliable command-completion detection. Unified solid-surface button styling.]]></description>
+      <description><![CDATA[<p>Planning board: per-workspace Trello-style kanban with AI fill, live two-way file sync, and structured sync endpoints (.forge/board.json + board.inbox.jsonl) so agents read/mutate the board without parsing markdown. Send cards straight to agent terminals. Telegram gateway + Hermes push notifications. Vendored SwiftTerm fork with Warp-style inline path completion and reliable command-completion detection. Unified solid-surface button styling.</p>]]></description>
       <enclosure url="https://github.com/Coursion-Studio/forge/releases/download/v0.2.0/Forge-0.2.0.dmg" type="application/octet-stream" sparkle:edSignature="Gec2Mxd1NWer4nm/O+jei7hBmgtmU4TqpfrKzBp92UuTvPsxZciY7TSrjoXJSTkaxMA4RNcN8Kq5Qa7UPpCYBw==" length="7831427" />
     </item>
 
@@ -114,7 +119,7 @@
       <sparkle:version>3</sparkle:version>
       <sparkle:shortVersionString>0.1.1</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-      <description><![CDATA[Editor pane, dev reload overlay, customizable top-bar chips, terminal fixes]]></description>
+      <description><![CDATA[<p>Editor pane, dev reload overlay, customizable top-bar chips, terminal fixes</p>]]></description>
       <enclosure url="https://github.com/Coursion-Studio/forge/releases/download/v0.1.1/Forge-0.1.1.dmg" type="application/octet-stream" sparkle:edSignature="5MeattmC6mKLgDF+hNbJSQWDAlwF4P954YKiZXx+JDDfMNNTBSXLN8QtdsHZkjfIg0sX+QpZqZDg84KJIdYGDg==" length="7451802" />
     </item>
   </channel>
