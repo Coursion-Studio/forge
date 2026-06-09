@@ -20,7 +20,17 @@
     
     
     
+    
     <item>
+      <title>Version 0.6.9</title>
+      <pubDate>Tue, 09 Jun 2026 13:53:51 +0300</pubDate>
+      <sparkle:version>20</sparkle:version>
+      <sparkle:shortVersionString>0.6.9</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<p>Install bundled agent skills directly from the ⌘K command palette (Skills section), in addition to Settings.</p>]]></description>
+      <enclosure url="https://github.com/kuraydev/forge-release/releases/download/v0.6.9/Forge-0.6.9.dmg" type="application/octet-stream" sparkle:edSignature="/bRRmODe4w7p4yFJ0AUU3shxtcJGo8DclVexSOTBCx4q0fFP7M/h0F5y35Kk46N6X2dvPHtbXkHJJzL1BP8EAw==" length="8421186" />
+    </item>
+<item>
       <title>Version 0.6.8</title>
       <pubDate>Tue, 09 Jun 2026 13:39:52 +0300</pubDate>
       <sparkle:version>19</sparkle:version>
