@@ -19,7 +19,20 @@
     
     
     
+    
     <item>
+      <title>Version 0.6.8</title>
+      <pubDate>Tue, 09 Jun 2026 13:39:52 +0300</pubDate>
+      <sparkle:version>19</sparkle:version>
+      <sparkle:shortVersionString>0.6.8</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<p><em>2026-06-09</em></p>
+<ul>
+<li><strong>Install agent skills</strong> — Forge now ships its Git workflow skills (commit, push to a feature branch, merge worktrees, merge to main) and can install them into your agent&#x27;s global skills directory. Settings → Agents → Agent skills, one click per agent (Claude Code, Hermes) — every project gets them, no manual setup.</li>
+</ul>]]></description>
+      <enclosure url="https://github.com/kuraydev/forge-release/releases/download/v0.6.8/Forge-0.6.8.dmg" type="application/octet-stream" sparkle:edSignature="50z7bDpD83jIS7NfO3KQAE6yXjwyI4WR/J7KaK83dc0p/g9dtT1bJTwtH1ZzZHl9PKryFcZ2V6kW6hlNPhdOBw==" length="8419500" />
+    </item>
+<item>
       <title>Version 0.6.7</title>
       <pubDate>Mon, 08 Jun 2026 10:49:00 +0300</pubDate>
       <sparkle:version>18</sparkle:version>
