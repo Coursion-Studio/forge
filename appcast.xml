@@ -19,8 +19,23 @@
     
     
     
-    
-    
+    <item>
+      <title>Version 0.7.0</title>
+      <pubDate>Sun, 14 Jun 2026 20:17:19 +0300</pubDate>
+      <sparkle:version>21</sparkle:version>
+      <sparkle:shortVersionString>0.7.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<p><em>2026-06-14</em></p>
+<ul>
+<li><strong>One-click RUN</strong> — Each workspace exposes a RUN button that launches its dev commands. Configure several named commands (split-button + dropdown), or run silently with no pane — the command streams to a log and the button shows a live working spinner.</li>
+<li><strong>Schedules pane</strong> — Build recurring tasks that fire on your cadence: send a prompt into a workspace terminal or run a shell command, on an interval or daily/weekly at a set time. List view, edit modal, run-now, and a master start/stop switch.</li>
+<li><strong>Sharper notifications</strong> — Done/needs-input pings now dedupe per pane, throttle rapid bursts, fall back to a flashing menu-bar icon when banner permission is off, and no longer fire a false &quot;done&quot; when an agent rings the bell mid-turn.</li>
+<li><strong>Activity at a glance</strong> — Workspace rows in the sidebar now show the same working / needs-input / done activity tag as the top tabs, and background workspaces report status without being opened first.</li>
+<li><strong>Diagnostics log</strong> — Settings → General → Diagnostics can mirror Hermes pushes, pane activity, schedules, and errors to a shareable log file.</li>
+<li><strong>Board send-to-agent</strong> — The planning board&#x27;s &quot;send card to agent&quot; menu now shows each terminal&#x27;s agent name and engine instead of a generic label.</li>
+</ul>]]></description>
+      <enclosure url="https://github.com/kuraydev/forge-release/releases/download/v0.7.0/Forge-0.7.0.dmg" type="application/octet-stream" sparkle:edSignature="KSHfgydtyCgKbpj4LwLnmlr/zN1wRmul+9sT2ADrusb63J3xcCDIpYJF/pMARql3/aXDoQsWtCOIboqwjdaDDQ==" length="8668618" />
+    </item>
     <item>
       <title>Version 0.6.9</title>
       <pubDate>Tue, 09 Jun 2026 13:53:51 +0300</pubDate>
