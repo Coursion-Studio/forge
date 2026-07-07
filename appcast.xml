@@ -19,7 +19,26 @@
     
     
     
+    
     <item>
+      <title>Version 0.8.0</title>
+      <pubDate>Tue, 07 Jul 2026 13:13:52 +0300</pubDate>
+      <sparkle:version>50</sparkle:version>
+      <sparkle:shortVersionString>0.8.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<p><em>2026-07-07</em></p>
+<ul>
+<li><strong>Brakes on every loop</strong> — Per-loop budget caps (max iterations, estimated cost, tokens, wall-clock, plus consecutive-FAIL and no-progress limits) hard-stop a runaway auto-loop. A real Stop button cancels an in-flight run mid-wave and still saves the partial run.</li>
+<li><strong>Live cost &amp; token meter</strong> — Each run shows estimated tokens, cost, LLM calls, iterations and elapsed time, with a budget burn-down bar that turns red past 80%.</li>
+<li><strong>Run trace browser</strong> — Every run now records an append-only <code>trace.jsonl</code>. Tap any run to inspect its trace, verify report, deliverable, diff, plan and raw sub-agent outputs — plus the models and spend it used.</li>
+<li><strong>&quot;Done&quot; means done</strong> — Define success criteria per loop: deterministic <strong>Command</strong> checks (shell exit 0, run in the workspace with <code>$FORGE_DELIVERABLE</code>) and <strong>Judge</strong> rubric items. Deterministic checks run first and short-circuit a FAIL before spending on the LLM judge — a run passes only when its checks and the judge agree. Plus an inline spec linter and a &quot;was this verdict right?&quot; calibration thumb in the run inspector.</li>
+<li><strong>Background triggers</strong> — A loop can now fire itself: on an interval, a <strong>cron</strong> schedule, a <strong>file change</strong> under a watched path, or every new <strong>git commit</strong> — each firing at most once per change. An optional &quot;require my approval&quot; gate parks a triggered run until you tap Approve, and per-loop Hermes notifications can be gated to changes above a character threshold.</li>
+<li><strong>Loops that improve themselves</strong> — Turn on self-improvement and a loop mines its recent failed runs, finds the recurring issues, and proposes durable new constraints (and a refined skill) — each one reviewable and one-click revertible. In auto mode it applies them overnight between runs, so you wake up to a tighter loop. Plus a workspace <strong>Loops dashboard</strong> showing every loop&#x27;s pass/fail streak, spend, trigger and improvement count at a glance.</li>
+<li><strong>Configurable Claude Code launch</strong> — Set which account/command runs (e.g. <code>claude-main-account</code>), the default model, the permission mode, and extra CLI flags in Settings → Agents; any workspace can override them under Customize → Agent. Applied everywhere Forge starts <code>claude</code> — terminal, UI mode, and the Chat pane&#x27;s Claude Code provider.</li>
+</ul>]]></description>
+      <enclosure url="https://github.com/kuraydev/forge-release/releases/download/v0.8.0/Forge-0.8.0.dmg" type="application/octet-stream" sparkle:edSignature="0yz0W3b15pEsa4GK3+3gRqBZEbPNhc+jAHkU09gfRnrMFKZY+INaMbg3o4ANHmcW21M5jPLrrmfnaTG03ujQCA==" length="10084123" />
+    </item>
+<item>
       <title>Version 0.7.0</title>
       <pubDate>Sun, 14 Jun 2026 20:17:19 +0300</pubDate>
       <sparkle:version>21</sparkle:version>
