@@ -40,6 +40,11 @@
         your API keys. Native SwiftUI all the way down.
       </p>
       <div class="cta-grid">
+        <div class="install-cmd" data-copy="brew install --cask coursion-studio/tap/forge">
+          <span class="prompt" aria-hidden="true">$</span>
+          <code>brew install --cask coursion-studio/tap/forge</code>
+          <button class="copy-btn" type="button" aria-label="Copy install command">Copy</button>
+        </div>
         <a class="btn primary" href="https://github.com/Coursion-Studio/forge/releases/latest">
           Download&nbsp;.dmg
         </a>
@@ -223,6 +228,27 @@
       <div>© 2026 Coursion · Made in SwiftUI</div>
     </footer>
   </div>
+
+  <script>
+    // Copy-to-clipboard for the brew install code block.
+    (function () {
+      document.querySelectorAll(".copy-btn").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var box = btn.closest("[data-copy]");
+          if (!box || !navigator.clipboard) return;
+          navigator.clipboard.writeText(box.getAttribute("data-copy")).then(function () {
+            btn.classList.add("copied");
+            var original = btn.textContent;
+            btn.textContent = "Copied";
+            setTimeout(function () {
+              btn.classList.remove("copied");
+              btn.textContent = original;
+            }, 1400);
+          }).catch(function () { /* clipboard blocked — no-op */ });
+        });
+      });
+    })();
+  </script>
 
   <script>
     // Pulls every public release from GitHub. Two things happen with the result:
