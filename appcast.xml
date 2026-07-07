@@ -7,19 +7,13 @@
     <language>en</language>
 
     
-    
-    
+
     
 
     
+
     
-    
-    
-        
-    
-    
-    
-    
+
     <item>
       <title>Version 0.8.0</title>
       <pubDate>Tue, 07 Jul 2026 13:13:52 +0300</pubDate>
@@ -37,150 +31,6 @@
 <li><strong>Configurable Claude Code launch</strong> — Set which account/command runs (e.g. <code>claude-main-account</code>), the default model, the permission mode, and extra CLI flags in Settings → Agents; any workspace can override them under Customize → Agent. Applied everywhere Forge starts <code>claude</code> — terminal, UI mode, and the Chat pane&#x27;s Claude Code provider.</li>
 </ul>]]></description>
       <enclosure url="https://github.com/kuraydev/forge-release/releases/download/v0.8.0/Forge-0.8.0.dmg" type="application/octet-stream" sparkle:edSignature="0yz0W3b15pEsa4GK3+3gRqBZEbPNhc+jAHkU09gfRnrMFKZY+INaMbg3o4ANHmcW21M5jPLrrmfnaTG03ujQCA==" length="10084123" />
-    </item>
-<item>
-      <title>Version 0.7.0</title>
-      <pubDate>Sun, 14 Jun 2026 20:17:19 +0300</pubDate>
-      <sparkle:version>21</sparkle:version>
-      <sparkle:shortVersionString>0.7.0</sparkle:shortVersionString>
-      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-      <description><![CDATA[<p><em>2026-06-14</em></p>
-<ul>
-<li><strong>One-click RUN</strong> — Each workspace exposes a RUN button that launches its dev commands. Configure several named commands (split-button + dropdown), or run silently with no pane — the command streams to a log and the button shows a live working spinner.</li>
-<li><strong>Schedules pane</strong> — Build recurring tasks that fire on your cadence: send a prompt into a workspace terminal or run a shell command, on an interval or daily/weekly at a set time. List view, edit modal, run-now, and a master start/stop switch.</li>
-<li><strong>Sharper notifications</strong> — Done/needs-input pings now dedupe per pane, throttle rapid bursts, fall back to a flashing menu-bar icon when banner permission is off, and no longer fire a false &quot;done&quot; when an agent rings the bell mid-turn.</li>
-<li><strong>Activity at a glance</strong> — Workspace rows in the sidebar now show the same working / needs-input / done activity tag as the top tabs, and background workspaces report status without being opened first.</li>
-<li><strong>Diagnostics log</strong> — Settings → General → Diagnostics can mirror Hermes pushes, pane activity, schedules, and errors to a shareable log file.</li>
-<li><strong>Board send-to-agent</strong> — The planning board&#x27;s &quot;send card to agent&quot; menu now shows each terminal&#x27;s agent name and engine instead of a generic label.</li>
-</ul>]]></description>
-      <enclosure url="https://github.com/kuraydev/forge-release/releases/download/v0.7.0/Forge-0.7.0.dmg" type="application/octet-stream" sparkle:edSignature="KSHfgydtyCgKbpj4LwLnmlr/zN1wRmul+9sT2ADrusb63J3xcCDIpYJF/pMARql3/aXDoQsWtCOIboqwjdaDDQ==" length="8668618" />
-    </item>
-    <item>
-      <title>Version 0.6.9</title>
-      <pubDate>Tue, 09 Jun 2026 13:53:51 +0300</pubDate>
-      <sparkle:version>20</sparkle:version>
-      <sparkle:shortVersionString>0.6.9</sparkle:shortVersionString>
-      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-      <description><![CDATA[<p>Install bundled agent skills directly from the ⌘K command palette (Skills section), in addition to Settings.</p>]]></description>
-      <enclosure url="https://github.com/kuraydev/forge-release/releases/download/v0.6.9/Forge-0.6.9.dmg" type="application/octet-stream" sparkle:edSignature="/bRRmODe4w7p4yFJ0AUU3shxtcJGo8DclVexSOTBCx4q0fFP7M/h0F5y35Kk46N6X2dvPHtbXkHJJzL1BP8EAw==" length="8421186" />
-    </item>
-<item>
-      <title>Version 0.6.8</title>
-      <pubDate>Tue, 09 Jun 2026 13:39:52 +0300</pubDate>
-      <sparkle:version>19</sparkle:version>
-      <sparkle:shortVersionString>0.6.8</sparkle:shortVersionString>
-      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-      <description><![CDATA[<p><em>2026-06-09</em></p>
-<ul>
-<li><strong>Install agent skills</strong> — Forge now ships its Git workflow skills (commit, push to a feature branch, merge worktrees, merge to main) and can install them into your agent&#x27;s global skills directory. Settings → Agents → Agent skills, one click per agent (Claude Code, Hermes) — every project gets them, no manual setup.</li>
-</ul>]]></description>
-      <enclosure url="https://github.com/kuraydev/forge-release/releases/download/v0.6.8/Forge-0.6.8.dmg" type="application/octet-stream" sparkle:edSignature="50z7bDpD83jIS7NfO3KQAE6yXjwyI4WR/J7KaK83dc0p/g9dtT1bJTwtH1ZzZHl9PKryFcZ2V6kW6hlNPhdOBw==" length="8419500" />
-    </item>
-<item>
-      <title>Version 0.6.7</title>
-      <pubDate>Mon, 08 Jun 2026 10:49:00 +0300</pubDate>
-      <sparkle:version>18</sparkle:version>
-      <sparkle:shortVersionString>0.6.7</sparkle:shortVersionString>
-      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-      <description><![CDATA[<p><em>2026-06-08</em></p>
-<ul>
-<li><strong>Readable update notes</strong> — The &quot;A new version is available&quot; dialog now renders release notes as formatted text — bold feature names, bullet lists, and links — instead of raw Markdown symbols.</li>
-</ul>]]></description>
-      <enclosure url="https://github.com/kuraydev/forge-release/releases/download/v0.6.7/Forge-0.6.7.dmg" type="application/octet-stream" sparkle:edSignature="vQ2ZRAIB/84DqauVMSmRYzOzxX9c1LrhU92FveNHiykxpeLqvn4jO7VHHybfug9hNTL73DMLkppH1vcG81aeAQ==" length="8372870" />
-    </item>
-<item>
-      <title>Version 0.6.6</title>
-      <pubDate>Sun, 07 Jun 2026 23:26:59 +0300</pubDate>
-      <sparkle:version>17</sparkle:version>
-      <sparkle:shortVersionString>0.6.6</sparkle:shortVersionString>
-      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-      <description><![CDATA[<p><em>2026-06-07</em></p>
-<ul>
-<li><strong>Categorize workspaces</strong> — Group workspaces into collapsible sidebar categories. Drag a workspace onto a category header to file it, or use the new Categorize menu on any workspace. Rename or dissolve categories from the header&#x27;s context menu.</li>
-<li><strong>Auto-categorize</strong> — One click on the wand button sorts ungrouped workspaces by project type (iOS, macOS, Web, Mobile, Backend, Scripts) — detected locally from project files, no AI key needed.</li>
-</ul>]]></description>
-      <enclosure url="https://github.com/kuraydev/forge-release/releases/download/v0.6.6/Forge-0.6.6.dmg" type="application/octet-stream" sparkle:edSignature="O0aFQDGLCiT6NHh9X4gRQPzt4mgOSfCnwSdvRLJPVvhBqKS/cPz9fg3QkuZBIsa9JMENTqIVwiodUVeidrsxBQ==" length="8374088" />
-    </item>
-<item>
-      <title>Version 0.6.5</title>
-      <pubDate>Sun, 07 Jun 2026 23:02:35 +0300</pubDate>
-      <sparkle:version>16</sparkle:version>
-      <sparkle:shortVersionString>0.6.5</sparkle:shortVersionString>
-      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-      <description><![CDATA[<p><em>2026-06-07</em></p>
-<ul>
-<li><strong>No more false &quot;finished&quot;</strong> — Builds and scripts that go quiet mid-run no longer ping as finished. Silence-based turn detection now applies only to TUI agents (Claude Code, Codex, Aider…); ordinary commands signal completion when they actually exit.</li>
-<li><strong>Apple Intelligence board planning works</strong> — AI Fill on the planning board no longer fails with the on-device model; project context is now trimmed to fit its context window, and failure alerts show the real provider error.</li>
-<li><strong>Cleaner sidebar</strong> — Removed the per-workspace activity pill from the sidebar list (still shown in the top tab strip).</li>
-<li><strong>No more orphaned shells</strong> — Closing a terminal pane, deleting a workspace, or quitting Forge now terminates the underlying shell process instead of leaving it running in the background.</li>
-</ul>]]></description>
-      <enclosure url="https://github.com/kuraydev/forge-release/releases/download/v0.6.5/Forge-0.6.5.dmg" type="application/octet-stream" sparkle:edSignature="O6WS3GW4y0+Edgu023LE+wa+efWXRtbG2AV+y4Vj2kpoo8iStGIFqrRYJ9qGmkXfgVS0lVFX0GCODYLDPx/DBg==" length="8341876" />
-    </item>
-<item>
-      <title>Version 0.5.1</title>
-      <pubDate>Fri, 05 Jun 2026 16:05:53 +0300</pubDate>
-      <sparkle:version>10</sparkle:version>
-      <sparkle:shortVersionString>0.5.1</sparkle:shortVersionString>
-      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-      <description><![CDATA[<p>Fixed: Claude Code and Hermes agent chips no longer vanish from the toolbar. Agent detection now scans PATH directly with retries instead of relying on a one-shot login-shell check.</p>]]></description>
-      <enclosure url="https://github.com/kuraydev/forge-release/releases/download/v0.5.1/Forge-0.5.1.dmg" type="application/octet-stream" sparkle:edSignature="C09BvsHjVDEretG/TN12/mTaAf4fGsDABn/PiyfXiYtpOKxIG2xaZIyUyBW7r17x/7aXd0h/4PnwFyiptJGWBg==" length="8203133" />
-    </item>
-<item>
-      <title>Version 0.5.0</title>
-      <pubDate>Fri, 05 Jun 2026 15:42:36 +0300</pubDate>
-      <sparkle:version>9</sparkle:version>
-      <sparkle:shortVersionString>0.5.0</sparkle:shortVersionString>
-      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-      <description><![CDATA[<p><em>2026-06-05</em></p>
-<ul>
-<li><strong>Prompt Optimizer</strong> — Rewrite any prompt with project-aware context before sending it to an agent. Get a side-by-side comparison plus a model and effort recommendation. Trigger from the chat input bar, the command palette, or ⌘⇧O.</li>
-<li><strong>Frecency-ranked ⌘K</strong> — The command palette now ranks board cards, workspace panes, and recent files by how often and how recently you use them.</li>
-<li><strong>Searchable Add popover</strong> — Adding a pane is a quick type-to-filter popover instead of a nested menu, with full pane names visible.</li>
-<li><strong>Reliable agent chips</strong> — Claude and Hermes toolbar chips no longer vanish after launch; agent detection now retries transient failures and caches results.</li>
-<li><strong>Responsive toolbar</strong> — The workspace top bar adapts to narrow windows with a compact mode instead of clipping buttons.</li>
-<li><strong>Updater fixes</strong> — In-app updates now wire the Sparkle delegate correctly and skip update checks when running off the launch path.</li>
-</ul>]]></description>
-      <enclosure url="https://github.com/kuraydev/forge-release/releases/download/v0.5.0/Forge-0.5.0.dmg" type="application/octet-stream" sparkle:edSignature="T7KSKMnt4v7uCuhStIt4tzPNkurJ5Vgh1WVBW0BBXmTajg4aJtbeQhTvdps8OxnPvyEFxU2xTmgxwvOdjyWxCw==" length="8203837" />
-    </item>
-<item>
-      <title>Version 0.4.1</title>
-      <pubDate>Fri, 05 Jun 2026 00:55:04 +0300</pubDate>
-      <sparkle:version>8</sparkle:version>
-      <sparkle:shortVersionString>0.4.1</sparkle:shortVersionString>
-      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-      <description><![CDATA[<p><em>2026-06-04</em></p>
-<ul>
-<li><strong>Worktree badge</strong> — Every terminal header and the workspace toolbar now show the active git branch and worktree at a glance, targeting the focused terminal.</li>
-<li><strong>Per-terminal worktree toggle</strong> — Enable or disable isolated worktree mode for the focused terminal straight from the toolbar.</li>
-<li><strong>Reliable git detection</strong> — Reworked git invocation to exec directly with a composed PATH and retry transient spawn failures, fixing flaky branch/worktree detection under load.</li>
-<li><strong>Faster dev loop</strong> — Reliable rebuild-and-relaunch flow with InjectionIII hot reload.</li>
-</ul>]]></description>
-      <enclosure url="https://github.com/Coursion-Studio/forge/releases/download/v0.4.1/Forge-0.4.1.dmg" type="application/octet-stream" sparkle:edSignature="ZMBKSJuk25wI2s0CRxmXS/uWJhlQs+wdRLedZMI0fBWqgUExaT68t/FT02p3bzCW9/qCpcBm8K/WO+r7X05FAg==" length="8194023" />
-    </item><item>
-      <title>Version 0.3.0</title>
-      <pubDate>Tue, 02 Jun 2026 11:56:49 +0300</pubDate>
-      <sparkle:version>5</sparkle:version>
-      <sparkle:shortVersionString>0.3.0</sparkle:shortVersionString>
-      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-      <description><![CDATA[<p><em>2026-06-02</em></p>
-<ul>
-<li><strong>In-app updates</strong> — Forge now checks for, downloads, and installs new versions itself via Sparkle. Auto-check and auto-download are toggleable in Settings, with last-checked status and a one-click Check for Updates.</li>
-<li><strong>What&#x27;s New</strong> — A release-notes modal driven by the bundled changelog greets you after each update, with an icon-row layout that turns each highlight into a glanceable card.</li>
-<li><strong>Selectable terminal output</strong> — Select and copy text from a terminal while a command is still streaming.</li>
-<li><strong>Pane &amp; terminal rename</strong> — Give any pane or terminal a custom name straight from its tab.</li>
-<li><strong>Workspace icon picker</strong> — Choose from 103 SF Symbols when customizing a workspace.</li>
-<li><strong>Settings refresh</strong> — Branded toggles and segmented pickers throughout, a dedicated Coach tab, and collapsible cards to cut first-glance clutter.</li>
-</ul>]]></description>
-      <enclosure url="https://github.com/Coursion-Studio/forge/releases/download/v0.3.0/Forge-0.3.0.dmg" type="application/octet-stream" sparkle:edSignature="DH88Crat0eKo3rEEi/8J0AZVvqhdeVS2aoqbfl93HU9LR/QrL+NkQpgqDeYKQU+BUTcPSJybuWl5nTi5p0jvCg==" length="7929821" />
-    </item>
-<item>
-      <title>Version 0.2.0</title>
-      <pubDate>Tue, 02 Jun 2026 10:02:13 +0300</pubDate>
-      <sparkle:version>4</sparkle:version>
-      <sparkle:shortVersionString>0.2.0</sparkle:shortVersionString>
-      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-      <description><![CDATA[<p>Planning board: per-workspace Trello-style kanban with AI fill, live two-way file sync, and structured sync endpoints (.forge/board.json + board.inbox.jsonl) so agents read/mutate the board without parsing markdown. Send cards straight to agent terminals. Telegram gateway + Hermes push notifications. Vendored SwiftTerm fork with Warp-style inline path completion and reliable command-completion detection. Unified solid-surface button styling.</p>]]></description>
-      <enclosure url="https://github.com/Coursion-Studio/forge/releases/download/v0.2.0/Forge-0.2.0.dmg" type="application/octet-stream" sparkle:edSignature="Gec2Mxd1NWer4nm/O+jei7hBmgtmU4TqpfrKzBp92UuTvPsxZciY7TSrjoXJSTkaxMA4RNcN8Kq5Qa7UPpCYBw==" length="7831427" />
     </item>
 
     </channel>
