@@ -6,7 +6,26 @@
     <description>Updates for Forge — agent-first development workbench from Coursion.</description>
     <language>en</language>
 
+    
     <item>
+      <title>Version 0.9.1</title>
+      <pubDate>Sun, 19 Jul 2026 14:51:22 +0300</pubDate>
+      <sparkle:version>104</sparkle:version>
+      <sparkle:shortVersionString>0.9.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<p><em>2026-07-19</em></p>
+<ul>
+<li><strong>Goals — Claude Code&#x27;s native <code>/goal</code>, first-class.</strong> Type <code>/goal</code> in a Claude pane for a native panel of saved goal templates (one-tap Run) or a free-text verifiable end-state with an optional time budget. A goal bar tracks the run — elapsed, Stop, then met / not met — and <code>.forge/goals.json</code> + an inbox make goals agent-scriptable. Old Loops specs migrate to templates automatically; the Loops pane is retired.</li>
+<li><strong>Services pane — a process manager for dev servers.</strong> Long-lived processes (Metro, APIs, docker compose) with health checks, restart policies, and dependency-ordered <strong>Start all</strong>; agent-scriptable via <code>.forge/services.json</code> + inbox.</li>
+<li><strong>New workspaces open with your default agent</strong> — Claude Code out of the box, or pick any detected CLI (Settings → Agents).</li>
+<li><strong>Workspace status you can trust.</strong> Working dots survive workspace switches and long tool runs; a pane genuinely waiting on you shows an orange &quot;waiting for input&quot;; finished checkmarks clear themselves once seen (and expire if never visited); interrupts no longer fire phantom &quot;finished&quot; notifications.</li>
+<li><strong>Claude Code UI fixes.</strong> Transcript rows no longer vanish until you scroll; the idle 100% CPU spin is gone at the root; errors render as unmissable red alert cards; the worktree &quot;Isolate&quot; banner no longer hides the header row and its dismissal finally sticks.</li>
+<li><strong>Model picker, finished.</strong> &quot;Default&quot; now names the actual model (&quot;Default — Opus 4.8 (1M)&quot;), and your pick is remembered per workspace across restarts.</li>
+<li><strong>Sync fixes.</strong> BYO API keys actually roam via iCloud (both directions, stale copies cleaned); <code>.forge/board.json</code> refreshes after agents edit <code>board.md</code> directly.</li>
+</ul>]]></description>
+      <enclosure url="https://github.com/kuraydev/forge-release/releases/download/v0.9.1/Forge-0.9.1.dmg" type="application/octet-stream" sparkle:edSignature="tsxzV8WO32ArlmtSThtKM+eIUqPRUC8voWCY8I6hElAih6upslVyrnkI1bZWuSRCzCQtNPdoj0N9PspAfCuSDw==" length="10371626" />
+    </item>
+<item>
       <title>Version 0.8.1</title>
       <pubDate>Tue, 14 Jul 2026 23:48:50 +0300</pubDate>
       <sparkle:version>91</sparkle:version>
