@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Forge — Privacy Policy</title>
+  <meta name="description" content="How Forge handles your data. Local-first, bring-your-own-key, no tracking, no backend." />
+  <link rel="icon" type="image/png" href="icon.png" />
+  <link rel="apple-touch-icon" href="icon.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="theme-color" content="#0E1224" />
+  <style>
+    .legal { max-width: 760px; margin: 0 auto; padding-bottom: 40px; }
+    .legal h1 { font-size: 2.2rem; margin: 0 0 6px; }
+    .legal .updated { color: var(--text-tertiary); font-size: 0.9rem; margin-bottom: 28px; }
+    .legal h2 { font-size: 1.25rem; margin: 34px 0 10px; }
+    .legal h3 { font-size: 1rem; margin: 22px 0 6px; }
+    .legal p, .legal li { color: var(--text-secondary); line-height: 1.7; font-size: 0.98rem; }
+    .legal ul { padding-left: 1.1rem; }
+    .legal li { margin: 6px 0; }
+    .legal strong { color: var(--text-primary); }
+    .legal a { color: var(--forge-purple); }
+    .legal .tldr { border: 1px solid var(--card-stroke); background: var(--card-fill);
+                   border-radius: var(--radius-card); padding: 18px 20px; margin: 8px 0 28px; }
+  </style>
+</head>
+<body>
+  <div class="bg"></div>
+
+  <div class="container">
+    <nav class="top">
+      <div class="brand">
+        <a href="/" style="display:flex;align-items:center;gap:10px;color:inherit;text-decoration:none">
+          <img src="icon.png" alt="Forge" />
+          <span>Forge</span>
+        </a>
+      </div>
+      <div class="links">
+        <a href="/">Home</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </nav>
+
+    <section class="legal">
+      <h1>Privacy Policy</h1>
+      <div class="updated">Last updated: August 3, 2026</div>
+
+      <div class="tldr">
+        <strong>The short version.</strong> Forge is a local-first Mac app with no Coursion
+        backend. Your code, files, chats, and API keys stay on your Mac. We don't run analytics,
+        don't track you, and never receive your API keys or the content of your work. The only
+        data that leaves your Mac is what <em>you</em> direct it to: requests to AI providers you
+        configure, sites you open in the browser pane, optional iCloud sync through your own
+        Apple account, and an update check to our website.
+      </div>
+
+      <h2>1. Who we are</h2>
+      <p>Forge is a macOS application published by Coursion Studio ("Coursion", "we", "us"). This
+      policy explains what Forge does with data. It applies to the Forge app and this website
+      (<a href="https://forge.coursion.studio">forge.coursion.studio</a>).</p>
+
+      <h2>2. What Forge stores on your Mac</h2>
+      <p>Everything Forge creates lives locally in your user folders — your projects on disk,
+      workspace definitions, settings, notes, and chat transcripts (under
+      <em>~/Library/Application&nbsp;Support/Forge</em> and your own project folders). We have no
+      server that holds a copy.</p>
+      <ul>
+        <li><strong>API keys</strong> are stored in the macOS <strong>Keychain</strong> and are
+        never written to logs or sent anywhere except the AI provider endpoint they belong to.</li>
+        <li><strong>Chat and terminal content</strong> stays on disk on your Mac.</li>
+      </ul>
+
+      <h2>3. Data that leaves your Mac (only when you direct it)</h2>
+
+      <h3>AI providers (bring your own key)</h3>
+      <p>When you use an AI feature, Forge sends your prompt and the context you attach directly
+      to the provider you configured — for example Anthropic, OpenAI, OpenRouter/Moonshot, or a
+      local model via Ollama. Your key and prompt go straight to that provider over HTTPS; they
+      do not pass through Coursion. Each provider's own privacy policy governs that data. If you
+      run a local model (Ollama), that request never leaves your machine.</p>
+
+      <h3>Browser pane</h3>
+      <p>The built-in browser is a standard WebKit view. Sites you visit receive the same
+      information any browser would send. We do not inject tracking or read your browsing.</p>
+
+      <h3>Voice dictation (optional)</h3>
+      <p>If you enable voice dictation, Forge uses Apple's Speech Recognition
+      (<em>SFSpeechRecognizer</em>). Depending on your macOS configuration, audio may be sent to
+      <strong>Apple</strong> for transcription under Apple's privacy policy. Forge does not store
+      your audio and does not send it to Coursion. The microphone is used only while dictation is
+      active.</p>
+
+      <h3>iCloud sync (optional, off by default for keys)</h3>
+      <p>If you turn on iCloud sync, Forge stores workspace definitions, settings, snippets, and
+      (only if you explicitly enable it) API keys in <strong>your own iCloud account</strong>
+      through Apple iCloud Drive and iCloud Keychain. This is Apple-to-your-devices sync governed
+      by Apple's privacy policy — Coursion has no access to it and operates no sync server.</p>
+
+      <h3>Software updates</h3>
+      <p>Forge checks <a href="https://forge.coursion.studio">forge.coursion.studio</a> for a
+      signed update feed (via Sparkle). As with any web request, our static host may record
+      standard server logs (such as IP address and app version) to deliver the update. We do not
+      use this to build a profile of you.</p>
+
+      <h3>Feedback &amp; crash reports (only if you send them)</h3>
+      <p>Forge can detect an unclean exit and locate the matching macOS crash report so you can
+      send it to us. Nothing is transmitted automatically. If you choose to send feedback or a
+      crash report, Forge composes an email in your mail client that you review and send yourself.
+      It includes basic environment details (app version, macOS version, hardware summary) and no
+      secrets. You decide whether to send it.</p>
+
+      <h2>4. What we do not do</h2>
+      <ul>
+        <li>No analytics, telemetry, ad SDKs, or third-party trackers.</li>
+        <li>No account or sign-up with Coursion is required to use Forge.</li>
+        <li>We never receive your API keys, source code, prompts, or file contents.</li>
+        <li>We do not sell or share personal data — we don't collect it to begin with.</li>
+      </ul>
+
+      <h2>5. Children</h2>
+      <p>Forge is a developer tool not directed to children under 13, and we do not knowingly
+      collect data from them.</p>
+
+      <h2>6. Your choices</h2>
+      <p>You control every outbound path: don't configure a provider key and no AI requests are
+      made; leave iCloud sync off and nothing syncs; leave dictation off and the microphone is
+      never used. You can delete Forge's local data by removing its Application Support folder and
+      any keys from Keychain.</p>
+
+      <h2>7. Changes</h2>
+      <p>We may update this policy as Forge evolves. Material changes will be reflected here with a
+      new "last updated" date, and where appropriate surfaced in the app.</p>
+
+      <h2>8. Contact</h2>
+      <p>Questions about privacy? Email
+      <a href="mailto:hello@coursion.studio">hello@coursion.studio</a>.</p>
+    </section>
+
+    <footer>
+      <div class="links">
+        <a href="/">Home</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="https://github.com/Coursion-Studio/forge/releases/latest">Download</a>
+      </div>
+      <div>© 2026 Coursion · Made in SwiftUI</div>
+    </footer>
+  </div>
+</body>
+</html>
