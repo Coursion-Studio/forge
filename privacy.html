@@ -43,7 +43,7 @@
 
     <section class="legal">
       <h1>Privacy Policy</h1>
-      <div class="updated">Last updated: August 9, 2026</div>
+      <div class="updated">Last updated: October 18, 2026</div>
 
       <div class="tldr">
         <strong>The short version.</strong> Forge is a local-first Mac app with no Coursion
@@ -52,7 +52,8 @@
         crash reports and feature-usage counts (you can turn both off in Settings). Beyond
         that, data leaves your Mac only where <em>you</em> direct it: requests to AI providers
         you configure, sites you open in the browser pane, optional iCloud sync through your
-        own Apple account, and an update check to our website.
+        own Apple account, and an update check to our website. This website counts page views
+        on our own server, with no cookies (section 6).
       </div>
 
       <h2>1. Who we are</h2>
@@ -129,21 +130,33 @@
         on. No user profile is created and events are not linked to your identity.</li>
       </ul>
 
-      <h2>6. Children</h2>
+      <h2>6. This website</h2>
+      <p>We count page views on the home page so we know whether anyone is reading. The counting
+      is done by our own server, Polaris, which runs on Google Cloud Run in Belgium. No analytics
+      company is involved. There are no cookies, nothing is saved in your browser, and nothing
+      follows you to other sites.</p>
+      <p>For each view the counter records the page path and, if there is one, the domain you
+      arrived from. To count a visitor once per day rather than once per page, it computes a
+      one-way hash of the date, the site, your IP address and your browser's user agent. Your IP
+      address itself is never written down, and the hash is deleted after two days. What remains
+      is a daily count of views and visitors per page.</p>
+      <p>The website is served by GitHub Pages, which may log requests (such as your IP address)
+      as part of running that service, under GitHub's own privacy statement.</p>
+      <h2>7. Children</h2>
       <p>Forge is a developer tool not directed to children under 13, and we do not knowingly
       collect data from them.</p>
 
-      <h2>7. Your choices</h2>
+      <h2>8. Your choices</h2>
       <p>You control every outbound path: don't configure a provider key and no AI requests are
       made; leave iCloud sync off and nothing syncs; leave dictation off and the microphone is
       never used. You can delete Forge's local data by removing its Application Support folder and
       any keys from Keychain.</p>
 
-      <h2>8. Changes</h2>
+      <h2>9. Changes</h2>
       <p>We may update this policy as Forge evolves. Material changes will be reflected here with a
       new "last updated" date, and where appropriate surfaced in the app.</p>
 
-      <h2>9. Contact</h2>
+      <h2>10. Contact</h2>
       <p>Questions about privacy? Email
       <a href="mailto:hello@coursion.studio">hello@coursion.studio</a>.</p>
     </section>
