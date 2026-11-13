@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" href="icon.png" />
   <link rel="apple-touch-icon" href="icon.png" />
   <link rel="stylesheet" href="home.css?v=3" />
-  <link rel="stylesheet" href="stages.css?v=3" />
+  <link rel="stylesheet" href="stages.css?v=5" />
   <meta name="theme-color" content="#0E1224" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Forge" />
@@ -70,18 +70,17 @@
           <div class="fw-tl"><span></span><span></span><span></span></div>
           <div class="fw-brand"><img src="icon.png" alt="" width="22" height="22" /><b>Forge</b><span class="sp"></span><span class="ib">⌂</span><span class="ib add">+</span></div>
           <div class="fw-search">⌕ Search workspaces</div>
-          <div class="fw-grp">Pinned</div>
+          <div class="fw-grp">Working · <span data-working>4</span></div>
           <div class="fw-pin">
-            <div class="fw-ws sel"><span class="ico" style="--c:#C75CEB">L</span><span class="nm">Lumen<small data-side>Running 3 agents</small></span><span class="tm" data-clock>0:00</span></div>
-            <div class="fw-sub"><i class="d live"></i>Split three jobs <em>3 agents</em></div>
-            <div class="fw-sub"><i class="d"></i>Ship the cart fix</div>
+            <div class="fw-ws sel"><canvas class="mascot sm" data-ws-mascot="lumen"></canvas><span class="nm">Lumen<small data-side>Ready</small></span><span class="tm" data-clock>0:00</span></div>
+            <div class="fw-sub"><i class="d live"></i>Split three jobs <em data-sub-n>0 agents</em></div>
           </div>
+          <div class="fw-ws" data-ws="tidepool"><canvas class="mascot sm"></canvas><span class="nm">Tidepool<small></small></span><span class="tm">4:12</span></div>
+          <div class="fw-ws" data-ws="atlas"><canvas class="mascot sm"></canvas><span class="nm">Atlas API<small></small></span><span class="tm">1:37</span></div>
+          <div class="fw-ws" data-ws="orbit"><canvas class="mascot sm"></canvas><span class="nm">Orbit<small></small></span><span class="tm">0:48</span></div>
           <div class="fw-grp">All</div>
-          <div class="fw-ws"><span class="ico" style="--c:#389EFF">T</span><span class="nm">Tidepool</span><span class="tm">2h</span></div>
-          <div class="fw-ws"><span class="ico" style="--c:#3DDC97">A</span><span class="nm">Atlas API</span><span class="tm">18h</span></div>
-          <div class="fw-ws"><span class="ico" style="--c:#FFB547">O</span><span class="nm">Orbit</span><span class="tm">1d</span></div>
-          <div class="fw-ws"><span class="ico" style="--c:#FF5189">N</span><span class="nm">Nook</span><span class="tm">3d</span></div>
-          <div class="fw-ws"><span class="ico" style="--c:#2FD3C9">V</span><span class="nm">Vista</span><span class="tm">5d</span></div>
+          <div class="fw-ws" data-ws="nook"><canvas class="mascot sm"></canvas><span class="nm">Nook<small></small></span><span class="tm">3h</span></div>
+          <div class="fw-ws" data-ws="vista"><canvas class="mascot sm"></canvas><span class="nm">Vista<small></small></span><span class="tm">2d</span></div>
           <div class="fw-foot"><span class="ib">⌂</span><span class="ib">◉</span><span class="ib">⌘</span><span class="ib">⚙</span><span class="sp"></span><small><i class="d on"></i>Synced</small></div>
         </aside>
         <div class="fw-main">
@@ -561,7 +560,7 @@
       els.forEach(function (el) { io.observe(el); });
     })();
   </script>
-  <script src="mascot.js?v=1" defer></script>
-  <script src="stages.js?v=3" defer></script>
+  <script src="mascot.js?v=2" defer></script>
+  <script src="stages.js?v=4" defer></script>
 </body>
 </html>

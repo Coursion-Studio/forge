@@ -65,6 +65,13 @@
       return [anvil([[0, 1, "S"], [1, 4, "H"], [0, 7, "C"], [1, 10, "S"], [0, 14, "H"]], "happy"),
               anvil([[1, 2, "C"], [0, 5, "S"], [1, 8, "H"], [0, 11, "C"], [1, 15, "S"]], "happy")];
     } },
+    waiting: { fps: 3, hop: 2, frames: function () {
+      var alert = anvil([[0, 7, "T"], [0, 8, "T"]], "wide");
+      return [alert, alert, anvil(null, "wide")];
+    } },
+    sleepy: { fps: 1, hop: 0, frames: function () {
+      return [anvil([[1, 13, "Z"]], "shut", "g"), anvil([[0, 14, "Z"]], "shut", "g"), anvil([[1, 12, "Z"], [0, 15, "Z"]], "shut", "g")];
+    } },
     greeting: { fps: 3, hop: 1, frames: function () {
       return [anvil([[0, 13, "W"]], "happy"), anvil([[1, 14, "W"]], "happy")];
     } }
@@ -105,7 +112,7 @@
       case "g": return "rgb(158,43,31)";
       case "S": return "rgb(255,214,74)";
       case "Z": return "rgb(140,145,168)";
-      case "T": return "rgb(255,214,74)";
+      case "T": return "rgb(255,149,0)";
       case "K": return rgb(tint || [199, 92, 235]);
       case "k": return rgb(mix(tint || [199, 92, 235], [0, 0, 0], 0.35));
       case "M": return "rgb(204,212,230)";
@@ -142,14 +149,16 @@
         return g;
       });
     }
-    this.i = 0; clearInterval(this.timer); this.timer = null;
+    var n = this.anim.frames.length;
+    this.i = Math.floor(Math.random() * n);
+    clearInterval(this.timer); clearTimeout(this.lag); this.timer = null;
     this.draw();
-    var still = mood === "ready" && reduce;
-    if (!reduce && this.anim.frames.length > 1) {
-      var self = this;
-      this.timer = setInterval(function () { self.i = (self.i + 1) % self.anim.frames.length; self.draw(); }, 1000 / Math.min(this.anim.fps, 8));
+    if (!reduce && n > 1) {
+      var self = this, ms = 1000 / Math.min(this.anim.fps, 8) * (0.85 + Math.random() * 0.3);
+      this.lag = setTimeout(function () {
+        self.timer = setInterval(function () { self.i = (self.i + 1) % n; self.draw(); }, ms);
+      }, Math.random() * ms);
     }
-    return still;
   };
   Mascot.prototype.draw = function () {
     var a = this.anim, f = a.frames[this.i], x = this.x, tint = this.crew ? tierColor[this.crew.tier] : null;
@@ -160,7 +169,7 @@
       if (fill) { x.fillStyle = fill; x.fillRect(col, r + this.pad - hop, 1, 1); }
     }
   };
-  Mascot.prototype.stop = function () { clearInterval(this.timer); };
+  Mascot.prototype.stop = function () { clearInterval(this.timer); clearTimeout(this.lag); };
 
   window.ForgeMascot = Mascot;
 })();

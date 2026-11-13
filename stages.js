@@ -32,7 +32,30 @@
     var elx = q("[data-el]"), clock = q("[data-clock]"), side = q("[data-side]"), sub = q("[data-sub]");
     var costEl = q("[data-cost]"), tokEl = q("[data-tok]"), timeEl = q("[data-time]"), stop = q(".stop");
     var row = q("[data-agent-row]"), rowN = q("[data-agent-n]"), build = q("[data-build]");
-    var main = new ForgeMascot(q("[data-mascot]"), { mood: "ready" });
+    var pane = new ForgeMascot(q("[data-mascot]"), { mood: "ready" });
+    var lumen = new ForgeMascot(q('[data-ws-mascot="lumen"]'), { mood: "ready" });
+    var main = { set: function (m) { pane.set(m); lumen.set(m); } };
+    var subN = q("[data-sub-n]");
+    var others = {
+      tidepool: [["Testing in the VM · 11 UI tests", "working", ""], ["Reading crash log", "reading", ""], ["Editing PhotoGrid.swift", "editing", ""], ["Build passed · ready to land", "celebrating", "ok"]],
+      atlas: [["Fixing a flaky test", "editing", ""], ["forge-verify · 82 tests", "working", ""], ["Needs your OK to push", "waiting", "att"], ["Landed on main", "celebrating", "ok"]],
+      orbit: [["Planning the onboarding", "thinking", ""], ["2 helpers working", "helpers", ""], ["Reviewing the diff", "reading", ""], ["Ready", "ready", ""]],
+      nook: [["Idle · 3h", "sleepy", ""]],
+      vista: [["Idle · 2d", "sleepy", ""]]
+    };
+    Object.keys(others).forEach(function (k, n) {
+      var row = q('[data-ws="' + k + '"]'), seq = others[k], m = new ForgeMascot(row.querySelector("canvas"), { mood: seq[0][1] });
+      var label = row.querySelector("small"), tm = row.querySelector(".tm"), j = 0;
+      var t0 = Date.now() - (parseInt(tm.textContent, 10) * 60 + parseInt(tm.textContent.split(":")[1] || 0, 10)) * 1000;
+      function show() { label.textContent = seq[j][0]; label.className = seq[j][2]; m.set(seq[j][1]); }
+      show();
+      if (seq.length < 2) return;
+      tm.classList.add("live");
+      if (!reduce) setInterval(function () { tm.textContent = fmt(Math.floor((Date.now() - t0) / 1000)); }, 1000);
+      (function cycle() {
+        setTimeout(function () { j = (j + 1) % seq.length; show(); cycle(); }, reduce ? 1e9 : 2600 + n * 700 + Math.random() * 1800);
+      })();
+    });
     var next = 0, auto = true, started = 0, cost = 0, tok = 0, launched = 0, ticking = null, settle = null;
 
     function fmt(s) { return Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0"); }
@@ -46,7 +69,7 @@
       count.textContent = n + " running · " + list.querySelectorAll(".fa-card.done").length + " done";
       costEl.textContent = "≈$" + cost.toFixed(2);
       tokEl.textContent = tok >= 1000 ? (tok / 1000).toFixed(1) + "M" : tok.toFixed(1) + "k";
-      rowN.textContent = launched + " launched";
+      rowN.textContent = launched + " launched"; subN.textContent = launched + " agent" + (launched === 1 ? "" : "s");
       if (n) {
         clearTimeout(settle);
         main.set("helpers"); pulse.textContent = n + " helper" + (n === 1 ? "" : "s") + " still working";
