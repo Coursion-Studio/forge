@@ -4,27 +4,27 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Forge: a whole team of coding agents on your own Mac</title>
-  <meta name="description" content="Forge is a native Mac workbench for coding agents. Claude Code with a real UI, subagents you can watch, terminals, a board and headless test VMs for every project. Agents prove their work before it ships. Private beta: join the waitlist." />
+  <meta name="description" content="Forge is a Mac workbench that runs Claude Code in a harness: the right model for every job, isolated worktrees, and a green test run on the exact commit before any agent can say done. Subagents you can watch, test VMs and a board. Private beta: join the waitlist." />
   <link rel="canonical" href="https://forge.coursion.studio/" />
   <link rel="icon" type="image/png" href="icon.png" />
   <link rel="apple-touch-icon" href="icon.png" />
   <link rel="stylesheet" href="home.css?v=3" />
-  <link rel="stylesheet" href="stages.css?v=9" />
+  <link rel="stylesheet" href="stages.css?v=11" />
   <meta name="theme-color" content="#0E1224" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Forge" />
   <meta property="og:url" content="https://forge.coursion.studio/" />
   <meta property="og:title" content="Forge: a whole team of coding agents on your own Mac" />
-  <meta property="og:description" content="Claude Code with a native UI, subagents you can watch, terminals, a board and test VMs, in one Mac app. Private beta: join the waitlist." />
-  <meta property="og:image" content="https://forge.coursion.studio/og.png?v=4" />
+  <meta property="og:description" content="Claude Code in a harness: the right model per job, its own worktree, and proof before anything lands. Private beta: join the waitlist." />
+  <meta property="og:image" content="https://forge.coursion.studio/og.png?v=5" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Forge: a whole team of coding agents on your own Mac" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@kuraydev" />
   <meta name="twitter:title" content="Forge: a whole team of coding agents on your own Mac" />
-  <meta name="twitter:description" content="Claude Code with a native UI, subagents you can watch, terminals, a board and test VMs, in one Mac app. Join the waitlist." />
-  <meta name="twitter:image" content="https://forge.coursion.studio/og.png?v=4" />
+  <meta name="twitter:description" content="Claude Code in a harness: the right model per job, its own worktree, and proof before anything lands. Join the waitlist." />
+  <meta name="twitter:image" content="https://forge.coursion.studio/og.png?v=5" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Forge","operatingSystem":"macOS 15 or later","applicationCategory":"DeveloperApplication","url":"https://forge.coursion.studio/","description":"A native Mac workbench for coding agents."}</script>
   <script defer src="https://polaris-backend-489776622782.europe-west1.run.app/api/v1/analytics/t.js" data-site="forge.coursion.studio"></script>
 </head>
@@ -34,7 +34,7 @@
   <nav class="top" aria-label="Main">
     <a class="brand" href="#top"><img src="icon.png" alt="" width="28" height="28" /><span>Forge</span></a>
     <div class="top-links">
-      <a href="#claude">Claude Code</a>
+      <a href="#harness">Harness</a>
       <a href="#subagents">Subagents</a>
       <a href="#ship">Shipping</a>
       <a href="#faq">FAQ</a>
@@ -48,7 +48,7 @@
     <div class="hero-copy">
       <span class="badge"><span class="badge-dot"></span>Private beta · free during the beta</span>
       <h1>A whole team of coding agents.<br /><span class="grad">Working on your own Mac.</span></h1>
-      <p class="sub">Forge gives every project Claude Code with a native UI, subagents you can watch, terminals, a planning board and test VMs. Agents prove their work before it ships. Your files, your shell, your keys.</p>
+      <p class="sub">Forge runs Claude Code in a harness: the right model for every job, a worktree of its own, and proof before anything lands. Watch the subagents work, test in VMs, plan on a board. Your files, your shell, your keys.</p>
       <div class="join" id="join">
         <form class="waitlist" method="POST" novalidate>
           <label class="sr-only" for="email-hero">Email address</label>
@@ -146,42 +146,33 @@
       </div>
     </section>
 
-    <section class="sec" id="claude" style="--accent:var(--purple)" aria-labelledby="claude-h">
+    <section class="sec" id="harness" style="--accent:var(--green)" aria-labelledby="harness-h">
       <div class="glowbg" aria-hidden="true"></div>
       <div class="wrap split">
         <div class="copy reveal">
-          <span class="kicker">Claude Code, native</span>
-          <h2 id="claude-h">The Claude Code you use, with a real interface.</h2>
-          <p class="lede">Forge runs your own Claude Code and draws its conversation natively. Read diffs, approve tools and switch models without leaving the pane.</p>
+          <span class="kicker">The harness</span>
+          <h2 id="harness-h">Agents can't just say “done”.</h2>
+          <p class="lede">Forge wraps Claude Code in a harness. Every job gets the right model, its own worktree and a clear finish line, and a hook turns back any “done” that has no green test run on the exact commit it hands you.</p>
           <ul class="points">
-            <li><b>Readable transcript.</b> Markdown, highlighted code, Edit diffs, Bash output and a live to-do list.</li>
-            <li><b>Permission cards.</b> Allow once or always, right where the tool asks.</li>
-            <li><b>Slash panels.</b> Model, effort, agents, MCP and permissions as panels above the composer.</li>
-            <li><b>Flip to the terminal TUI</b> any time. Same session, same history.</li>
+            <li><b>Proof, not promises.</b> A hand-back needs a passing <code>forge-verify</code> on that exact tree. Edit after testing and it goes back.</li>
+            <li><b>The right model for each job.</b> Haiku searches, Sonnet builds, Opus reviews, Fable takes the hard ones. Every launch says which and why.</li>
+            <li><b>Its own worktree.</b> Workers never touch your checkout. A reviewer and a tester check the branch before it lands.</li>
+            <li><b>Briefs with a finish line.</b> A brief without “Done when” bounces before the agent starts.</li>
+            <li><b>Nothing left behind.</b> A janitor clears merged worktrees, stale builds and test simulators.</li>
           </ul>
         </div>
-        <div class="stage reveal d1" aria-hidden="true">
-          <div class="mock">
-            <div class="mbar"><span class="tl"><span></span><span></span><span></span></span>Claude Code · lumen-web<span class="sp"></span><span class="chip on">opus</span><span class="chip">effort high</span><span class="chip">42% context</span></div>
-            <div class="mbody">
-              <div class="msg-user">Fix the rounding on the cart summary and add a test.</div>
-              <div class="msg-ai">The total adds rounded line prices. I'll round <b>once, at the end</b>.</div>
-              <div class="tool"><span class="ic" style="--c:#389EFF">Read</span>src/cart/summary.ts<span class="ok">✓</span></div>
-              <div class="diff">
-                <div class="h">src/cart/summary.ts</div>
-                <div class="d">- return lines.reduce((s, l) =&gt; s + round(l.price), 0)</div>
-                <div class="a">+ return round(lines.reduce((s, l) =&gt; s + l.price, 0))</div>
-              </div>
-              <div class="perm">
-                <span class="t">Claude wants to run a command</span>
-                <code>npm test -- cart</code>
-                <div class="row"><span class="pbtn go">Allow</span><span class="pbtn">Always allow npm test</span><span class="pbtn">Deny</span></div>
-              </div>
-            </div>
-            <div class="panel"><div class="sel"><span>/model</span><span>opus · sonnet · haiku</span></div><div><span>/agents</span><span>4 types</span></div><div><span>/mcp</span><span>2 servers</span></div></div>
-            <div class="composer"><span class="slash">/</span>Ask Claude, @ a file, drop an image…</div>
+        <figure class="stage reveal d1 live" id="hx-demo">
+          <div class="fw hx">
+            <div class="hx-bar"><span class="fw-tl"><span></span><span></span><span></span></span><b>Fix the cart rounding</b><span class="mc" style="--c:#4D9BFF">Sonnet 5.5</span><span class="ty">forge-worker</span><span class="sp"></span><code>worktree-agent-3f2a</code></div>
+            <div class="hx-log" aria-live="polite"></div>
+            <div class="hx-foot"><span class="hx-stat">Turned back <b data-hx-back>0</b></span><span class="hx-stat">Accepted <b data-hx-ok>0</b></span><span class="sp"></span><span class="hx-state" data-hx-state>Waiting for a brief</span></div>
           </div>
-        </div>
+          <div class="try hx-try"><span>How should the worker hand back?</span>
+            <button type="button" data-hx="cheat">Say done, skip the tests</button>
+            <button type="button" data-hx="edit">Edit after testing</button>
+            <button type="button" data-hx="proof">Hand back with proof</button>
+          </div>
+        </figure>
       </div>
     </section>
 
@@ -557,5 +548,6 @@
   <script src="mascot.js?v=3" defer></script>
   <script src="stages.js?v=7" defer></script>
   <script src="panes.js?v=2" defer></script>
+  <script src="harness.js?v=1" defer></script>
 </body>
 </html>
