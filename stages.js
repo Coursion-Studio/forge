@@ -36,8 +36,8 @@
     var costEl = q("[data-cost]"), tokEl = q("[data-tok]"), timeEl = q("[data-time]"), stop = q(".stop");
     var row = q("[data-agent-row]"), rowN = q("[data-agent-n]"), build = q("[data-build]"), tx = q(".fw-tx");
     var pane = new ForgeMascot(q("[data-mascot]"), { mood: "ready" });
-    var lumen = new ForgeMascot(q('[data-ws-mascot="lumen"]'), { mood: "ready" });
-    var main = { set: function (m) { pane.set(m); lumen.set(m); } };
+    var lumenApp = q(".fw-pin .app"), agentsN = q("[data-agents-n]");
+    var main = { set: function (m) { pane.set(m); } };
     var subN = q("[data-sub-n]");
     var current = "lumen", panes = { lumen: lumenPane };
     var models = [["Opus 5.5", "careful"], ["Sonnet 5.5", "medium"], ["Haiku 5.5", "light"], ["Fable 5.1", "heavy"]];
@@ -53,13 +53,14 @@
       nook: [["Idle · 3h", "sleepy", ""]],
       vista: [["Idle · 2d", "sleepy", ""]]
     };
-    var sideM = {};
     Object.keys(others).forEach(function (k, n) {
-      var r = q('[data-ws="' + k + '"]'), seq = others[k], m = new ForgeMascot(r.querySelector("canvas"), { mood: seq[0][1] });
-      sideM[k] = m;
+      var r = q('[data-ws="' + k + '"]'), seq = others[k], app = r.querySelector(".app");
       var label = r.querySelector("small"), tm = r.querySelector(".tm"), j = 0;
       var t0 = Date.now() - (parseInt(tm.textContent, 10) * 60 + parseInt(tm.textContent.split(":")[1] || 0, 10)) * 1000;
-      function show() { label.textContent = seq[j][0]; label.className = seq[j][2]; m.set(seq[j][1]); }
+      function show() {
+        label.textContent = seq[j][0]; label.className = seq[j][2];
+        app.className = "app " + (seq[j][2] || (seq[j][1] === "sleepy" || seq[j][1] === "ready" ? "" : "busy"));
+      }
       show();
       if (seq.length < 2) return;
       tm.classList.add("live");
@@ -164,7 +165,8 @@
       var v = views[k], top = q(".fw-top");
       top.querySelector(".ttl b").textContent = v.name;
       top.querySelector(".ttl small").innerHTML = v.path + ' · <em>Capabilities</em>';
-      var ic = top.querySelector(".ico"); ic.style.setProperty("--c", v.ico); ic.textContent = v.letter;
+      var src = (k === "lumen" ? q(".fw-pin .app") : q('[data-ws="' + k + '"] .app')).cloneNode(true);
+      src.className = "app app-top"; top.querySelector(".app-top").replaceWith(src);
       ws.querySelectorAll(".fw-ws").forEach(function (r) { r.classList.remove("sel"); });
       q(".fw-pin").classList.toggle("on", k === "lumen");
       (k === "lumen" ? q(".fw-pin .fw-ws") : q('[data-ws="' + k + '"]')).classList.add("sel");
@@ -183,6 +185,8 @@
       count.textContent = n + " running · " + list.querySelectorAll(".fa-card.done").length + " done";
       costEl.textContent = "≈$" + cost.toFixed(2);
       tokEl.textContent = tok >= 1000 ? (tok / 1000).toFixed(1) + "M" : tok.toFixed(1) + "k";
+      agentsN.textContent = n; agentsN.classList.toggle("zero", !n);
+      lumenApp.className = "app " + (n ? "busy" : launched ? "ok" : "");
       rowN.textContent = launched + " launched"; subN.textContent = launched + " agent" + (launched === 1 ? "" : "s");
       if (n) {
         clearTimeout(settle);

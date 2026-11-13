@@ -246,3 +246,16 @@ canvas.mascot { cursor: pointer; }
 .perm .acts { display: flex; gap: 6px; }
 .perm button { all: unset; cursor: pointer; padding: 5px 11px; border-radius: 7px; font-size: 11.5px; font-weight: 600; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); }
 .perm button[data-allow] { background: #F08A52; border-color: transparent; color: #fff; }
+.app { position: relative; display: inline-grid; place-items: center; width: 26px; height: 26px; border-radius: 7px; flex: none; color: #fff; background: linear-gradient(145deg, var(--a), var(--b)); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -1px 0 rgba(0,0,0,0.2), 0 2px 6px -2px color-mix(in srgb, var(--b) 70%, transparent); }
+.app svg { width: 15px; height: 15px; filter: drop-shadow(0 1px 0 rgba(0,0,0,0.2)); }
+.app.app-top { width: 28px; height: 28px; }
+.app::after { content: ""; position: absolute; right: -3px; bottom: -3px; width: 9px; height: 9px; border-radius: 50%; border: 2px solid #1a1531; background: transparent; opacity: 0; transition: opacity 0.3s ease, background 0.3s ease; }
+.app.busy::after { opacity: 1; background: #FF8A3D; animation: pulse 1.6s ease-out infinite; }
+.app.att::after { opacity: 1; background: #FF9500; }
+.app.ok::after { opacity: 1; background: var(--green); }
+.app.app-top::after { display: none; }
+.tb svg { width: 13px; height: 13px; flex: none; }
+.tb.launch svg { width: 14px; height: 14px; }
+.tb .vmdot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); box-shadow: 0 0 6px var(--green); }
+.tb .cnt { min-width: 16px; padding: 0 5px; height: 16px; border-radius: 8px; display: inline-grid; place-items: center; font: 700 10px var(--mono); background: rgba(199,92,235,0.25); color: #e3c4ff; transition: background 0.3s ease; }
+.tb .cnt.zero { background: rgba(255,255,255,0.08); color: var(--ink-3); }
