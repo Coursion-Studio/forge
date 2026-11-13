@@ -8,14 +8,15 @@
   <link rel="canonical" href="https://forge.coursion.studio/" />
   <link rel="icon" type="image/png" href="icon.png" />
   <link rel="apple-touch-icon" href="icon.png" />
-  <link rel="stylesheet" href="home.css?v=2" />
+  <link rel="stylesheet" href="home.css?v=3" />
+  <link rel="stylesheet" href="stages.css?v=1" />
   <meta name="theme-color" content="#0E1224" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Forge" />
   <meta property="og:url" content="https://forge.coursion.studio/" />
   <meta property="og:title" content="Forge: a whole team of coding agents on your own Mac" />
   <meta property="og:description" content="Claude Code with a native UI, subagents you can watch, terminals, a board and test VMs, in one Mac app. Private beta: join the waitlist." />
-  <meta property="og:image" content="https://forge.coursion.studio/og.png?v=2" />
+  <meta property="og:image" content="https://forge.coursion.studio/og.png?v=3" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Forge: a whole team of coding agents on your own Mac" />
@@ -23,7 +24,7 @@
   <meta name="twitter:site" content="@kuraydev" />
   <meta name="twitter:title" content="Forge: a whole team of coding agents on your own Mac" />
   <meta name="twitter:description" content="Claude Code with a native UI, subagents you can watch, terminals, a board and test VMs, in one Mac app. Join the waitlist." />
-  <meta name="twitter:image" content="https://forge.coursion.studio/og.png?v=2" />
+  <meta name="twitter:image" content="https://forge.coursion.studio/og.png?v=3" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Forge","operatingSystem":"macOS 15 or later","applicationCategory":"DeveloperApplication","url":"https://forge.coursion.studio/","description":"A native Mac workbench for coding agents."}</script>
   <script defer src="https://polaris-backend-489776622782.europe-west1.run.app/api/v1/analytics/t.js" data-site="forge.coursion.studio"></script>
 </head>
@@ -62,9 +63,33 @@
         <p class="note">One email when your invite is ready. macOS 15 or later.</p>
       </div>
     </div>
-    <figure class="hero-shot reveal">
+    <figure class="hero-shot reveal live" id="ws-demo" style="--accent:var(--purple)">
       <div class="glow" aria-hidden="true"></div>
-      <div class="shot"><img src="screenshots/workspace.webp" width="1500" height="940" alt="A Forge workspace: a Claude Code pane beside the project board" fetchpriority="high" /></div>
+      <div class="mock">
+        <div class="mbar"><span class="tl"><span></span><span></span><span></span></span>Lumen · 1 · Claude<span class="sp"></span><span class="chip on">opus</span><span class="chip">effort high</span></div>
+        <div class="ws">
+          <div class="ws-side" aria-hidden="true">
+            <span class="lbl">Workspaces</span>
+            <div class="ws-row sel"><span class="ic" style="--c:#C75CEB"></span><span>Lumen<small>agents working</small></span><span class="dot live" style="--c:#C75CEB"></span></div>
+            <div class="ws-row"><span class="ic" style="--c:#389EFF"></span><span>Tidepool<small>iOS</small></span></div>
+            <div class="ws-row"><span class="ic" style="--c:#3DDC97"></span><span>Atlas API<small>1 uncommitted</small></span></div>
+            <div class="ws-row"><span class="ic" style="--c:#FFB547"></span><span>Orbit<small>build passed</small></span></div>
+          </div>
+          <div class="ws-main">
+            <div class="ws-tx" aria-hidden="true">
+              <div class="msg-user">Move search to trigrams, review the cookie change, and find every price helper.</div>
+              <div class="msg-ai">Three independent jobs. I'll hand each to its own subagent and keep you posted here.</div>
+              <div class="tool"><span class="ic" style="--c:#C75CEB">Agent</span>3 subagents launched<span class="ok">✓</span></div>
+            </div>
+            <div class="ws-pulse"><span class="dot live" style="--c:#C75CEB"></span><b data-pulse>Working</b><span class="sp"></span><span class="chip">42% context</span></div>
+          </div>
+          <div class="ws-agents">
+            <div class="lbl"><span>Subagents</span><span data-count>0 running</span></div>
+            <div class="list" style="display:grid;gap:8px" aria-live="polite"></div>
+          </div>
+        </div>
+      </div>
+      <div class="try"><button type="button" data-spawn><span class="kc">S</span>Split another job</button><span>or press S</span></div>
     </figure>
   </header>
 
@@ -203,8 +228,19 @@
             <li><b>Screenshots as evidence.</b> A tester agent keeps what it saw, so "it works" comes with pictures.</li>
           </ul>
         </div>
-        <div class="stage reveal d1">
-          <div class="shot"><img src="screenshots/builds.webp" width="980" height="740" loading="lazy" decoding="async" alt="The Forge Builds window" /></div>
+        <div class="stage reveal d1 live" id="vm-demo">
+          <div class="mock">
+            <div class="mbar"><span class="tl"><span></span><span></span><span></span></span>Builds · VM<span class="sp"></span><span class="chip on" style="--c:#2FD3C9">vmt-pool-1 · 2/4 jobs</span></div>
+            <div class="vm">
+              <div class="vm-head"><span class="dot live" style="--c:#2FD3C9"></span><b>Lumen UI tests</b><span class="chip">tester agent</span><span class="sp"></span><span class="el">0:00</span></div>
+              <div class="vm-steps" aria-hidden="true">
+                <div class="vm-step"><i></i><span>queue</span></div><div class="vm-step"><i></i><span>clone</span></div><div class="vm-step"><i></i><span>boot</span></div><div class="vm-step"><i></i><span>sync</span></div><div class="vm-step"><i></i><span>run</span></div><div class="vm-step"><i></i><span>copy back</span></div><div class="vm-step"><i></i><span>done</span></div>
+              </div>
+              <div class="vm-log" aria-live="polite"></div>
+              <div class="vm-res"></div>
+            </div>
+          </div>
+          <div class="try"><button type="button" data-run>Run tests in the VM</button></div>
         </div>
       </div>
     </section>
@@ -238,7 +274,24 @@
           <h2 id="board-h">A plan your agents can read and update.</h2>
           <p class="lede">The board lives in your repo as Markdown. Agents pick up cards, move them and file new ones as they work. Schedules run a prompt or a script on a timer.</p>
         </div>
-        <div class="stage reveal d1"><div class="shot"><img src="screenshots/board.webp" width="1500" height="530" loading="lazy" decoding="async" alt="The Forge board with Backlog, To Do, Doing, Review and Done columns" /></div></div>
+        <div class="stage reveal d1 live">
+          <div class="mock">
+            <div class="mbar"><span class="tl"><span></span><span></span><span></span></span>Board · lumen-web/.forge/board.md<span class="sp"></span><span class="chip">drag a card</span></div>
+            <div class="kb" id="kb-demo">
+              <div class="kb-col"><h4>Backlog <span></span></h4>
+                <div class="kb-card" draggable="true" tabindex="0">Dark mode for receipts<div class="meta"><span class="chip">ui</span></div></div>
+                <div class="kb-card" draggable="true" tabindex="0">Export orders as CSV<div class="meta"><span class="chip">feature</span></div></div></div>
+              <div class="kb-col"><h4>To Do <span></span></h4>
+                <div class="kb-card" draggable="true" tabindex="0" data-auto>Round the cart total once<div class="meta"><span class="chip on" style="--c:#FF6B6B">bug</span><span class="chip on" style="--c:#FFB547">high</span></div><span class="who">Waiting</span></div>
+                <div class="kb-card" draggable="true" tabindex="0">TypeError in checkout<div class="meta"><span class="chip on" style="--c:#FF6B6B">sentry</span></div><span class="who">Filed from a report</span></div></div>
+              <div class="kb-col"><h4>Doing <span></span></h4>
+                <div class="kb-card" draggable="true" tabindex="0">Search index migration<div class="meta"><span class="chip on" style="--c:#389EFF">sonnet</span></div><span class="who">Claude · editing</span></div></div>
+              <div class="kb-col"><h4>Review <span></span></h4></div>
+              <div class="kb-col"><h4>Done <span></span></h4>
+                <div class="kb-card" draggable="true" tabindex="0">Cache price lookups<div class="meta"><span class="chip on" style="--c:#3DDC97">landed</span></div></div></div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -320,7 +373,19 @@
           <h2 id="home-h">Every project at a glance.</h2>
           <p class="lede">Home (⌘⇧H) gathers what needs you across every workspace: uncommitted work, open cards, subagents, reports, the janitor and recurring jobs.</p>
         </div>
-        <div class="stage reveal d1"><div class="shot"><img src="screenshots/home.webp" width="1500" height="870" loading="lazy" decoding="async" alt="Forge Home dashboard" /></div></div>
+        <div class="stage reveal d1 live">
+          <div class="mock">
+            <div class="mbar"><span class="tl"><span></span><span></span><span></span></span>Home<span class="sp"></span><span class="kc">⌘</span><span class="kc">⇧</span><span class="kc">H</span></div>
+            <div class="hm" id="hm-demo">
+              <button class="hm-tile" type="button" style="--c:#C75CEB"><span class="k">Subagents</span><span class="n" data-to="6">0</span><span class="d">running across 3 projects</span></button>
+              <button class="hm-tile" type="button" style="--c:#389EFF"><span class="k">Uncommitted</span><span class="n" data-to="4">0</span><span class="d">Lumen 3, Atlas API 1 · ✦ Commit with Claude</span></button>
+              <button class="hm-tile" type="button" style="--c:#FFB547"><span class="k">Open cards</span><span class="n" data-to="12">0</span><span class="d">2 high priority, 1 from Sentry</span></button>
+              <button class="hm-tile" type="button" style="--c:#3DDC97"><span class="k">Endpoints</span><span class="n" data-to="5">0</span><span class="d">healthy · staging slow, 1.6 s</span></button>
+              <button class="hm-tile" type="button" style="--c:#FF5189"><span class="k">Janitor</span><span class="n" data-to="18">0</span><span class="d">GB reclaimed this week</span></button>
+              <button class="hm-tile" type="button" style="--c:#2FD3C9"><span class="k">Schedules</span><span class="n" data-to="3">0</span><span class="d">next: nightly report at 08:00</span></button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -458,5 +523,6 @@
       els.forEach(function (el) { io.observe(el); });
     })();
   </script>
+  <script src="stages.js?v=1" defer></script>
 </body>
 </html>
