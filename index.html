@@ -3,28 +3,28 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Forge: run a team of coding agents on your own Mac (private beta)</title>
-  <meta name="description" content="Forge is an agent-first workbench for Mac. Claude Code panes, terminals, a browser, code review and a board for every project, in one native app. Your files, your shell, your keys. Join the waitlist." />
+  <title>Forge: a whole team of coding agents on your own Mac</title>
+  <meta name="description" content="Forge is a native Mac workbench for coding agents. Claude Code with a real UI, subagents you can watch, terminals, a board and headless test VMs for every project. Agents prove their work before it ships. Private beta: join the waitlist." />
   <link rel="canonical" href="https://forge.coursion.studio/" />
   <link rel="icon" type="image/png" href="icon.png" />
   <link rel="apple-touch-icon" href="icon.png" />
-  <link rel="stylesheet" href="site.css?v=1" />
+  <link rel="stylesheet" href="home.css?v=2" />
   <meta name="theme-color" content="#0E1224" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Forge" />
   <meta property="og:url" content="https://forge.coursion.studio/" />
-  <meta property="og:title" content="Forge: run a team of coding agents on your own Mac" />
-  <meta property="og:description" content="Claude Code panes, terminals, a browser, review and a board for every project, in one native Mac app. Private beta: join the waitlist." />
-  <meta property="og:image" content="https://forge.coursion.studio/og.png?v=1" />
+  <meta property="og:title" content="Forge: a whole team of coding agents on your own Mac" />
+  <meta property="og:description" content="Claude Code with a native UI, subagents you can watch, terminals, a board and test VMs, in one Mac app. Private beta: join the waitlist." />
+  <meta property="og:image" content="https://forge.coursion.studio/og.png?v=2" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Forge: run a team of coding agents on your own Mac" />
+  <meta property="og:image:alt" content="Forge: a whole team of coding agents on your own Mac" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@kuraydev" />
-  <meta name="twitter:title" content="Forge: run a team of coding agents on your own Mac" />
-  <meta name="twitter:description" content="Claude Code panes, terminals, a browser, review and a board for every project, in one native Mac app. Join the waitlist." />
-  <meta name="twitter:image" content="https://forge.coursion.studio/og.png?v=1" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Forge","operatingSystem":"macOS 15 or later","applicationCategory":"DeveloperApplication","url":"https://forge.coursion.studio/","description":"An agent-first development workbench for Mac."}</script>
+  <meta name="twitter:title" content="Forge: a whole team of coding agents on your own Mac" />
+  <meta name="twitter:description" content="Claude Code with a native UI, subagents you can watch, terminals, a board and test VMs, in one Mac app. Join the waitlist." />
+  <meta name="twitter:image" content="https://forge.coursion.studio/og.png?v=2" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Forge","operatingSystem":"macOS 15 or later","applicationCategory":"DeveloperApplication","url":"https://forge.coursion.studio/","description":"A native Mac workbench for coding agents."}</script>
   <script defer src="https://polaris-backend-489776622782.europe-west1.run.app/api/v1/analytics/t.js" data-site="forge.coursion.studio"></script>
 </head>
 <body>
@@ -33,22 +33,21 @@
   <nav class="top" aria-label="Main">
     <a class="brand" href="#top"><img src="icon.png" alt="" width="28" height="28" /><span>Forge</span></a>
     <div class="top-links">
-      <a href="#agents">Agents</a>
-      <a href="#workspace">Workspace</a>
+      <a href="#claude">Claude Code</a>
+      <a href="#subagents">Subagents</a>
+      <a href="#ship">Shipping</a>
       <a href="#faq">FAQ</a>
       <a class="top-cta" href="#join">Join the waitlist</a>
     </div>
   </nav>
 
   <header class="hero" id="top">
-    <div class="mesh" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <div class="mesh" aria-hidden="true"><i></i><i></i><i></i></div>
     <div class="dots" aria-hidden="true"></div>
-
     <div class="hero-copy">
-      <span class="badge"><span class="badge-dot"></span>Private beta</span>
-      <h1>Run a team of coding agents.<br /><span class="grad">On your own Mac.</span></h1>
-      <p class="sub">Forge is an agent-first workbench. Every project gets Claude Code panes, terminals, a browser, code review and a board, in one native app. Your files, your shell, your keys.</p>
-
+      <span class="badge"><span class="badge-dot"></span>Private beta · free during the beta</span>
+      <h1>A whole team of coding agents.<br /><span class="grad">Working on your own Mac.</span></h1>
+      <p class="sub">Forge gives every project Claude Code with a native UI, subagents you can watch, terminals, a planning board and test VMs. Agents prove their work before it ships. Your files, your shell, your keys.</p>
       <div class="join" id="join">
         <form class="waitlist" method="POST" novalidate>
           <label class="sr-only" for="email-hero">Email address</label>
@@ -60,216 +59,345 @@
           <button class="btn" type="submit"><span class="btn-label">Join the waitlist</span></button>
         </form>
         <p class="status" role="status" aria-live="polite"></p>
-        <p class="note">Free during the beta. One email when your invite is ready. macOS 15 or later.</p>
+        <p class="note">One email when your invite is ready. macOS 15 or later.</p>
       </div>
     </div>
-
-    <div class="stage" aria-hidden="true">
-      <div class="stage-glow"></div>
-      <div class="win hero-win">
-        <div class="win-bar">
-          <span class="lights"><i></i><i></i><i></i></span>
-          <span class="win-title">atlas-api</span>
-          <span class="win-chips"><span class="chip run">▶ RUN</span><span class="chip">Agents</span></span>
-        </div>
-        <div class="win-body">
-          <aside class="side">
-            <div class="side-h">Workspaces</div>
-            <div class="ws on"><span class="ws-ic a1"></span>atlas-api<span class="ws-badge">3</span></div>
-            <div class="ws"><span class="ws-ic a2"></span>orbit-ios</div>
-            <div class="ws"><span class="ws-ic a3"></span>marketing-site</div>
-            <div class="ws"><span class="ws-ic a4"></span>notes-mac</div>
-          </aside>
-          <section class="pane chat">
-            <div class="pane-h"><span class="pane-name">Workspace 1</span><span class="model">opus</span><span class="ctx"><i style="width:38%"></i></span></div>
-            <div class="msg user">Add rate limiting to the public API and cover it with tests.</div>
-            <div class="msg bot">Splitting this up. A worker builds it in its own worktree, a reviewer checks it after.</div>
-            <div class="tool"><span class="t-ic">✎</span>Edit <code>rateLimit.ts</code><span class="diff"><b class="add">+48</b> <b class="del">−3</b></span></div>
-            <div class="tool"><span class="t-ic">$</span>Bash <code>pnpm test</code><span class="pass">passed</span></div>
-            <div class="composer"><span>Message Claude…</span><kbd>/</kbd><kbd>@</kbd></div>
-          </section>
-          <section class="pane threads">
-            <div class="pane-h"><span class="pane-name">Subagents</span><span class="count">2 running</span></div>
-            <div class="sa run">
-              <div class="sa-top"><span class="pulse"></span><b>Build the rate limiter</b></div>
-              <div class="sa-chips"><span>sonnet</span><span>worker</span><span>worktree</span></div>
-              <div class="sa-now">Running the test suite…</div>
-            </div>
-            <div class="sa run">
-              <div class="sa-top"><span class="pulse"></span><b>Find every public route</b></div>
-              <div class="sa-chips"><span>haiku</span><span>explorer</span></div>
-              <div class="sa-now">Reading <code>routes/index.ts</code></div>
-            </div>
-            <div class="sa done">
-              <div class="sa-top"><span class="tick">✓</span><b>Review the change</b></div>
-              <div class="sa-chips"><span>opus</span><span>reviewer</span></div>
-              <div class="sa-now">No blocking issues. Two edge cases added as tests.</div>
-            </div>
-          </section>
-        </div>
-      </div>
-    </div>
+    <figure class="hero-shot reveal">
+      <div class="glow" aria-hidden="true"></div>
+      <div class="shot"><img src="screenshots/workspace.webp" width="1500" height="940" alt="A Forge workspace: a Claude Code pane beside the project board" fetchpriority="high" /></div>
+    </figure>
   </header>
 
   <main>
-    <section class="sec" id="agents">
-      <div class="sec-head reveal">
-        <p class="eyebrow">Parallel agents</p>
-        <h2>Run many agents at once. See what every subagent is doing.</h2>
-        <p>Open as many Claude Code panes as you like. Each subagent becomes a card with its model, its files and what it is doing right now, so nothing runs out of sight.</p>
+    <section class="inside" aria-labelledby="inside-h">
+      <div class="wrap">
+        <h2 id="inside-h">Everything an agent needs, already in the room</h2>
+        <p>Open a project and every tool is one split or one shortcut away. Panes keep their state when you switch workspaces.</p>
+        <div class="panes reveal">
+          <div class="pane" style="--c:#C75CEB"><i>✦</i><span>Claude Code<small>native UI or TUI</small></span></div>
+          <div class="pane" style="--c:#389EFF"><i>⧉</i><span>Subagents<small>cards and a live feed</small></span></div>
+          <div class="pane" style="--c:#3DDC97"><i>›_</i><span>Terminal<small>command blocks</small></span></div>
+          <div class="pane" style="--c:#FFB547"><i>▤</i><span>Board<small>kanban in your repo</small></span></div>
+          <div class="pane" style="--c:#2FD3C9"><i>◷</i><span>Schedules<small>recurring tasks</small></span></div>
+          <div class="pane" style="--c:#FF5189"><i>⚒</i><span>Builds<small>queue, VMs, installs</small></span></div>
+          <div class="pane" style="--c:#C75CEB"><i>↧</i><span>Land<small>verified merges</small></span></div>
+          <div class="pane" style="--c:#389EFF"><i>◔</i><span>Reports<small>Sentry and PostHog</small></span></div>
+          <div class="pane" style="--c:#3DDC97"><i>♡</i><span>Endpoints<small>health checks</small></span></div>
+          <div class="pane" style="--c:#FFB547"><i>¶</i><span>Markdown<small>docs and plans</small></span></div>
+          <div class="pane" style="--c:#2FD3C9"><i>≡</i><span>Log tail<small>follow any file</small></span></div>
+          <div class="pane" style="--c:#FF5189"><i>⚿</i><span>Secrets<small>Keychain, on request</small></span></div>
+        </div>
       </div>
-      <div class="visual reveal">
-        <div class="win agents-win">
-          <div class="win-bar"><span class="lights"><i></i><i></i><i></i></span><span class="win-title">Agents</span></div>
-          <div class="agents-grid">
-            <div class="ag-col">
-              <div class="ag-h"><span class="ws-ic a1"></span>atlas-api · Workspace 1<span class="st working">working</span></div>
-              <div class="ag-row"><span class="pulse"></span>Build the rate limiter<span class="m">sonnet</span></div>
-              <div class="ag-row"><span class="pulse"></span>Find every public route<span class="m">haiku</span></div>
-              <div class="ag-row done"><span class="tick">✓</span>Review the change<span class="m">opus</span></div>
+    </section>
+
+    <section class="sec" id="claude" style="--accent:var(--purple)" aria-labelledby="claude-h">
+      <div class="glowbg" aria-hidden="true"></div>
+      <div class="wrap split">
+        <div class="copy reveal">
+          <span class="kicker">Claude Code, native</span>
+          <h2 id="claude-h">The Claude Code you use, with a real interface.</h2>
+          <p class="lede">Forge runs your own Claude Code and draws its conversation natively. Read diffs, approve tools and switch models without leaving the pane.</p>
+          <ul class="points">
+            <li><b>Readable transcript.</b> Markdown, highlighted code, Edit diffs, Bash output and a live to-do list.</li>
+            <li><b>Permission cards.</b> Allow once or always, right where the tool asks.</li>
+            <li><b>Slash panels.</b> Model, effort, agents, MCP and permissions as panels above the composer.</li>
+            <li><b>Flip to the terminal TUI</b> any time. Same session, same history.</li>
+          </ul>
+        </div>
+        <div class="stage reveal d1" aria-hidden="true">
+          <div class="mock">
+            <div class="mbar"><span class="tl"><span></span><span></span><span></span></span>Claude Code · lumen-web<span class="sp"></span><span class="chip on">opus</span><span class="chip">effort high</span><span class="chip">42% context</span></div>
+            <div class="mbody">
+              <div class="msg-user">Fix the rounding on the cart summary and add a test.</div>
+              <div class="msg-ai">The total adds rounded line prices. I'll round <b>once, at the end</b>.</div>
+              <div class="tool"><span class="ic" style="--c:#389EFF">Read</span>src/cart/summary.ts<span class="ok">✓</span></div>
+              <div class="diff">
+                <div class="h">src/cart/summary.ts</div>
+                <div class="d">- return lines.reduce((s, l) =&gt; s + round(l.price), 0)</div>
+                <div class="a">+ return round(lines.reduce((s, l) =&gt; s + l.price, 0))</div>
+              </div>
+              <div class="perm">
+                <span class="t">Claude wants to run a command</span>
+                <code>npm test -- cart</code>
+                <div class="row"><span class="pbtn go">Allow</span><span class="pbtn">Always allow npm test</span><span class="pbtn">Deny</span></div>
+              </div>
             </div>
-            <div class="ag-col">
-              <div class="ag-h"><span class="ws-ic a2"></span>orbit-ios · Workspace 2<span class="st working">working</span></div>
-              <div class="ag-row"><span class="pulse"></span>Fix the onboarding crash<span class="m">sonnet</span></div>
-              <div class="ag-row done"><span class="tick">✓</span>Reproduce on iOS 18<span class="m">sonnet</span></div>
-            </div>
-            <div class="ag-col">
-              <div class="ag-h"><span class="ws-ic a3"></span>marketing-site · Workspace 3<span class="st idle">idle</span></div>
-              <div class="ag-row done"><span class="tick">✓</span>Tighten hero copy<span class="m">sonnet</span></div>
+            <div class="panel"><div class="sel"><span>/model</span><span>opus · sonnet · haiku</span></div><div><span>/agents</span><span>4 types</span></div><div><span>/mcp</span><span>2 servers</span></div></div>
+            <div class="composer"><span class="slash">/</span>Ask Claude, @ a file, drop an image…</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="subagents" style="--accent:var(--blue)" aria-labelledby="sub-h">
+      <div class="glowbg" aria-hidden="true"></div>
+      <div class="wrap split flip">
+        <div class="copy reveal">
+          <span class="kicker">Parallel subagents</span>
+          <h2 id="sub-h">Watch every subagent work, live.</h2>
+          <p class="lede">When Claude splits a job, each subagent gets a card: its model, its worktree, the step it is on and what it costs. No guessing what is running.</p>
+          <ul class="points">
+            <li><b>Cards or one activity feed</b> beside the conversation.</li>
+            <li><b>Honest status.</b> "Queued for the build lock, 2m" instead of a spinner that says "Starting".</li>
+            <li><b>The Agents window</b> (⌘⇧G) shows every pane and subagent across all projects, with cost and run-time warnings.</li>
+            <li><b>The right model per job.</b> Scouts on Haiku, builders on Sonnet, reviewers on Opus.</li>
+          </ul>
+        </div>
+        <div class="stage reveal d1" aria-hidden="true">
+          <div class="mock">
+            <div class="mbar"><span class="tl"><span></span><span></span><span></span></span>Agents · 4 subagents<span class="sp"></span><span class="chip">$1.84 today</span></div>
+            <div class="agents">
+              <div class="acard" style="--c:#389EFF"><div class="h"><span class="dot live" style="--c:#389EFF"></span>Search index migration</div><div class="chips"><span class="chip on" style="--c:#389EFF">sonnet</span><span class="chip">worker</span><span class="chip">worktree</span></div><div class="now">Editing src/search/trigram.ts · 3m 12s</div><div class="bar" style="--w:64%"><i></i></div></div>
+              <div class="acard" style="--c:#C75CEB"><div class="h"><span class="dot live" style="--c:#C75CEB"></span>Review: signed cookies</div><div class="chips"><span class="chip on" style="--c:#C75CEB">opus</span><span class="chip">reviewer</span><span class="chip">effort high</span></div><div class="now">Running the test suite · 1m 40s</div><div class="bar" style="--w:42%"><i></i></div></div>
+              <div class="acard" style="--c:#FFB547"><div class="h"><span class="dot" style="--c:#FFB547"></span>Image upload progress</div><div class="chips"><span class="chip on" style="--c:#FFB547">sonnet</span><span class="chip">worker</span></div><div class="now">Queued for the build lock behind "Search index" · 2m 10s</div><div class="bar" style="--w:18%"><i></i></div></div>
+              <div class="acard" style="--c:#3DDC97"><div class="h"><span class="dot" style="--c:#3DDC97"></span>Find every price helper</div><div class="chips"><span class="chip on" style="--c:#3DDC97">haiku</span><span class="chip">explorer</span></div><div class="now">Done · 14 files read · $0.02</div><div class="bar" style="--w:100%"><i></i></div></div>
             </div>
           </div>
-          <div class="team-note"><span class="peer">Workspace 2 → Workspace 1</span> “I changed the shared auth client. Pull before you touch it.”</div>
         </div>
       </div>
     </section>
 
-    <section class="sec split" id="proof">
-      <div class="sec-head left reveal">
-        <p class="eyebrow">Proof, not promises</p>
-        <h2>Agents show the work passed before they say done.</h2>
-        <p>A hand-back that claims “done” needs a passing test run on that exact code. Finished branches land on main through your own gate, and an install waits until every agent is idle, so no one gets cut off mid-task. App tests run in the background, not on your screen.</p>
-      </div>
-      <div class="visual reveal">
-        <div class="win proof-win">
-          <div class="win-bar"><span class="lights"><i></i><i></i><i></i></span><span class="win-title">Ready to land</span></div>
-          <ol class="steps">
-            <li class="ok"><span class="s-ic">✓</span><div><b>Verified</b><span>Tests passed on the commit it hands back</span></div></li>
-            <li class="ok"><span class="s-ic">✓</span><div><b>Rebased on main</b><span>forge/7c2e · 3 commits</span></div></li>
-            <li class="ok"><span class="s-ic">✓</span><div><b>Gate green</b><span>Your project’s own check</span></div></li>
-            <li class="ok"><span class="s-ic">✓</span><div><b>Landed</b><span>Fast-forwarded, worktree cleaned up</span></div></li>
-            <li class="wait"><span class="s-ic"><span class="pulse"></span></span><div><b>Install when idle</b><span>Waiting for 2 agents to finish</span></div></li>
-          </ol>
+    <section class="sec" id="ship" style="--accent:var(--green)" aria-labelledby="ship-h">
+      <div class="glowbg" aria-hidden="true"></div>
+      <div class="wrap split">
+        <div class="copy reveal">
+          <span class="kicker">Proof, then ship</span>
+          <h2 id="ship-h">Agents prove their work before it lands.</h2>
+          <p class="lede">"Tests pass" has to be true for the exact commit handed back. Then Forge lands the branch and cleans up after it.</p>
+          <ul class="points">
+            <li><b>Verified hand-backs.</b> A subagent's "done" is checked against a green run of that exact tree, or sent back.</li>
+            <li><b>One-click Land.</b> Rebase on main, run your gate, fast-forward, bump the build, remove the worktree.</li>
+            <li><b>Failures go back to the agent</b> that owns the branch, with the failing lines.</li>
+            <li><b>Install when idle.</b> Your app rebuilds itself only once every agent has stopped working.</li>
+          </ul>
+        </div>
+        <div class="stage reveal d1" aria-hidden="true">
+          <div class="mock">
+            <div class="mbar"><span class="tl"><span></span><span></span><span></span></span>Land · forge/search-index<span class="sp"></span><span class="chip on" style="--c:#3DDC97">verified</span></div>
+            <div class="term">
+              <div><span class="p">$</span> forge-verify</div>
+              <div class="dim">vitest run · 214 passed</div>
+              <div class="ok">FORGE-VERIFY ok tree=9f3c2e1 checkout=lumen-web/agent-a41f</div>
+            </div>
+            <div class="flow">
+              <div class="step" style="--c:#3DDC97"><span class="n">1</span><div><b>Rebase onto main</b><span>3 commits, no conflicts</span></div><span class="chip on" style="--c:#3DDC97">done</span></div>
+              <div class="step" style="--c:#3DDC97"><span class="n">2</span><div><b>Run the gate</b><code>npm test &amp;&amp; npm run build</code></div><span class="chip on" style="--c:#3DDC97">green</span></div>
+              <div class="step" style="--c:#389EFF"><span class="n">3</span><div><b>Fast-forward main, bump build</b><span>worktree and branch removed</span></div><span class="chip on" style="--c:#389EFF">landed</span></div>
+              <div class="step" style="--c:#FFB547"><span class="n">4</span><div><b>Install when idle</b><span>waiting for 2 agents to finish</span></div><span class="chip on" style="--c:#FFB547">queued</span></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="sec cta-mid reveal" aria-labelledby="mid-h">
-      <h2 id="mid-h">Want in early?</h2>
-      <p>We are letting people in from the waitlist in small groups.</p>
-      <div class="join">
-        <form class="waitlist" method="POST" novalidate>
-          <label class="sr-only" for="email-mid">Email address</label>
-          <input id="email-mid" name="email" type="email" required autocomplete="email" inputmode="email" placeholder="you@company.com" />
-          <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
-          <input type="hidden" name="_subject" value="New Forge waitlist signup" />
-          <input type="hidden" name="ref" value="" />
-          <input type="hidden" name="placement" value="middle" />
-          <button class="btn" type="submit"><span class="btn-label">Join the waitlist</span></button>
-        </form>
-        <p class="status" role="status" aria-live="polite"></p>
-      </div>
-    </section>
-
-    <section class="sec" id="workspace">
-      <div class="sec-head reveal">
-        <p class="eyebrow">One workspace per project</p>
-        <h2>Everything an agent needs, already open.</h2>
-        <p>Open a folder and get a workspace wired for it: terminals, Claude, a browser for the dev server, git review and a planning board your agents can read and update.</p>
-      </div>
-      <div class="visual reveal">
-        <div class="tiles">
-          <div class="tile t-term"><div class="tile-h"><span class="ti">›_</span>Terminal</div><pre><span class="p">~/atlas-api ❯</span> pnpm dev
-<span class="g">ready</span> on localhost:3000</pre></div>
-          <div class="tile t-claude"><div class="tile-h"><span class="ti">✦</span>Claude Code</div><p>Native chat with diffs, permission cards and a checklist, or the plain terminal. Same session either way.</p></div>
-          <div class="tile t-browser"><div class="tile-h"><span class="ti">◎</span>Browser</div><div class="url">localhost:3000/docs</div><div class="page"><i></i><i></i><i></i></div></div>
-          <div class="tile t-review"><div class="tile-h"><span class="ti">±</span>Review</div><pre><span class="g">+ const limit = rateLimit(60)</span>
-<span class="r">- app.use(cors())</span>
-<span class="g">+ app.use(cors(), limit)</span></pre></div>
-          <div class="tile t-board"><div class="tile-h"><span class="ti">▦</span>Board</div><div class="cols"><div><b>To do</b><i></i><i></i></div><div><b>Doing</b><i class="hot"></i></div><div><b>Done</b><i></i><i></i><i></i></div></div></div>
-          <div class="tile t-more"><div class="tile-h"><span class="ti">＋</span>And more</div><p>Notes, HTTP requests, log tail, markdown, side-by-side model compare, a one-click Run button and health checks for your deployed endpoints.</p></div>
+    <section class="sec" id="vm" style="--accent:var(--teal)" aria-labelledby="vm-h">
+      <div class="glowbg" aria-hidden="true"></div>
+      <div class="wrap split flip">
+        <div class="copy reveal">
+          <span class="kicker">Headless test VMs</span>
+          <h2 id="vm-h">App tests that never touch your screen.</h2>
+          <p class="lede">UI tests, simulator builds and screenshots run in throwaway macOS VMs. Your cursor and focus stay yours while agents test.</p>
+          <ul class="points">
+            <li><b>A shared pool.</b> Agents queue for a VM instead of fighting over your desktop.</li>
+            <li><b>Watch each run</b> in the Builds window: queue, clone, boot, run, copy back.</li>
+            <li><b>Screenshots as evidence.</b> A tester agent keeps what it saw, so "it works" comes with pictures.</li>
+          </ul>
+        </div>
+        <div class="stage reveal d1">
+          <div class="shot"><img src="screenshots/builds.webp" width="980" height="740" loading="lazy" decoding="async" alt="The Forge Builds window" /></div>
         </div>
       </div>
     </section>
 
-    <section class="sec split rev" id="local">
-      <div class="sec-head left reveal">
-        <p class="eyebrow">Mac-native and local</p>
-        <h2>Your Mac, your files, your keys.</h2>
-        <p>No VMs, no containers, no servers. Agents work in your real folders with your own shell. Forge runs the Claude Code you already use, and any API key you add stays in your Keychain.</p>
+    <section class="sec" style="padding-top:0" aria-labelledby="mid-h">
+      <div class="wrap">
+        <div class="mid-join reveal">
+          <h2 id="mid-h">Want your agents in here?</h2>
+          <p>We are inviting developers from the waitlist in small groups.</p>
+          <div class="join">
+            <form class="waitlist" method="POST" novalidate>
+              <label class="sr-only" for="email-mid">Email address</label>
+              <input id="email-mid" name="email" type="email" required autocomplete="email" inputmode="email" placeholder="you@company.com" />
+              <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+              <input type="hidden" name="_subject" value="New Forge waitlist signup" />
+              <input type="hidden" name="ref" value="" />
+              <input type="hidden" name="placement" value="middle" />
+              <button class="btn" type="submit"><span class="btn-label">Join the waitlist</span></button>
+            </form>
+            <p class="status" role="status" aria-live="polite"></p>
+          </div>
+        </div>
       </div>
-      <div class="visual reveal">
+    </section>
+
+    <section class="sec" id="board" style="--accent:var(--amber)" aria-labelledby="board-h">
+      <div class="glowbg" aria-hidden="true"></div>
+      <div class="wrap">
+        <div class="center-head reveal">
+          <span class="kicker">Board and schedules</span>
+          <h2 id="board-h">A plan your agents can read and update.</h2>
+          <p class="lede">The board lives in your repo as Markdown. Agents pick up cards, move them and file new ones as they work. Schedules run a prompt or a script on a timer.</p>
+        </div>
+        <div class="stage reveal d1"><div class="shot"><img src="screenshots/board.webp" width="1500" height="530" loading="lazy" decoding="async" alt="The Forge board with Backlog, To Do, Doing, Review and Done columns" /></div></div>
+      </div>
+    </section>
+
+    <section class="sec" id="terminal" style="--accent:var(--green)" aria-labelledby="term-h">
+      <div class="glowbg" aria-hidden="true"></div>
+      <div class="wrap split">
+        <div class="copy reveal">
+          <span class="kicker">Terminals</span>
+          <h2 id="term-h">Terminals that know where each command starts.</h2>
+          <p class="lede">Every command is a block you can copy, rerun or hand to Claude. Code in an answer gets a Run in Terminal button that picks an idle shell for you.</p>
+          <ul class="points">
+            <li><b>Command blocks</b> with exit status and timing.</li>
+            <li><b>A composer</b> for long commands, ⌃R history search.</li>
+            <li><b>Run in Terminal</b> from any Claude answer. Risky commands still ask.</li>
+          </ul>
+        </div>
+        <div class="stage reveal d1" aria-hidden="true">
+          <div class="mock">
+            <div class="mbar"><span class="tl"><span></span><span></span><span></span></span>Terminal · lumen-web<span class="sp"></span><span class="chip">main</span></div>
+            <div class="flow">
+              <div class="block"><div class="bh"><span class="p">❯</span> npm test -- cart<span class="sp"></span><span class="chip on" style="--c:#3DDC97">✓ 0 · 2.1s</span></div><div class="bo">✓ cart/summary.test.ts (6 tests)<br>Test Files 1 passed · Tests 6 passed</div></div>
+              <div class="block bad"><div class="bh"><span class="p">❯</span> npm run lint<span class="sp"></span><span class="chip on" style="--c:#FF6B6B">✗ 1 · 0.8s</span></div><div class="bo">src/cache.ts:2 'retries' is assigned but never used<br><span class="ask">Ask Claude to fix</span> <span class="ask">Copy</span> <span class="ask">Rerun</span></div></div>
+              <div class="block"><div class="bh"><span class="p">❯</span> git log --oneline -2<span class="sp"></span><span class="chip on" style="--c:#3DDC97">✓ 0</span></div><div class="bo">a41f2c9 Round the cart total once<br>7d03b1e Cache price lookups for five minutes</div></div>
+            </div>
+            <div class="composer"><span class="slash">❯</span>npm run dev</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" style="--accent:var(--pink)" aria-labelledby="more-h">
+      <div class="wrap">
+        <div class="center-head reveal">
+          <span class="kicker">And the rest of the job</span>
+          <h2 id="more-h">Commit, clean up, watch production, keep secrets.</h2>
+        </div>
+        <div class="bento">
+          <article class="tile reveal" style="--c:var(--blue)">
+            <div><span class="kicker">Commit with Claude</span><h3>Uncommitted work never piles up.</h3><p>Home lists every project with changes not committed or pushed. One click opens Claude in that checkout to group them into commits and flag anything unfinished.</p></div>
+            <div class="mock" aria-hidden="true">
+              <div class="eps"><div class="ep"><span class="chip on" style="--c:#3DDC97">main</span><b>Lumen</b><span class="m">3 uncommitted</span><span class="sp"></span><span class="chip on" style="--c:#C75CEB">✦ Commit</span></div><div class="ep"><span class="chip on" style="--c:#3DDC97">main</span><b>Tidepool</b><span class="m">1 unpushed</span><span class="sp"></span><span class="chip on" style="--c:#C75CEB">✦ Commit</span></div></div>
+            </div>
+          </article>
+          <article class="tile reveal d1" style="--c:var(--pink)">
+            <div><span class="kicker">Janitor</span><h3>Agents leave nothing behind.</h3><p>Merged worktrees, stale build caches and old test simulators are cleaned up every hour, and only when nothing still uses them.</p></div>
+            <div class="mock" aria-hidden="true">
+              <div class="eps"><div class="ep"><span class="dot" style="--c:#3DDC97"></span>4 merged worktrees removed<span class="sp"></span><span class="m">12.4 GB</span></div><div class="ep"><span class="dot" style="--c:#389EFF"></span>Orphaned build caches<span class="sp"></span><span class="m">6.1 GB</span></div><div class="ep"><span class="dot" style="--c:#FFB547"></span>1 worktree kept: unmerged work<span class="sp"></span><span class="m">safe</span></div></div>
+            </div>
+          </article>
+          <article class="tile reveal" style="--c:var(--amber)">
+            <div><span class="kicker">Health and reports</span><h3>Know when production breaks.</h3><p>Forge checks the endpoints your project declares and builds daily, weekly and monthly Sentry and PostHog reports. Loud new errors become board cards.</p></div>
+            <div class="mock" aria-hidden="true">
+              <div class="eps">
+                <div class="ep"><span class="dot" style="--c:#3DDC97"></span>API (prod)<span class="sp"></span><span class="m">182 ms · v2.4.1</span></div>
+                <div class="ep"><span class="dot" style="--c:#FFB547"></span>Staging<span class="sp"></span><span class="m">slow · 1.6 s</span></div>
+                <div class="ep"><span class="dot" style="--c:#FF6B6B"></span>New error: TypeError in checkout<span class="sp"></span><span class="m">→ board</span></div>
+              </div>
+              <div class="spark" style="--c:#FFB547"><i style="--h:30%"></i><i style="--h:42%"></i><i style="--h:38%"></i><i style="--h:55%"></i><i style="--h:48%"></i><i style="--h:62%"></i><i style="--h:70%"></i><i style="--h:58%"></i><i style="--h:76%"></i><i style="--h:84%"></i><i style="--h:72%"></i><i style="--h:90%"></i></div>
+            </div>
+          </article>
+          <article class="tile reveal d1" style="--c:var(--purple)">
+            <div><span class="kicker">Secrets</span><h3>Keys stay in your Keychain.</h3><p>Give a pane a secret as an environment variable, or let an agent ask with <code>forge-secret get</code>. You approve each request, and values are masked in transcripts and logs.</p></div>
+            <div class="mock" aria-hidden="true">
+              <div class="mbody">
+                <div class="perm" style="border-color:rgba(199,92,235,.45);background:rgba(199,92,235,.08)"><span class="t">Claude in lumen-web asks for STRIPE_TEST_KEY</span><code>forge-secret get STRIPE_TEST_KEY</code><div class="row"><span class="pbtn go" style="background:#C75CEB;color:#fff">Allow once</span><span class="pbtn">Deny</span></div></div>
+                <div class="tool">echo $STRIPE_TEST_KEY<span class="ok" style="color:var(--ink-3)">••••STRIPE_TEST_KEY••••</span></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="home" style="--accent:var(--blue)" aria-labelledby="home-h">
+      <div class="glowbg" aria-hidden="true"></div>
+      <div class="wrap">
+        <div class="center-head reveal">
+          <span class="kicker">Home</span>
+          <h2 id="home-h">Every project at a glance.</h2>
+          <p class="lede">Home (⌘⇧H) gathers what needs you across every workspace: uncommitted work, open cards, subagents, reports, the janitor and recurring jobs.</p>
+        </div>
+        <div class="stage reveal d1"><div class="shot"><img src="screenshots/home.webp" width="1500" height="870" loading="lazy" decoding="async" alt="Forge Home dashboard" /></div></div>
+      </div>
+    </section>
+
+    <section class="sec" id="local" style="--accent:var(--pink)" aria-labelledby="local-h">
+      <div class="wrap">
+        <div class="center-head reveal">
+          <span class="kicker">Mac-native and local</span>
+          <h2 id="local-h">No cloud VMs. No servers. Just your Mac.</h2>
+          <p class="lede">Forge is a native SwiftUI and AppKit app. Agents work on the real project on your disk.</p>
+        </div>
         <div class="local">
-          <div class="loc-row"><span class="loc-ic">⌂</span><div><b>Files stay in your folders</b><span>~/Projects/atlas-api</span></div></div>
-          <div class="loc-row"><span class="loc-ic">›_</span><div><b>Your shell, your PATH</b><span>zsh, your dotfiles, your tools</span></div></div>
-          <div class="loc-row"><span class="loc-ic">⚿</span><div><b>Keys in the Keychain</b><span>Secrets masked as ••••STRIPE_KEY•••• in transcripts</span></div></div>
-          <div class="loc-row"><span class="loc-ic">⌘</span><div><b>Built in SwiftUI and AppKit</b><span>A real Mac app, not a web wrapper</span></div></div>
+          <div class="reveal"><span class="ico">⌂</span><h3>Your files</h3><p>Projects stay in your folders and your git repos. Nothing is uploaded to run an agent.</p></div>
+          <div class="reveal d1"><span class="ico">›_</span><h3>Your shell</h3><p>Your PATH, your toolchains, your simulators. If it runs in your terminal, it runs in Forge.</p></div>
+          <div class="reveal d2"><span class="ico">⚿</span><h3>Your keys</h3><p>Claude Code signs in with your own account. Optional API keys live in the Keychain. No AI resale.</p></div>
         </div>
       </div>
     </section>
 
-    <section class="sec" id="calm">
-      <div class="sec-head reveal">
-        <p class="eyebrow">Calm by design</p>
-        <h2>Lots running. Nothing shouting.</h2>
-        <p>Home shows what changed across your projects. Builds shows what is compiling and what is waiting. Agents shows every pane and subagent in one window. Look when you want to.</p>
+    <section class="sec" style="--accent:var(--purple);padding-top:0" aria-labelledby="cmp-h">
+      <div class="wrap">
+        <div class="center-head reveal"><h2 id="cmp-h">Forge vs. a cloud IDE</h2></div>
+        <table class="compare reveal">
+          <thead><tr><th scope="col"><span class="sr-only">Aspect</span></th><th scope="col" class="us">Forge</th><th scope="col">Cloud IDE</th></tr></thead>
+          <tbody>
+            <tr><td>Where code runs</td><td class="us">Your Mac</td><td class="them">A rented VM or container</td></tr>
+            <tr><td>Your setup</td><td class="us">Your shell, tools and simulators</td><td class="them">Rebuilt in an image</td></tr>
+            <tr><td>Model access</td><td class="us">Your Claude Code, your keys</td><td class="them">Resold, metered credits</td></tr>
+            <tr><td>Parallel agents</td><td class="us">Each in its own git worktree, visible live</td><td class="them">Often one at a time</td></tr>
+            <tr><td>UI tests</td><td class="us">Local headless VMs, screenshots kept</td><td class="them">Remote runners, if any</td></tr>
+            <tr><td>Offline</td><td class="us">Everything but the model</td><td class="them">Nothing</td></tr>
+          </tbody>
+        </table>
       </div>
-      <div class="visual reveal">
-        <div class="trio">
-          <div class="win mini"><div class="win-bar"><span class="lights"><i></i><i></i><i></i></span><span class="win-title">Home</span></div>
-            <div class="mini-b"><div class="kv"><span>Uncommitted</span><b>2 projects</b></div><div class="kv"><span>Board</span><b>5 open cards</b></div><div class="kv"><span>Endpoints</span><b class="okc">all healthy</b></div></div></div>
-          <div class="win mini"><div class="win-bar"><span class="lights"><i></i><i></i><i></i></span><span class="win-title">Builds</span></div>
-            <div class="mini-b"><div class="kv"><span>atlas-api</span><b class="busy">building</b></div><div class="kv"><span>orbit-ios</span><b>queued</b></div><div class="kv"><span>Last install</span><b class="okc">succeeded</b></div></div></div>
-          <div class="win mini"><div class="win-bar"><span class="lights"><i></i><i></i><i></i></span><span class="win-title">Agents</span></div>
-            <div class="mini-b"><div class="kv"><span>Running</span><b class="busy">3 subagents</b></div><div class="kv"><span>Ready to land</span><b>1 branch</b></div><div class="kv"><span>Waiting on you</span><b>nothing</b></div></div></div>
+    </section>
+
+    <section class="sec" id="faq" aria-labelledby="faq-h">
+      <div class="wrap">
+        <div class="center-head reveal"><h2 id="faq-h">Questions</h2></div>
+        <div class="faq-list reveal">
+          <details><summary>Who is Forge for?</summary><p>Developers on a Mac who already work with coding agents like Claude Code and want several of them on real projects, with terminals, a board and test VMs right beside them. It is built for iOS, web and Mac projects.</p></details>
+          <details><summary>Do I need an API key?</summary><p>Not for Claude Code. Forge runs the Claude Code you already have, signed in with your own account. Any other keys your projects need stay in your Keychain.</p></details>
+          <details><summary>Does my code leave my Mac?</summary><p>Only what your agent sends to its model provider, exactly as when you run Claude Code in a terminal. Forge puts no server of its own between you and your code.</p></details>
+          <details><summary>How do the test VMs work?</summary><p>Forge runs app and UI tests inside throwaway macOS virtual machines on your own Mac, so agents can launch apps, boot simulators and take screenshots without touching your screen.</p></details>
+          <details><summary>Is it Mac only?</summary><p>Yes. Forge is a native Mac app and needs macOS 15 (Sequoia) or later.</p></details>
+          <details><summary>When does it open?</summary><p>We are inviting people from the waitlist in small groups. Join and you will get one email when your invite is ready.</p></details>
+          <details><summary>What does it cost?</summary><p>Free during the beta.</p></details>
         </div>
       </div>
     </section>
 
-    <section class="sec faq" id="faq">
-      <div class="sec-head reveal"><h2>Questions</h2></div>
-      <div class="faq-list reveal">
-        <details><summary>Who is Forge for?</summary><p>Developers on a Mac who already work with coding agents like Claude Code and want several of them on real projects, with the terminal, browser, review and board right beside them. It is built for iOS, web and Mac projects.</p></details>
-        <details><summary>Do I need an API key?</summary><p>Not for Claude Code. Forge runs the Claude Code you already have, signed in with your own account. Keys are optional, for the built-in AI chat and model compare (Anthropic, OpenAI or a local model), and they stay in your Keychain.</p></details>
-        <details><summary>Is it Mac only?</summary><p>Yes. Forge is a native Mac app and needs macOS 15 (Sequoia) or later.</p></details>
-        <details><summary>When does it open?</summary><p>We are inviting people from the waitlist in small groups. Join and you will get one email when your invite is ready.</p></details>
-        <details><summary>What does it cost?</summary><p>Free during the beta. Pricing will be announced before launch.</p></details>
-      </div>
-    </section>
-
-    <section class="sec cta-end reveal" aria-labelledby="end-h">
-      <img src="icon.png" alt="" width="88" height="88" loading="lazy" decoding="async" class="end-icon" />
-      <h2 id="end-h">Give your agents a proper workbench.</h2>
-      <p>Join the waitlist for the Forge private beta.</p>
-      <div class="join">
-        <form class="waitlist" method="POST" novalidate>
-          <label class="sr-only" for="email-end">Email address</label>
-          <input id="email-end" name="email" type="email" required autocomplete="email" inputmode="email" placeholder="you@company.com" />
-          <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
-          <input type="hidden" name="_subject" value="New Forge waitlist signup" />
-          <input type="hidden" name="ref" value="" />
-          <input type="hidden" name="placement" value="footer" />
-          <button class="btn" type="submit"><span class="btn-label">Join the waitlist</span></button>
-        </form>
-        <p class="status" role="status" aria-live="polite"></p>
+    <section class="sec cta-end" aria-labelledby="end-h">
+      <div class="wrap reveal">
+        <img src="icon.png" alt="" width="88" height="88" loading="lazy" decoding="async" class="end-icon" />
+        <h2 id="end-h">Give your agents a proper workbench.</h2>
+        <p>Join the waitlist for the Forge private beta.</p>
+        <div class="join">
+          <form class="waitlist" method="POST" novalidate>
+            <label class="sr-only" for="email-end">Email address</label>
+            <input id="email-end" name="email" type="email" required autocomplete="email" inputmode="email" placeholder="you@company.com" />
+            <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <input type="hidden" name="_subject" value="New Forge waitlist signup" />
+            <input type="hidden" name="ref" value="" />
+            <input type="hidden" name="placement" value="footer" />
+            <button class="btn" type="submit"><span class="btn-label">Join the waitlist</span></button>
+          </form>
+          <p class="status" role="status" aria-live="polite"></p>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="foot">
-    <div class="foot-row">
+    <div class="wrap foot-row">
       <span class="foot-l"><img src="icon.png" alt="" width="20" height="20" loading="lazy" />© 2026 Coursion Studio</span>
       <span class="foot-r">
         <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
         <a href="mailto:support@coursion.studio">Support</a>
         <a href="https://x.com/kuraydev" rel="noopener">@kuraydev</a>
       </span>
