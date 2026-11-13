@@ -34,9 +34,9 @@
   <nav class="top" aria-label="Main">
     <a class="brand" href="#top"><img src="icon.png" alt="" width="28" height="28" /><span>Forge</span></a>
     <div class="top-links">
+      <a href="#ship">Shipping</a>
       <a href="#harness">Harness</a>
       <a href="#subagents">Subagents</a>
-      <a href="#ship">Shipping</a>
       <a href="#faq">FAQ</a>
       <a class="top-cta" href="#join">Join the waitlist</a>
     </div>
@@ -145,17 +145,33 @@
       </div>
     </section>
 
-    <section class="inside" aria-labelledby="inside-h">
+    <section class="sec ship" id="ship" style="--accent:var(--green)" aria-labelledby="ship-h">
+      <div class="glowbg" aria-hidden="true"></div>
       <div class="wrap">
-        <h2 id="inside-h">Everything an agent needs, already in the room</h2>
-        <p>Open a project and every tool is one split or one shortcut away. Panes keep their state when you switch workspaces.</p>
-        <div class="pp reveal" id="pp-demo">
-          <div class="pp-dock" role="toolbar" aria-label="Add a pane"></div>
-          <p class="pp-hint">Click a tool to split it in. Click again to close it.</p>
-          <div class="fw pp-win">
-            <div class="pp-bar"><span class="fw-tl"><span></span><span></span><span></span></span><b>Lumen</b><small>~/Code/lumen</small><span class="sp"></span><small data-pp-n>0 panes</small></div>
-            <div class="pp-grid" data-n="0"></div>
+        <div class="ship-head reveal">
+          <span class="kicker">Proof, then ship</span>
+          <h2 id="ship-h">Agents prove it.<br /><span class="grad">Forge lands it.</span></h2>
+          <p class="lede">Every finished branch waits in one place with its proof attached. One click rebases it, runs your gate, fast-forwards main, bumps the build and cleans up. If the gate fails, the failure goes straight back to the agent that wrote it.</p>
+        </div>
+        <figure class="ld reveal live" id="ld-demo">
+          <div class="fw ld-win">
+            <div class="ld-bar"><span class="fw-tl"><span></span><span></span><span></span></span><b>Ready to land</b><small>Lumen · main</small><span class="sp"></span><span class="ld-build">build <b data-ld-build>551</b></span></div>
+            <div class="ld-graph" aria-hidden="true"><svg data-ld-svg preserveAspectRatio="none"></svg></div>
+            <div class="ld-body">
+              <div class="ld-queue" data-ld-queue></div>
+              <div class="ld-run">
+                <div class="ld-steps" data-ld-steps></div>
+                <div class="ld-term" data-ld-term><div class="dim">Pick a branch and press Land.</div></div>
+              </div>
+            </div>
+            <div class="ld-foot"><span class="ld-idle" data-ld-idle><i></i><span>Nothing to install yet</span></span><span class="sp"></span><span class="ld-hint">Land runs under one lock, so two agents never race main.</span></div>
           </div>
+        </figure>
+        <div class="ld-points">
+          <div class="reveal"><b>Verified hand-backs</b><p>A branch only shows up here after its agent passed <code>forge-verify</code> on that exact commit.</p></div>
+          <div class="reveal d1"><b>One click to main</b><p>Rebase, your gate, fast-forward, build bump, worktree and branch removed.</p></div>
+          <div class="reveal d2"><b>Failures go home</b><p>A red gate is sent to the agent that owns the branch, with the failing lines.</p></div>
+          <div class="reveal d3"><b>Install when idle</b><p>Your app rebuilds itself only once every agent has stopped working.</p></div>
         </div>
       </div>
     </section>
@@ -214,37 +230,6 @@
               <div class="acard" style="--c:#3DDC97"><div class="h"><span class="dot" style="--c:#3DDC97"></span>Find every price helper</div><div class="chips"><span class="chip on" style="--c:#3DDC97">haiku</span><span class="chip">explorer</span></div><div class="now">Done · 14 files read · $0.02</div><div class="bar" style="--w:100%"><i></i></div></div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="sec ship" id="ship" style="--accent:var(--green)" aria-labelledby="ship-h">
-      <div class="glowbg" aria-hidden="true"></div>
-      <div class="wrap">
-        <div class="ship-head reveal">
-          <span class="kicker">Proof, then ship</span>
-          <h2 id="ship-h">Agents prove it.<br /><span class="grad">Forge lands it.</span></h2>
-          <p class="lede">Every finished branch waits in one place with its proof attached. One click rebases it, runs your gate, fast-forwards main, bumps the build and cleans up. If the gate fails, the failure goes straight back to the agent that wrote it.</p>
-        </div>
-        <figure class="ld reveal live" id="ld-demo">
-          <div class="fw ld-win">
-            <div class="ld-bar"><span class="fw-tl"><span></span><span></span><span></span></span><b>Ready to land</b><small>Lumen · main</small><span class="sp"></span><span class="ld-build">build <b data-ld-build>551</b></span></div>
-            <div class="ld-graph" aria-hidden="true"><svg data-ld-svg preserveAspectRatio="none"></svg></div>
-            <div class="ld-body">
-              <div class="ld-queue" data-ld-queue></div>
-              <div class="ld-run">
-                <div class="ld-steps" data-ld-steps></div>
-                <div class="ld-term" data-ld-term><div class="dim">Pick a branch and press Land.</div></div>
-              </div>
-            </div>
-            <div class="ld-foot"><span class="ld-idle" data-ld-idle><i></i><span>Nothing to install yet</span></span><span class="sp"></span><span class="ld-hint">Land runs under one lock, so two agents never race main.</span></div>
-          </div>
-        </figure>
-        <div class="ld-points">
-          <div class="reveal"><b>Verified hand-backs</b><p>A branch only shows up here after its agent passed <code>forge-verify</code> on that exact commit.</p></div>
-          <div class="reveal d1"><b>One click to main</b><p>Rebase, your gate, fast-forward, build bump, worktree and branch removed.</p></div>
-          <div class="reveal d2"><b>Failures go home</b><p>A red gate is sent to the agent that owns the branch, with the failing lines.</p></div>
-          <div class="reveal d3"><b>Install when idle</b><p>Your app rebuilds itself only once every agent has stopped working.</p></div>
         </div>
       </div>
     </section>
@@ -452,6 +437,21 @@
             <tr><td>Offline</td><td class="us">Everything but the model</td><td class="them">Nothing</td></tr>
           </tbody>
         </table>
+      </div>
+    </section>
+
+    <section class="inside" aria-labelledby="inside-h">
+      <div class="wrap">
+        <h2 id="inside-h">Everything an agent needs, already in the room</h2>
+        <p>Open a project and every tool is one split or one shortcut away. Panes keep their state when you switch workspaces.</p>
+        <div class="pp reveal" id="pp-demo">
+          <div class="pp-dock" role="toolbar" aria-label="Add a pane"></div>
+          <p class="pp-hint">Click a tool to split it in. Click again to close it.</p>
+          <div class="fw pp-win">
+            <div class="pp-bar"><span class="fw-tl"><span></span><span></span><span></span></span><b>Lumen</b><small>~/Code/lumen</small><span class="sp"></span><small data-pp-n>0 panes</small></div>
+            <div class="pp-grid" data-n="0"></div>
+          </div>
+        </div>
       </div>
     </section>
 
