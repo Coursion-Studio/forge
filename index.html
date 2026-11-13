@@ -26,7 +26,7 @@
       <div class="links">
         <a href="#panes">Panes</a>
         <a href="#why">Why Forge</a>
-        <a href="https://github.com/Coursion-Studio/forge/releases/latest">Download</a>
+        <a href="#waitlist">Waitlist</a>
       </div>
     </nav>
 
@@ -40,17 +40,17 @@
         No VMs, no containers, no servers. Your shell, your files,
         your API keys. Native SwiftUI all the way down.
       </p>
-      <div class="cta-grid">
-        <div class="install-cmd" data-copy="brew install --cask coursion-studio/tap/forge">
-          <span class="prompt" aria-hidden="true">$</span>
-          <code>brew install --cask coursion-studio/tap/forge</code>
-          <button class="copy-btn" type="button" aria-label="Copy install command">Copy</button>
-        </div>
-        <a class="btn primary" href="https://github.com/Coursion-Studio/forge/releases/latest">
-          Download&nbsp;.dmg
-        </a>
+      <div class="cta-grid waitlist-cta" id="waitlist">
+        <form id="waitlist-form" class="waitlist-form" action="https://formspree.io/f/FORGE_FORM_ID" method="POST">
+          <label class="sr-only" for="waitlist-email">Email address</label>
+          <input id="waitlist-email" name="email" type="email" required autocomplete="email" placeholder="you@domain.com" />
+          <input type="text" name="_gotcha" class="sr-only" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <input type="hidden" name="_subject" value="New Forge waitlist signup" />
+          <button class="btn primary" type="submit"><span class="waitlist-btn-label">Join the waitlist</span></button>
+        </form>
+        <div id="waitlist-status" class="waitlist-status" role="status" aria-live="polite"></div>
       </div>
-      <p class="req-note">macOS 15 (Sequoia) or later · Auto-updates via Sparkle · <a href="#panes">See the panes</a></p>
+      <p class="req-note">Private beta. Join the waitlist and we will email you when Forge opens. macOS 15 (Sequoia) or later · <a href="#panes">See the panes</a></p>
     </header>
 
     <section class="tight" style="padding-top:0">
@@ -58,9 +58,6 @@
         <div class="stat"><strong>11</strong><span>pane types</span></div>
         <div class="stat"><strong>100%</strong><span>native SwiftUI</span></div>
         <div class="stat"><strong>Local</strong><span>no servers</span></div>
-        <div class="stat" id="stat-downloads" hidden>
-          <strong id="dl-count">0</strong><span>downloads</span>
-        </div>
       </div>
     </section>
 
@@ -311,15 +308,6 @@
 
     <hr class="sep" />
 
-    <section id="releases" class="tight" hidden>
-      <div class="section-label">Releases</div>
-      <h2>Every version, every download.</h2>
-      <p class="lede">Live count, every channel — site and in-app updates.</p>
-      <ol class="releases" id="releases-list"></ol>
-    </section>
-
-    <hr class="sep" id="releases-sep" hidden />
-
     <section id="why" class="tight">
       <div class="section-label">Why Forge</div>
       <h2>Native. Local. Yours.</h2>
@@ -362,14 +350,14 @@
             </svg>
           </div>
           <h3>Auto-updates</h3>
-          <p>Sparkle-signed updates ship over the air. Apple-notarized DMGs, EdDSA-verified — no App Store middleman.</p>
+          <p>Signed, notarized builds that update themselves over the air once Forge opens to everyone.</p>
         </div>
       </div>
     </section>
 
     <footer>
       <div class="links">
-        <a href="https://github.com/Coursion-Studio/forge/releases/latest">Download</a>
+        <a href="#waitlist">Waitlist</a>
         <a href="privacy.html">Privacy</a>
         <a href="terms.html">Terms</a>
         <a href="mailto:support@coursion.studio">Support</a>
@@ -380,22 +368,18 @@
   </div>
 
   <script>
-    // Copy-to-clipboard for the brew install code block.
     (function () {
-      document.querySelectorAll(".copy-btn").forEach(function (btn) {
-        btn.addEventListener("click", function () {
-          var box = btn.closest("[data-copy]");
-          if (!box || !navigator.clipboard) return;
-          navigator.clipboard.writeText(box.getAttribute("data-copy")).then(function () {
-            btn.classList.add("copied");
-            var original = btn.textContent;
-            btn.textContent = "Copied";
-            setTimeout(function () {
-              btn.classList.remove("copied");
-              btn.textContent = original;
-            }, 1400);
-          }).catch(function () { /* clipboard blocked — no-op */ });
-        });
+      var form = document.getElementById("waitlist-form");
+      var status = document.getElementById("waitlist-status");
+      if (!form) return;
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var btn = form.querySelector("button");
+        var label = form.querySelector(".waitlist-btn-label");
+        btn.disabled = true; label.textContent = "Joining…"; status.textContent = "";
+        fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } })
+          .then(function (r) { if (!r.ok) throw new Error(); form.reset(); label.textContent = "You're on the list"; status.textContent = "Thanks. We'll email you when Forge opens."; })
+          .catch(function () { btn.disabled = false; label.textContent = "Join the waitlist"; status.textContent = "Something went wrong. Try again, or email support@coursion.studio."; });
       });
     })();
   </script>
@@ -426,78 +410,5 @@
     })();
   </script>
 
-  <script>
-    // Pulls every public release from GitHub. Two things happen with the result:
-    //   1. The hero "downloads" stat shows the sum across all assets.
-    //   2. The Releases section lists each version with its own download count.
-    // Unauthenticated calls are rate-limited to 60/hr per IP — fine for a
-    // landing page. Both surfaces stay hidden if there are no releases yet,
-    // so we never ship a "0 downloads" page pre-launch.
-    (function () {
-      var fmtCount = function (n) {
-        if (n >= 1e6) return (n / 1e6).toFixed(1).replace(/\.0$/, "") + "M";
-        if (n >= 1e3) return (n / 1e3).toFixed(1).replace(/\.0$/, "") + "K";
-        return String(n);
-      };
-      var fmtDate = function (iso) {
-        try {
-          return new Date(iso).toLocaleDateString("en-US", {
-            year: "numeric", month: "short", day: "numeric"
-          });
-        } catch (_) { return ""; }
-      };
-      var pickDmg = function (assets) {
-        return (assets || []).find(function (a) {
-          return /\.dmg$/i.test(a.name || "");
-        }) || (assets || [])[0];
-      };
-
-      fetch("https://api.github.com/repos/Coursion-Studio/forge/releases")
-        .then(function (r) { return r.ok ? r.json() : []; })
-        .then(function (releases) {
-          releases = releases || [];
-          var total = 0;
-          var rows = releases.map(function (rel) {
-            var assets = rel.assets || [];
-            var count = assets.reduce(function (s, a) {
-              return s + (a.download_count || 0);
-            }, 0);
-            total += count;
-            var dmg = pickDmg(assets);
-            var li = document.createElement("li");
-            li.className = "release-row";
-            li.innerHTML =
-              '<div class="release-meta">' +
-                '<span class="release-tag">' + (rel.tag_name || rel.name || "") + '</span>' +
-                '<span class="release-date">' + fmtDate(rel.published_at) + '</span>' +
-              '</div>' +
-              '<div class="release-count">' +
-                '<strong>' + count.toLocaleString("en-US") + '</strong>' +
-                '<span>downloads</span>' +
-              '</div>' +
-              (dmg
-                ? '<a class="release-link" href="' + dmg.browser_download_url + '">Download</a>'
-                : '<a class="release-link" href="' + rel.html_url + '">Release page</a>');
-            return li;
-          });
-
-          // Hero stat — total across everything.
-          if (total > 0) {
-            document.getElementById("dl-count").textContent = fmtCount(total);
-            document.getElementById("stat-downloads").hidden = false;
-            document.getElementById("hero-stats").classList.remove("three");
-          }
-
-          // Releases section — only show when there's something to show.
-          if (rows.length > 0) {
-            var list = document.getElementById("releases-list");
-            rows.forEach(function (li) { list.appendChild(li); });
-            document.getElementById("releases").hidden = false;
-            document.getElementById("releases-sep").hidden = false;
-          }
-        })
-        .catch(function () { /* no-op: leave hero strip at 3 stats, releases section hidden */ });
-    })();
-  </script>
 </body>
 </html>
