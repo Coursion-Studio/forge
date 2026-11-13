@@ -129,7 +129,7 @@
 
   function Mascot(canvas, opts) {
     opts = opts || {};
-    this.c = canvas; this.x = canvas.getContext("2d");
+    this.c = canvas; canvas._m = this; this.x = canvas.getContext("2d");
     this.crew = opts.crew || null;
     this.rows = this.crew ? 13 : 12; this.cols = 16;
     this.pad = 3;

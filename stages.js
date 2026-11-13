@@ -28,14 +28,24 @@
   var ws = document.getElementById("ws-demo");
   if (ws && window.ForgeMascot) {
     var q = function (s) { return ws.querySelector(s); };
+    var esc = function (t) { return String(t).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
+    var tpl = q(".fw-pane").cloneNode(true);
+    var lumenPane = q(".fw-pane");
     var list = q("[data-list]"), count = q("[data-count]"), pulse = q("[data-pulse]"), key = q(".kc");
     var elx = q("[data-el]"), clock = q("[data-clock]"), side = q("[data-side]"), sub = q("[data-sub]");
     var costEl = q("[data-cost]"), tokEl = q("[data-tok]"), timeEl = q("[data-time]"), stop = q(".stop");
-    var row = q("[data-agent-row]"), rowN = q("[data-agent-n]"), build = q("[data-build]");
+    var row = q("[data-agent-row]"), rowN = q("[data-agent-n]"), build = q("[data-build]"), tx = q(".fw-tx");
     var pane = new ForgeMascot(q("[data-mascot]"), { mood: "ready" });
     var lumen = new ForgeMascot(q('[data-ws-mascot="lumen"]'), { mood: "ready" });
     var main = { set: function (m) { pane.set(m); lumen.set(m); } };
     var subN = q("[data-sub-n]");
+    var current = "lumen", panes = { lumen: lumenPane };
+    var models = [["Opus 5.5", "careful"], ["Sonnet 5.5", "medium"], ["Haiku 5.5", "light"], ["Fable 5.1", "heavy"]];
+    var efforts = ["Extra High", "High", "Medium", "Low"];
+    var model = 0, effort = 0;
+
+    function fmt(s) { return Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0"); }
+
     var others = {
       tidepool: [["Testing in the VM · 11 UI tests", "working", ""], ["Reading crash log", "reading", ""], ["Editing PhotoGrid.swift", "editing", ""], ["Build passed · ready to land", "celebrating", "ok"]],
       atlas: [["Fixing a flaky test", "editing", ""], ["forge-verify · 82 tests", "working", ""], ["Needs your OK to push", "waiting", "att"], ["Landed on main", "celebrating", "ok"]],
@@ -43,9 +53,11 @@
       nook: [["Idle · 3h", "sleepy", ""]],
       vista: [["Idle · 2d", "sleepy", ""]]
     };
+    var sideM = {};
     Object.keys(others).forEach(function (k, n) {
-      var row = q('[data-ws="' + k + '"]'), seq = others[k], m = new ForgeMascot(row.querySelector("canvas"), { mood: seq[0][1] });
-      var label = row.querySelector("small"), tm = row.querySelector(".tm"), j = 0;
+      var r = q('[data-ws="' + k + '"]'), seq = others[k], m = new ForgeMascot(r.querySelector("canvas"), { mood: seq[0][1] });
+      sideM[k] = m;
+      var label = r.querySelector("small"), tm = r.querySelector(".tm"), j = 0;
       var t0 = Date.now() - (parseInt(tm.textContent, 10) * 60 + parseInt(tm.textContent.split(":")[1] || 0, 10)) * 1000;
       function show() { label.textContent = seq[j][0]; label.className = seq[j][2]; m.set(seq[j][1]); }
       show();
@@ -56,15 +68,117 @@
         setTimeout(function () { j = (j + 1) % seq.length; show(); cycle(); }, reduce ? 1e9 : 2600 + n * 700 + Math.random() * 1800);
       })();
     });
-    var next = 0, auto = true, started = 0, cost = 0, tok = 0, launched = 0, ticking = null, settle = null;
 
-    function fmt(s) { return Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0"); }
+    var views = {
+      lumen: { name: "Lumen", path: "~/Code/lumen", ico: "#C75CEB", letter: "L" },
+      tidepool: { name: "Tidepool", path: "~/Code/tidepool-ios", ico: "#389EFF", letter: "T", pane: "1 · Photo grid crash", sub: "Testing in the VM", mood: "working", pulse: "2 helpers working",
+        you: "The photo grid crashes when you rotate the phone. Fix it and prove it in the VM.",
+        rows: [["Read", "Crashes/PhotoGrid-2026-11-13.ips", "88 lines"], ["Grep", "visibleIndexPaths", "6 files"]],
+        claude: "A stale index after rotation. One worker fixes it in its own worktree, a tester runs it in the VM.",
+        cards: [["Fix rotation crash", "Sonnet 5.5", "medium", "builder", "forge-worker", "Editing PhotoGrid.swift", 60], ["Prove it in the VM", "Sonnet 5.5", "medium", "none", "forge-tester", "Rotating on iPhone 17 · 4 screenshots", 35]],
+        stats: ["≈$0.21", "301.4k", "4:12"] },
+      atlas: { name: "Atlas API", path: "~/Code/atlas-api", ico: "#3DDC97", letter: "A", pane: "1 · Flaky checkout test", sub: "Waiting on you", mood: "waiting", pulse: "Waiting for your OK",
+        you: "The checkout test fails one run in ten. Make it reliable, then push.",
+        rows: [["Edit", "test/checkout.spec.ts", "+12 −4"], ["Bash", "forge-verify", "82 of 82 passed"]],
+        claude: "It raced the payment mock. Fixed and proven green. Pushing is outward, so I need your OK.",
+        ask: "git push origin main",
+        cards: [["Fix the checkout race", "Sonnet 5.5", "medium", "builder", "forge-worker", "Rebased and green, ready to land", 100]],
+        stats: ["≈$0.09", "142.0k", "1:37"] },
+      orbit: { name: "Orbit", path: "~/Code/orbit-web", ico: "#FFB547", letter: "O", pane: "1 · New onboarding", sub: "Waiting on subagents", mood: "helpers", pulse: "2 helpers working",
+        you: "Plan a shorter onboarding. Three screens at most.",
+        rows: [["Read", "app/onboarding/*.tsx", "5 files"]],
+        claude: "A planner drafts it while a scout collects every place the old flow is linked from.",
+        cards: [["Plan the onboarding", "Fable 5.1", "heavy", "planner", "Plan", "Weighing two flows", 50], ["Find every entry point", "Haiku 5.5", "light", "scout", "forge-explorer", "Reading 9 matches", 70]],
+        stats: ["≈$0.44", "388.2k", "0:48"] },
+      nook: { name: "Nook", path: "~/Code/nook-browser", ico: "#FF5189", letter: "N", pane: "1 · Tab groups", sub: "Idle", mood: "sleepy", pulse: "Idle for 3 hours",
+        you: "Ship the tab groups change.", rows: [["Bash", "forge-verify", "passed"]],
+        claude: "Landed on main as build 212 and queued the install for when you are idle.", cards: [], stats: ["≈$0.12", "96.3k", "6:02"] },
+      vista: { name: "Vista", path: "~/Code/vista", ico: "#2FD3C9", letter: "V", pane: "1 · Weekly report", sub: "Idle", mood: "sleepy", pulse: "Idle for 2 days",
+        you: "Write up this week's crash report.", rows: [["Read", "Reports/weekly/2026-11-09.md", "64 lines"]],
+        claude: "Done. Two new crashes, both filed as board cards with the Sentry link.", cards: [], stats: ["≈$0.05", "41.8k", "2:15"] }
+    };
+
+    function tierOf(m) { for (var i = 0; i < models.length; i++) if (models[i][0] === m) return models[i][1]; return "medium"; }
+    function cardHTML(t, m, tier, ty, st) {
+      return '<div class="fa-top"><canvas class="mascot"></canvas><div><div class="t">' + esc(t) + '</div>' +
+        '<div class="chips"><span class="mc" style="--c:' + tierColor[tier] + '">' + m + '</span><span class="ty">' + ty + '</span></div></div>' +
+        '<span class="st">' + st + '</span></div>' +
+        '<div class="now"></div><div class="prog"><div class="bar"><i></i></div><span class="pct">0%</span></div><div class="meta"></div><div class="log"></div>';
+    }
+    function trow(ok, tool, code, right) {
+      var d = document.createElement("div"); d.className = "trow";
+      d.innerHTML = '<i class="' + (ok ? "ok" : "spin") + '">' + (ok ? "✓" : "") + '</i><b>' + tool + '</b><code>' + esc(code) + '</code><span>' + esc(right) + '</span>';
+      return d;
+    }
+    function bubble(kind, text) {
+      var d = document.createElement("div");
+      if (kind === "you") { d.className = "you"; d.innerHTML = '<span class="lbl">You</span><div class="bub">' + esc(text) + '</div>'; }
+      else { d.className = "cl-msg"; d.innerHTML = '<span class="who"><i class="cl"></i>Claude</span><div class="bub">' + esc(text) + '</div>'; }
+      return d;
+    }
+
+    function buildPane(k) {
+      var v = views[k], p = tpl.cloneNode(true);
+      p.querySelector(".fw-ph .ttl b").innerHTML = '<i class="d' + (v.mood === "sleepy" ? "" : " live") + '"></i>' + v.pane;
+      p.querySelector("[data-sub]").textContent = v.sub;
+      var t = p.querySelector(".fw-tx"); t.innerHTML = "";
+      t.appendChild(bubble("you", v.you));
+      v.rows.forEach(function (r) { t.appendChild(trow(true, r[0], r[1], r[2])); });
+      t.appendChild(bubble("claude", v.claude));
+      if (v.ask) {
+        var a = document.createElement("div"); a.className = "perm";
+        a.innerHTML = '<div class="ph2"><b>Allow Bash?</b><code>' + v.ask + '</code></div><div class="acts"><button type="button" data-allow>Allow</button><button type="button" data-deny>Deny</button></div>';
+        t.appendChild(a);
+      } else if (v.cards.length && v.mood !== "sleepy") {
+        t.appendChild(trow(false, "Agent", v.cards.length + " subagents", "running"));
+      }
+      p.querySelector("[data-pulse]").textContent = v.pulse;
+      p.querySelector("[data-el]").textContent = "";
+      var stp = p.querySelector(".stop"); stp.style.opacity = v.mood === "sleepy" ? 0 : 1;
+      if (v.mood === "waiting") stp.style.opacity = 0;
+      v.m = new ForgeMascot(p.querySelector("[data-mascot]"), { mood: v.mood });
+      var s = p.querySelectorAll(".fa-stats b"); s[0].textContent = v.stats[0]; s[1].textContent = v.stats[1]; s[2].textContent = v.stats[2];
+      var running = v.cards.filter(function (c) { return c[6] < 100; }).length;
+      p.querySelector("[data-count]").textContent = running + " running · " + (v.cards.length - running) + " done";
+      var l = p.querySelector("[data-list]");
+      v.cards.forEach(function (c) {
+        var done = c[6] >= 100, el = document.createElement("div");
+        el.className = "fa-card" + (done ? " done" : "");
+        el.innerHTML = cardHTML(c[0], c[1], c[2], c[4], done ? "done" : "running");
+        el.querySelector(".now").textContent = c[5];
+        el.querySelector(".bar i").style.width = c[6] + "%"; el.querySelector(".pct").textContent = c[6] + "%";
+        el.querySelector(".meta").textContent = "ctx 4% · 120.3k ≈$0.08 " + v.stats[2];
+        el.querySelector(".log").innerHTML = "<div>› " + esc(c[5]) + "</div>";
+        l.appendChild(el);
+        new ForgeMascot(el.querySelector("canvas"), { crew: { tier: c[2], role: c[3] }, mood: done ? "ready" : (c[3] === "scout" ? "reading" : c[3] === "planner" ? "thinking" : "working") });
+      });
+      if (!v.cards.length) l.innerHTML = '<div class="fa-empty">No subagents running. Ask for something below.</div>';
+      return p;
+    }
+
+    function open(k) {
+      if (k === current) return;
+      var p = panes[k] || (panes[k] = buildPane(k));
+      q(".fw-pane").replaceWith(p);
+      current = k;
+      var v = views[k], top = q(".fw-top");
+      top.querySelector(".ttl b").textContent = v.name;
+      top.querySelector(".ttl small").innerHTML = v.path + ' · <em>Capabilities</em>';
+      var ic = top.querySelector(".ico"); ic.style.setProperty("--c", v.ico); ic.textContent = v.letter;
+      ws.querySelectorAll(".fw-ws").forEach(function (r) { r.classList.remove("sel"); });
+      q(".fw-pin").classList.toggle("on", k === "lumen");
+      (k === "lumen" ? q(".fw-pin .fw-ws") : q('[data-ws="' + k + '"]')).classList.add("sel");
+      p.querySelectorAll(".pk")[1].textContent = "▣ " + models[model][0] + " ▾";
+      p.querySelectorAll(".pk")[2].textContent = "◔ " + efforts[effort] + " ▾";
+    }
+
+    var next = 0, auto = true, started = 0, cost = 0, tok = 0, launched = 0, ticking = null, settle = null, live = [];
     function tick() {
       var s = Math.floor((Date.now() - started) / 1000);
       elx.textContent = s + "s"; clock.textContent = fmt(s); timeEl.textContent = fmt(s);
     }
     function running() { return list.querySelectorAll(".fa-card:not(.done)").length; }
-    function status() {
+    function status(stopped) {
       var n = running();
       count.textContent = n + " running · " + list.querySelectorAll(".fa-card.done").length + " done";
       costEl.textContent = "≈$" + cost.toFixed(2);
@@ -74,38 +188,50 @@
         clearTimeout(settle);
         main.set("helpers"); pulse.textContent = n + " helper" + (n === 1 ? "" : "s") + " still working";
         side.textContent = "Running " + n + " agent" + (n === 1 ? "" : "s"); sub.textContent = "Waiting on subagents";
-        stop.style.opacity = 1; row.querySelector("i").className = "spin";
+        stop.style.opacity = 1; stop.disabled = false; row.querySelector("i").className = "spin"; row.querySelector("i").textContent = "";
+        build.style.opacity = 1;
         if (!ticking) { started = started || Date.now(); ticking = setInterval(tick, 500); }
       } else {
         clearInterval(ticking); ticking = null;
+        stop.style.opacity = 0; stop.disabled = true; row.querySelector("i").className = "ok"; row.querySelector("i").textContent = "✓";
+        build.style.opacity = 0;
+        if (stopped) {
+          main.set("ready"); pulse.textContent = "Stopped. Your work is safe in the worktrees";
+          side.textContent = "Stopped"; sub.textContent = "Ready";
+          return;
+        }
         main.set("celebrating"); pulse.textContent = "All " + launched + " subagents finished";
         side.textContent = "Done · " + launched + " agents"; sub.textContent = "Ready";
-        stop.style.opacity = 0; row.querySelector("i").className = "ok"; row.querySelector("i").textContent = "✓";
-        build.style.opacity = 0;
         settle = setTimeout(function () { main.set("ready"); pulse.textContent = "Ready"; }, reduce ? 0 : 3200);
       }
     }
-    function spawn() {
+    function spawn(a) {
       var done = list.querySelectorAll(".fa-card.done");
-      if (list.children.length >= 3 && !done.length) return;
+      if (list.children.length >= 3 && !done.length) return false;
       if (list.children.length >= 3) list.removeChild(done[done.length - 1]);
-      var a = agents[next % agents.length]; next++; launched++;
+      a = a || agents[next++ % agents.length]; launched++;
       var el = document.createElement("div");
       el.className = "fa-card";
-      el.innerHTML = '<div class="fa-top"><canvas class="mascot"></canvas><div><div class="t">' + a.t + '</div>' +
-        '<div class="chips"><span class="mc" style="--c:' + tierColor[a.tier] + '">' + a.m + '</span><span class="ty">' + a.ty + '</span></div></div>' +
-        '<span class="st">running</span></div>' +
-        '<div class="now"></div><div class="prog"><div class="bar"><i></i></div><span class="pct">0%</span></div><div class="meta"></div>';
-      var firstDone = list.querySelector(".fa-card.done");
-      list.insertBefore(el, firstDone);
+      el.innerHTML = cardHTML(a.t, a.m, a.tier, a.ty, "running");
+      list.insertBefore(el, list.querySelector(".fa-card.done"));
       var crew = new ForgeMascot(el.querySelector("canvas"), { crew: { tier: a.tier, role: a.role }, mood: "delegating" });
-      var now = el.querySelector(".now"), bar = el.querySelector(".bar i"), pct = el.querySelector(".pct"), meta = el.querySelector(".meta");
-      var t0 = Date.now(), i = 0, ctx = 2 + Math.floor(Math.random() * 3);
+      var now = el.querySelector(".now"), bar = el.querySelector(".bar i"), pct = el.querySelector(".pct"), meta = el.querySelector(".meta"), log = el.querySelector(".log");
+      var t0 = Date.now(), i = 0, ctx = 2 + Math.floor(Math.random() * 3), halted = false, timer = null;
+      var ctl = { halt: function () {
+        if (halted || el.classList.contains("done")) return;
+        halted = true; clearTimeout(timer);
+        el.classList.add("done", "stopped"); el.querySelector(".st").textContent = "stopped";
+        now.textContent = "Stopped by you"; crew.set("sleepy");
+        list.appendChild(el);
+      } };
+      live.push(ctl);
       main.set("delegating"); pulse.textContent = "Delegating to " + a.t;
       status();
       (function step() {
+        if (halted) return;
         var s = a.steps[i], p = Math.round((i + 1) / a.steps.length * 100);
         now.textContent = s[0]; bar.style.width = p + "%"; pct.textContent = p + "%";
+        var ln = document.createElement("div"); ln.textContent = "› " + s[0]; log.appendChild(ln);
         var secs = Math.max(1, Math.round((Date.now() - t0) / 1000) * 7);
         meta.textContent = "ctx " + (ctx + i) + "% · " + (a.tok * (i + 1) / a.steps.length).toFixed(1) + "k ≈$" + (a.cost * (i + 1) / a.steps.length).toFixed(2) + " " + fmt(secs);
         cost += a.cost / a.steps.length; tok += a.tok / a.steps.length;
@@ -113,16 +239,44 @@
         if (i === a.steps.length - 1) {
           el.classList.add("done"); el.querySelector(".st").textContent = "done";
           list.appendChild(el);
-          setTimeout(function () { crew.set("ready"); }, reduce ? 0 : 4000);
+          setTimeout(function () { if (crew.mood === "celebrating") crew.set("ready"); }, reduce ? 0 : 4000);
           status();
           return;
         }
         status();
-        i++; setTimeout(step, reduce ? 0 : 1300 + Math.random() * 1100);
+        i++; timer = setTimeout(step, reduce ? 0 : 1300 + Math.random() * 1100);
       })();
+      return true;
     }
+    function custom(text) {
+      var m = models[model], tier = m[1];
+      var t = text.length > 34 ? text.slice(0, 33).trim() + "…" : text;
+      return { t: t.charAt(0).toUpperCase() + t.slice(1), m: m[0], tier: tier, role: "builder", ty: "forge-worker", tok: 120 + Math.random() * 160, cost: tier === "light" ? 0.03 : tier === "careful" ? 0.3 : tier === "heavy" ? 0.55 : 0.12,
+        steps: [["Reading the code", "reading"], ["Editing 3 files", "editing"], ["forge-verify · tests", "working"], ["Green, ready to land", "celebrating"]] };
+    }
+    function ask(text) {
+      text = text.trim(); if (!text) return;
+      if (current !== "lumen") {
+        var t = panes[current].querySelector(".fw-tx");
+        t.appendChild(bubble("you", text));
+        setTimeout(function () { t.appendChild(bubble("claude", "Noted. I'll pick it up after this job. Switch to Lumen to watch subagents work live.")); }, reduce ? 0 : 600);
+        return;
+      }
+      auto = false;
+      tx.appendChild(bubble("you", text));
+      main.set("thinking"); pulse.textContent = "Thinking…";
+      setTimeout(function () {
+        var a = custom(text);
+        var ok = list.querySelectorAll(".fa-card:not(.done)").length < 3;
+        tx.appendChild(bubble("claude", ok ? "One subagent for this: " + a.m + ", in its own worktree." : "Three helpers are busy. I'll start this one as soon as a slot frees up."));
+        if (ok) { tx.appendChild(trow(true, "Agent", "[" + a.m.split(" ")[0].toLowerCase() + ": your request] " + a.t, "launched")); spawn(a); }
+        else status();
+      }, reduce ? 0 : 700);
+    }
+
     function press() {
       auto = false;
+      open("lumen");
       key.classList.add("lit"); setTimeout(function () { key.classList.remove("lit"); }, 140);
       spawn();
     }
@@ -135,6 +289,53 @@
       if (r.bottom < 0 || r.top > window.innerHeight) return;
       press();
     });
+
+    ws.addEventListener("click", function (e) {
+      var t = e.target;
+      var w = t.closest(".fw-ws");
+      if (w) { open(w.dataset.ws || "lumen"); return; }
+      if (t.closest(".stop")) {
+        if (current === "lumen") { live.forEach(function (c) { c.halt(); }); status(true); }
+        else { var v = views[current]; v.m.set("ready"); t.closest(".fw-pulse").querySelector("[data-pulse]").textContent = "Stopped"; t.closest(".stop").style.opacity = 0; }
+        return;
+      }
+      if (t.closest(".send")) { var inp = t.closest(".fw-comp").querySelector("input"); ask(inp.value); inp.value = ""; inp.focus(); return; }
+      var pk = t.closest(".pk");
+      if (pk) {
+        var all = Array.prototype.indexOf.call(pk.parentNode.querySelectorAll(".pk"), pk);
+        if (all === 1) { model = (model + 1) % models.length; pk.textContent = "▣ " + models[model][0] + " ▾"; }
+        if (all === 2) { effort = (effort + 1) % efforts.length; pk.textContent = "◔ " + efforts[effort] + " ▾"; }
+        if (all === 0) { pk.textContent = pk.textContent.indexOf("Auto") >= 0 ? "✦ Plan ▾" : "✦ Auto ▾"; }
+        pk.classList.remove("bump"); void pk.offsetWidth; pk.classList.add("bump");
+        return;
+      }
+      var perm = t.closest(".perm");
+      if (perm && (t.closest("[data-allow]") || t.closest("[data-deny]"))) {
+        var allow = !!t.closest("[data-allow]"), v2 = views[current];
+        perm.replaceWith(trow(allow, "Bash", v2.ask, allow ? "pushed · build 318" : "denied"));
+        v2.m.set(allow ? "celebrating" : "ready");
+        panes[current].querySelector("[data-pulse]").textContent = allow ? "Pushed. Landed on main" : "Kept local. Nothing pushed";
+        panes[current].querySelector("[data-sub]").textContent = "Ready";
+        setTimeout(function () { v2.m.set("ready"); }, reduce ? 0 : 3000);
+        return;
+      }
+      var card = t.closest(".fa-card");
+      if (card) card.classList.toggle("open");
+    });
+    ws.addEventListener("keydown", function (e) {
+      if (e.target.matches(".fw-comp input") && e.key === "Enter") { ask(e.target.value); e.target.value = ""; e.preventDefault(); }
+      if ((e.key === "Enter" || e.key === " ") && e.target.closest(".fw-ws")) { e.preventDefault(); open(e.target.closest(".fw-ws").dataset.ws || "lumen"); }
+    });
+    ws.addEventListener("mouseover", function (e) {
+      var c = e.target.closest("canvas.mascot"); if (!c || !c._m) return;
+      var m = c._m; if (m.mood === "greeting") return;
+      if (m.mood === "ready" || m.mood === "sleepy" || m.mood === "waiting") { m._back = m.mood; m.set("greeting"); }
+    });
+    ws.addEventListener("mouseout", function (e) {
+      var c = e.target.closest("canvas.mascot"); if (!c || !c._m) return;
+      var m = c._m; if (m.mood === "greeting" && m._back) { m.set(m._back); m._back = null; }
+    });
+
     onView(ws, async function () {
       main.set("thinking"); pulse.textContent = "Thinking…";
       await wait(700);

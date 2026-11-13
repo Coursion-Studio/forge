@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" href="icon.png" />
   <link rel="apple-touch-icon" href="icon.png" />
   <link rel="stylesheet" href="home.css?v=3" />
-  <link rel="stylesheet" href="stages.css?v=5" />
+  <link rel="stylesheet" href="stages.css?v=6" />
   <meta name="theme-color" content="#0E1224" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Forge" />
@@ -66,21 +66,21 @@
     <figure class="hero-shot reveal live" id="ws-demo">
       <div class="glow" aria-hidden="true"></div>
       <div class="fw" aria-label="Forge running three subagents in one workspace">
-        <aside class="fw-side" aria-hidden="true">
+        <aside class="fw-side" aria-label="Workspaces">
           <div class="fw-tl"><span></span><span></span><span></span></div>
           <div class="fw-brand"><img src="icon.png" alt="" width="22" height="22" /><b>Forge</b><span class="sp"></span><span class="ib">⌂</span><span class="ib add">+</span></div>
           <div class="fw-search">⌕ Search workspaces</div>
           <div class="fw-grp">Working · <span data-working>4</span></div>
-          <div class="fw-pin">
-            <div class="fw-ws sel"><canvas class="mascot sm" data-ws-mascot="lumen"></canvas><span class="nm">Lumen<small data-side>Ready</small></span><span class="tm" data-clock>0:00</span></div>
+          <div class="fw-pin on">
+            <div class="fw-ws sel" role="button" tabindex="0"><canvas class="mascot sm" data-ws-mascot="lumen"></canvas><span class="nm">Lumen<small data-side>Ready</small></span><span class="tm" data-clock>0:00</span></div>
             <div class="fw-sub"><i class="d live"></i>Split three jobs <em data-sub-n>0 agents</em></div>
           </div>
-          <div class="fw-ws" data-ws="tidepool"><canvas class="mascot sm"></canvas><span class="nm">Tidepool<small></small></span><span class="tm">4:12</span></div>
-          <div class="fw-ws" data-ws="atlas"><canvas class="mascot sm"></canvas><span class="nm">Atlas API<small></small></span><span class="tm">1:37</span></div>
-          <div class="fw-ws" data-ws="orbit"><canvas class="mascot sm"></canvas><span class="nm">Orbit<small></small></span><span class="tm">0:48</span></div>
+          <div class="fw-ws" data-ws="tidepool" role="button" tabindex="0"><canvas class="mascot sm"></canvas><span class="nm">Tidepool<small></small></span><span class="tm">4:12</span></div>
+          <div class="fw-ws" data-ws="atlas" role="button" tabindex="0"><canvas class="mascot sm"></canvas><span class="nm">Atlas API<small></small></span><span class="tm">1:37</span></div>
+          <div class="fw-ws" data-ws="orbit" role="button" tabindex="0"><canvas class="mascot sm"></canvas><span class="nm">Orbit<small></small></span><span class="tm">0:48</span></div>
           <div class="fw-grp">All</div>
-          <div class="fw-ws" data-ws="nook"><canvas class="mascot sm"></canvas><span class="nm">Nook<small></small></span><span class="tm">3h</span></div>
-          <div class="fw-ws" data-ws="vista"><canvas class="mascot sm"></canvas><span class="nm">Vista<small></small></span><span class="tm">2d</span></div>
+          <div class="fw-ws" data-ws="nook" role="button" tabindex="0"><canvas class="mascot sm"></canvas><span class="nm">Nook<small></small></span><span class="tm">3h</span></div>
+          <div class="fw-ws" data-ws="vista" role="button" tabindex="0"><canvas class="mascot sm"></canvas><span class="nm">Vista<small></small></span><span class="tm">2d</span></div>
           <div class="fw-foot"><span class="ib">⌂</span><span class="ib">◉</span><span class="ib">⌘</span><span class="ib">⚙</span><span class="sp"></span><small><i class="d on"></i>Synced</small></div>
         </aside>
         <div class="fw-main">
@@ -101,8 +101,8 @@
               <span class="sp"></span>
               <span class="pc">⑂ main</span><span class="pc hide-s">▢ worktree</span><span class="pc ic">⋯</span>
             </div>
-            <div class="fw-tbar" aria-hidden="true">
-              <span class="pk">✦ Auto ▾</span><span class="pk">▣ Opus 5.5 ▾</span><span class="pk hide-s">◔ Extra High ▾</span>
+            <div class="fw-tbar">
+              <button type="button" class="pk">✦ Auto ▾</button><button type="button" class="pk">▣ Opus 5.5 ▾</button><button type="button" class="pk hide-s">◔ Extra High ▾</button>
               <span class="sp"></span><span class="ultra">CLAUDE MAX</span>
             </div>
             <div class="fw-body">
@@ -114,8 +114,8 @@
                   <div class="cl-msg"><span class="who"><i class="cl"></i>Claude</span><div class="bub">Three independent jobs. Each gets its own subagent, the worker in its own worktree, so they never touch your checkout.</div></div>
                   <div class="trow" data-agent-row><i class="spin"></i><b>Agent</b><code>[sonnet: routine change] Search index migration</code><span data-agent-n>launching</span></div>
                 </div>
-                <div class="fw-pulse" aria-hidden="true"><canvas class="mascot" data-mascot></canvas><b data-pulse>Ready</b><span class="el" data-el>0s</span><span class="sp"></span><span class="stop">■ Stop</span></div>
-                <div class="fw-comp" aria-hidden="true"><span class="ib">⌀</span><span class="ph">Ask Claude Code…</span><span class="send">↑</span></div>
+                <div class="fw-pulse"><canvas class="mascot" data-mascot></canvas><b data-pulse>Ready</b><span class="el" data-el>0s</span><span class="sp"></span><button type="button" class="stop">■ Stop</button></div>
+                <div class="fw-comp"><span class="ib" aria-hidden="true">⌀</span><input type="text" maxlength="80" aria-label="Ask Claude Code" placeholder="Ask Claude Code… try “add dark mode”" /><button type="button" class="send" aria-label="Send">↑</button></div>
               </div>
               <div class="fw-agents">
                 <div class="fa-h"><b>Subagents</b><span data-count>0 running</span></div>
@@ -126,7 +126,7 @@
           </div>
         </div>
       </div>
-      <div class="try"><button type="button" data-spawn><span class="kc">S</span>Split another job</button><span>or press S</span></div>
+      <div class="try"><button type="button" data-spawn><span class="kc">S</span>Split another job</button><span>or type a request, switch workspaces, hover a mascot</span></div>
     </figure>
   </header>
 
@@ -560,7 +560,7 @@
       els.forEach(function (el) { io.observe(el); });
     })();
   </script>
-  <script src="mascot.js?v=2" defer></script>
-  <script src="stages.js?v=4" defer></script>
+  <script src="mascot.js?v=3" defer></script>
+  <script src="stages.js?v=6" defer></script>
 </body>
 </html>
