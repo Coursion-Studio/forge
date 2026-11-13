@@ -9,14 +9,14 @@
   <link rel="icon" type="image/png" href="icon.png" />
   <link rel="apple-touch-icon" href="icon.png" />
   <link rel="stylesheet" href="home.css?v=3" />
-  <link rel="stylesheet" href="stages.css?v=1" />
+  <link rel="stylesheet" href="stages.css?v=3" />
   <meta name="theme-color" content="#0E1224" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Forge" />
   <meta property="og:url" content="https://forge.coursion.studio/" />
   <meta property="og:title" content="Forge: a whole team of coding agents on your own Mac" />
   <meta property="og:description" content="Claude Code with a native UI, subagents you can watch, terminals, a board and test VMs, in one Mac app. Private beta: join the waitlist." />
-  <meta property="og:image" content="https://forge.coursion.studio/og.png?v=3" />
+  <meta property="og:image" content="https://forge.coursion.studio/og.png?v=4" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Forge: a whole team of coding agents on your own Mac" />
@@ -24,7 +24,7 @@
   <meta name="twitter:site" content="@kuraydev" />
   <meta name="twitter:title" content="Forge: a whole team of coding agents on your own Mac" />
   <meta name="twitter:description" content="Claude Code with a native UI, subagents you can watch, terminals, a board and test VMs, in one Mac app. Join the waitlist." />
-  <meta name="twitter:image" content="https://forge.coursion.studio/og.png?v=3" />
+  <meta name="twitter:image" content="https://forge.coursion.studio/og.png?v=4" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Forge","operatingSystem":"macOS 15 or later","applicationCategory":"DeveloperApplication","url":"https://forge.coursion.studio/","description":"A native Mac workbench for coding agents."}</script>
   <script defer src="https://polaris-backend-489776622782.europe-west1.run.app/api/v1/analytics/t.js" data-site="forge.coursion.studio"></script>
 </head>
@@ -63,29 +63,67 @@
         <p class="note">One email when your invite is ready. macOS 15 or later.</p>
       </div>
     </div>
-    <figure class="hero-shot reveal live" id="ws-demo" style="--accent:var(--purple)">
+    <figure class="hero-shot reveal live" id="ws-demo">
       <div class="glow" aria-hidden="true"></div>
-      <div class="mock">
-        <div class="mbar"><span class="tl"><span></span><span></span><span></span></span>Lumen · 1 · Claude<span class="sp"></span><span class="chip on">opus</span><span class="chip">effort high</span></div>
-        <div class="ws">
-          <div class="ws-side" aria-hidden="true">
-            <span class="lbl">Workspaces</span>
-            <div class="ws-row sel"><span class="ic" style="--c:#C75CEB"></span><span>Lumen<small>agents working</small></span><span class="dot live" style="--c:#C75CEB"></span></div>
-            <div class="ws-row"><span class="ic" style="--c:#389EFF"></span><span>Tidepool<small>iOS</small></span></div>
-            <div class="ws-row"><span class="ic" style="--c:#3DDC97"></span><span>Atlas API<small>1 uncommitted</small></span></div>
-            <div class="ws-row"><span class="ic" style="--c:#FFB547"></span><span>Orbit<small>build passed</small></span></div>
+      <div class="fw" aria-label="Forge running three subagents in one workspace">
+        <aside class="fw-side" aria-hidden="true">
+          <div class="fw-tl"><span></span><span></span><span></span></div>
+          <div class="fw-brand"><img src="icon.png" alt="" width="22" height="22" /><b>Forge</b><span class="sp"></span><span class="ib">⌂</span><span class="ib add">+</span></div>
+          <div class="fw-search">⌕ Search workspaces</div>
+          <div class="fw-grp">Pinned</div>
+          <div class="fw-pin">
+            <div class="fw-ws sel"><span class="ico" style="--c:#C75CEB">L</span><span class="nm">Lumen<small data-side>Running 3 agents</small></span><span class="tm" data-clock>0:00</span></div>
+            <div class="fw-sub"><i class="d live"></i>Split three jobs <em>3 agents</em></div>
+            <div class="fw-sub"><i class="d"></i>Ship the cart fix</div>
           </div>
-          <div class="ws-main">
-            <div class="ws-tx" aria-hidden="true">
-              <div class="msg-user">Move search to trigrams, review the cookie change, and find every price helper.</div>
-              <div class="msg-ai">Three independent jobs. I'll hand each to its own subagent and keep you posted here.</div>
-              <div class="tool"><span class="ic" style="--c:#C75CEB">Agent</span>3 subagents launched<span class="ok">✓</span></div>
+          <div class="fw-grp">All</div>
+          <div class="fw-ws"><span class="ico" style="--c:#389EFF">T</span><span class="nm">Tidepool</span><span class="tm">2h</span></div>
+          <div class="fw-ws"><span class="ico" style="--c:#3DDC97">A</span><span class="nm">Atlas API</span><span class="tm">18h</span></div>
+          <div class="fw-ws"><span class="ico" style="--c:#FFB547">O</span><span class="nm">Orbit</span><span class="tm">1d</span></div>
+          <div class="fw-ws"><span class="ico" style="--c:#FF5189">N</span><span class="nm">Nook</span><span class="tm">3d</span></div>
+          <div class="fw-ws"><span class="ico" style="--c:#2FD3C9">V</span><span class="nm">Vista</span><span class="tm">5d</span></div>
+          <div class="fw-foot"><span class="ib">⌂</span><span class="ib">◉</span><span class="ib">⌘</span><span class="ib">⚙</span><span class="sp"></span><small><i class="d on"></i>Synced</small></div>
+        </aside>
+        <div class="fw-main">
+          <div class="fw-top" aria-hidden="true">
+            <span class="ico" style="--c:#C75CEB">L</span>
+            <span class="ttl"><b>Lumen</b><small>~/Code/lumen · <em>Capabilities</em></small></span>
+            <span class="sp"></span>
+            <span class="tb run">▶ Run dev</span>
+            <span class="tb launch"><i class="cl"></i>Launch</span>
+            <span class="tb hide-s" data-build>⚒ Building · 1 queued</span>
+            <span class="tb ghost hide-s">▭ VM</span>
+            <span class="tb ghost">◎ Agents</span>
+          </div>
+          <div class="fw-pane">
+            <div class="fw-ph" aria-hidden="true">
+              <span class="cl big"></span>
+              <span class="ttl"><b><i class="d live"></i>1 · Split three jobs</b><small data-sub>Delegating</small></span>
+              <span class="sp"></span>
+              <span class="pc">⑂ main</span><span class="pc hide-s">▢ worktree</span><span class="pc ic">⋯</span>
             </div>
-            <div class="ws-pulse"><span class="dot live" style="--c:#C75CEB"></span><b data-pulse>Working</b><span class="sp"></span><span class="chip">42% context</span></div>
-          </div>
-          <div class="ws-agents">
-            <div class="lbl"><span>Subagents</span><span data-count>0 running</span></div>
-            <div class="list" style="display:grid;gap:8px" aria-live="polite"></div>
+            <div class="fw-tbar" aria-hidden="true">
+              <span class="pk">✦ Auto ▾</span><span class="pk">▣ Opus 5.5 ▾</span><span class="pk hide-s">◔ Extra High ▾</span>
+              <span class="sp"></span><span class="ultra">CLAUDE MAX</span>
+            </div>
+            <div class="fw-body">
+              <div class="fw-chat">
+                <div class="fw-tx" aria-hidden="true">
+                  <div class="you"><span class="lbl">You</span><div class="bub">Move search to trigrams, review the cookie change, and find every price helper.</div></div>
+                  <div class="trow"><i class="ok">✓</i><b>Grep</b><code>formatPrice|priceLabel</code><span>14 files</span></div>
+                  <div class="trow"><i class="ok">✓</i><b>Read</b><code>src/search/index.ts</code><span>212 lines</span></div>
+                  <div class="cl-msg"><span class="who"><i class="cl"></i>Claude</span><div class="bub">Three independent jobs. Each gets its own subagent, the worker in its own worktree, so they never touch your checkout.</div></div>
+                  <div class="trow" data-agent-row><i class="spin"></i><b>Agent</b><code>[sonnet: routine change] Search index migration</code><span data-agent-n>launching</span></div>
+                </div>
+                <div class="fw-pulse" aria-hidden="true"><canvas class="mascot" data-mascot></canvas><b data-pulse>Ready</b><span class="el" data-el>0s</span><span class="sp"></span><span class="stop">■ Stop</span></div>
+                <div class="fw-comp" aria-hidden="true"><span class="ib">⌀</span><span class="ph">Ask Claude Code…</span><span class="send">↑</span></div>
+              </div>
+              <div class="fw-agents">
+                <div class="fa-h"><b>Subagents</b><span data-count>0 running</span></div>
+                <div class="fa-stats"><div><small>Cost</small><b data-cost>$0.00</b></div><div><small>Tokens</small><b data-tok>0</b></div><div><small>Time</small><b data-time>0:00</b></div></div>
+                <div class="fa-list" data-list aria-live="polite"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -523,6 +561,7 @@
       els.forEach(function (el) { io.observe(el); });
     })();
   </script>
-  <script src="stages.js?v=1" defer></script>
+  <script src="mascot.js?v=1" defer></script>
+  <script src="stages.js?v=3" defer></script>
 </body>
 </html>
