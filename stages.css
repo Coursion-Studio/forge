@@ -509,3 +509,9 @@ canvas.mascot { cursor: pointer; }
 .ag-note { text-align: center; color: var(--ink-3); font-size: 13px; margin: 16px 0 0; }
 @media (max-width: 980px) { .ag-row { grid-template-columns: 1fr 1fr; } .ag-card.lead { grid-column: span 2; } }
 @media (max-width: 520px) { .ag-row { grid-template-columns: 1fr; } .ag-card.lead { grid-column: auto; } }
+.ag-tile { color: #fff; box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -1px 0 rgba(0,0,0,0.2), 0 8px 18px -10px rgba(0,0,0,0.8); }
+.ag-tile svg { width: 24px; height: 24px; filter: drop-shadow(0 1px 0 rgba(0,0,0,0.2)); }
+.ag-tile.aider { background: linear-gradient(145deg, #5BE3A0, #138A5E); }
+.ag-tile.k { background: linear-gradient(145deg, #C9A2FF, #6B3FE4); }
+.ag-card img { outline: 1px solid rgba(255,255,255,0.14); outline-offset: -1px; }
+.ag-tile svg { width: 27px; height: 27px; }
