@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" href="icon.png" />
   <link rel="apple-touch-icon" href="icon.png" />
   <link rel="stylesheet" href="home.css?v=3" />
-  <link rel="stylesheet" href="stages.css?v=7" />
+  <link rel="stylesheet" href="stages.css?v=9" />
   <meta name="theme-color" content="#0E1224" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Forge" />
@@ -135,19 +135,13 @@
       <div class="wrap">
         <h2 id="inside-h">Everything an agent needs, already in the room</h2>
         <p>Open a project and every tool is one split or one shortcut away. Panes keep their state when you switch workspaces.</p>
-        <div class="panes reveal">
-          <div class="pane" style="--c:#C75CEB"><i>✦</i><span>Claude Code<small>native UI or TUI</small></span></div>
-          <div class="pane" style="--c:#389EFF"><i>⧉</i><span>Subagents<small>cards and a live feed</small></span></div>
-          <div class="pane" style="--c:#3DDC97"><i>›_</i><span>Terminal<small>command blocks</small></span></div>
-          <div class="pane" style="--c:#FFB547"><i>▤</i><span>Board<small>kanban in your repo</small></span></div>
-          <div class="pane" style="--c:#2FD3C9"><i>◷</i><span>Schedules<small>recurring tasks</small></span></div>
-          <div class="pane" style="--c:#FF5189"><i>⚒</i><span>Builds<small>queue, VMs, installs</small></span></div>
-          <div class="pane" style="--c:#C75CEB"><i>↧</i><span>Land<small>verified merges</small></span></div>
-          <div class="pane" style="--c:#389EFF"><i>◔</i><span>Reports<small>Sentry and PostHog</small></span></div>
-          <div class="pane" style="--c:#3DDC97"><i>♡</i><span>Endpoints<small>health checks</small></span></div>
-          <div class="pane" style="--c:#FFB547"><i>¶</i><span>Markdown<small>docs and plans</small></span></div>
-          <div class="pane" style="--c:#2FD3C9"><i>≡</i><span>Log tail<small>follow any file</small></span></div>
-          <div class="pane" style="--c:#FF5189"><i>⚿</i><span>Secrets<small>Keychain, on request</small></span></div>
+        <div class="pp reveal" id="pp-demo">
+          <div class="pp-dock" role="toolbar" aria-label="Add a pane"></div>
+          <p class="pp-hint">Click a tool to split it in. Click again to close it.</p>
+          <div class="fw pp-win">
+            <div class="pp-bar"><span class="fw-tl"><span></span><span></span><span></span></span><b>Lumen</b><small>~/Code/lumen</small><span class="sp"></span><small data-pp-n>0 panes</small></div>
+            <div class="pp-grid" data-n="0"></div>
+          </div>
         </div>
       </div>
     </section>
@@ -562,5 +556,6 @@
   </script>
   <script src="mascot.js?v=3" defer></script>
   <script src="stages.js?v=7" defer></script>
+  <script src="panes.js?v=2" defer></script>
 </body>
 </html>
