@@ -515,3 +515,113 @@ canvas.mascot { cursor: pointer; }
 .ag-tile.k { background: linear-gradient(145deg, #C9A2FF, #6B3FE4); }
 .ag-card img { outline: 1px solid rgba(255,255,255,0.14); outline-offset: -1px; }
 .ag-tile svg { width: 27px; height: 27px; }
+
+.sec, .ag, .inside { overflow-x: clip; }
+.kb { scroll-snap-type: x proximity; overscroll-behavior-x: contain; scrollbar-width: none; }
+.kb::-webkit-scrollbar { display: none; }
+.kb-col { scroll-snap-align: start; scroll-margin-left: 14px; }
+
+@media (max-width: 900px) {
+  .split > *, .split figure.stage { min-width: 0; }
+  .split figure.stage { margin: 0; }
+}
+
+@media (max-width: 640px) {
+  .top { padding-top: 8px; padding-bottom: 8px; }
+  .top-links .top-cta { display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; }
+  .hero { padding-top: 40px; }
+  .hero h1 { margin: 18px 0 16px; text-wrap: balance; }
+  .hero h1 .grad { display: inline-block; text-wrap: balance; }
+  .hero .sub { font-size: 17px; text-wrap: pretty; }
+  .join { margin-top: 26px; }
+  .waitlist { padding: 6px; gap: 6px; }
+  .waitlist input[type="email"] { font-size: 16px; min-height: 48px; padding: 12px 14px; }
+  .btn { min-height: 48px; }
+  .note { margin-top: 2px; text-wrap: pretty; }
+  .hero-shot { width: calc(100% - 24px); margin-top: 36px; }
+
+  .sec { padding: 56px 0; }
+  .sec h2 { font-size: clamp(28px, 8vw, 34px); text-wrap: balance; }
+  .ship h2 { font-size: clamp(34px, 10vw, 40px); }
+  .lede { font-size: 17px; text-wrap: pretty; }
+  .center-head { margin-bottom: 28px; }
+  .points li { font-size: 15px; }
+  .split { gap: 32px; }
+  .stage { border-radius: 16px; padding: 10px; }
+
+  .try { flex-wrap: wrap; gap: 10px; }
+  .try > span { width: 100%; text-align: center; order: 2; }
+  .try button { min-height: 44px; box-sizing: border-box; padding: 0 16px; font-size: 14px; }
+  .hx-try > span { order: 0; }
+  .hx-try button { width: 100%; justify-content: center; }
+
+  .ag { padding-top: 48px; }
+  .ag-card { grid-template-columns: 44px minmax(0, 1fr); column-gap: 14px; row-gap: 2px; align-items: start; padding: 14px 16px; }
+  .ag-card img, .ag-card .ag-tile { grid-row: span 2; margin-bottom: 0; }
+  .ag-card em { position: static; grid-column: 2; justify-self: start; margin-top: 6px; order: 3; }
+  .ag-note { text-wrap: pretty; }
+
+  .ld-points > div { padding: 14px 16px; }
+  .ld-bar small { display: none; }
+  .ld-term { margin: 0 10px 10px; }
+
+  .hx { height: 500px; }
+  .hx-bar { padding: 10px 12px; }
+  .hx-bar b { overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+  .hx-log { padding: 10px; }
+  .hx-foot { gap: 10px; padding: 9px 12px; }
+
+  .kb { grid-template-columns: repeat(5, minmax(150px, 46%)); }
+  .mbar .chip { flex: none; }
+
+  .mid-join { padding: 32px 18px; border-radius: 18px; }
+  .mid-join p { text-wrap: pretty; }
+
+  .bento { gap: 14px; }
+  .tile { padding: 20px; border-radius: 16px; gap: 16px; }
+  .ep { flex-wrap: wrap; row-gap: 4px; }
+  .ep .m { white-space: nowrap; }
+  .ep > .chip:last-child, .ep > .m:last-child { margin-left: auto; }
+  .tile h3 { text-wrap: balance; }
+  .ep b + .m { margin-left: 0; }
+  .tile .perm { display: grid; grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .tile .perm code { overflow-wrap: anywhere; }
+  .tile .pbtn { padding: 8px 14px; font-size: 13px; }
+  .tile .tool { flex-wrap: wrap; overflow-wrap: anywhere; }
+  .tile .tool .ok { margin-left: 0; }
+
+  .local { gap: 12px; }
+  .local div { padding: 20px; }
+
+  .compare td:first-child { width: 30%; }
+
+  .inside { padding-top: 56px; }
+  .inside h2 { text-wrap: balance; }
+  .pp-win { height: 480px; }
+
+  .faq-list details { padding: 0 16px; }
+  .faq-list summary { padding: 16px 0; min-height: 44px; align-items: center; }
+
+  .cta-end h2 { text-wrap: balance; }
+  .end-icon { width: 72px; height: 72px; }
+
+  .foot { padding-bottom: calc(32px + env(safe-area-inset-bottom)); }
+  .foot-row { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .foot-r { gap: 4px 22px; }
+  .foot-r a { display: inline-flex; align-items: center; min-height: 44px; }
+}
+
+@media (max-width: 380px) {
+  .hero h1 { font-size: 34px; }
+  .wrap { width: calc(100% - 32px); }
+  .hero-copy { width: calc(100% - 32px); }
+  .tile { padding: 18px; }
+}
+
+@media (hover: none) {
+  .ag-card:hover, .kb-card:hover, .hm-tile:hover, .pp-tool:hover, .ld-go:hover { transform: none; }
+}
+
+@media (max-width: 640px) and (prefers-reduced-motion: no-preference) {
+  .mesh i { animation-duration: 40s; }
+}

@@ -405,6 +405,15 @@
       if (e.key === "ArrowLeft" && i > 0) { kauto = false; cols[i - 1].appendChild(c); c.focus(); counts(); }
     });
     function counts() { kb.querySelectorAll(".kb-col").forEach(function (c) { c.querySelector("h4 span").textContent = c.querySelectorAll(".kb-card").length; }); }
+    function follow(col) { if (kb.scrollWidth > kb.clientWidth + 1) kb.scrollTo({ left: col.offsetLeft - 14, behavior: reduce ? "auto" : "smooth" }); }
+    var coarse = window.matchMedia("(pointer: coarse)");
+    kb.addEventListener("click", function (e) {
+      if (!coarse.matches) return;
+      var c = e.target.closest(".kb-card"); if (!c) return;
+      var cols = Array.prototype.slice.call(kb.querySelectorAll(".kb-col"));
+      var next = cols[cols.indexOf(c.parentNode) + 1]; if (!next) return;
+      kauto = false; next.appendChild(c); c.classList.remove("flash"); void c.offsetWidth; c.classList.add("flash"); counts(); follow(next);
+    });
     onView(kb, async function () {
       var card = kb.querySelector('[data-auto]');
       var cols = kb.querySelectorAll(".kb-col");
@@ -412,7 +421,7 @@
       var labels = ["", "Claude picked it up", "Claude · verifying", "Landed · build 551"];
       for (var i = 1; i < 4 && kauto; i++) {
         await wait(1300); if (!kauto) break;
-        cols[i + 1].appendChild(card); who.textContent = labels[i]; card.classList.remove("flash"); void card.offsetWidth; card.classList.add("flash"); counts();
+        cols[i + 1].appendChild(card); who.textContent = labels[i]; card.classList.remove("flash"); void card.offsetWidth; card.classList.add("flash"); counts(); follow(cols[i + 1]);
       }
     });
     counts();
